@@ -18,18 +18,18 @@
       <form id="adding-machine-form">
         <!-- input: first number -->
         <label for="first_number">First number:</label>
-        <input type="number" id="first_number" value="0" />
+        <input type="text" id="first_number" value="0" />
 
         <!-- input: second number -->
         <label for="second_number">Second number:</label>
-        <input type="number" id="second_number" value="0" />
+        <input type="text" id="second_number" value="0" />
 
-        <!-- button: on submit display addition of two numbers -->
-        <button type="submit">Add Numbers</button>
+        <!-- button: on click display addition of number inputs -->
+        <button type="button" onclick="doAddition();">Add Numbers</button>
       </form>
 
       <!-- container: display results -->
-      <p>Total: <span id="total"></span></p>
+      <p>Total: <span id="total">0</span></p>
     </main>
     <script src="script.js"></script>
   </body>
