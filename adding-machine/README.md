@@ -1,6 +1,11 @@
 # Adding Machine
 
+## Status
+
 _In progress_
+
+- Basic functionality
+- TODO: add style with CSS
 
 ## Resources
 
