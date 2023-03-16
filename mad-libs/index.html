@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mad Libs</title>
+  </head>
+  <body>
+    <!-- title + directions -->
+    <header>
+      <hgroup>
+        <h1>Mad Libs</h1>
+        <p>
+          Fill in an answer for each prompt.
+          <span class="new-line">Click submit to see your results.</span>
+        </p>
+      </hgroup>
+    </header>
+
+    <!-- form -->
+    <main>
+      <form>
+        <!-- name -->
+        <label for="nameInput">A name</label>
+        <input type="text" id="nameInput" name="nameInput" />
+
+        <!-- type of animal -->
+        <label for="animalInput">Type of animal</label>
+        <input type="text" id="animalInput" name="animalInput" />
+
+        <!-- vegetable -->
+        <label for="vegetableInput">Vegetable</label>
+        <input type="text" id="vegetableInput" name="vegetableInput" />
+
+        <!-- music genre -->
+        <label for="musicGenreInput">Music genre</label>
+        <input type="text" id="musicGenreInput" name="musicGenreInput" />
+
+        <!-- movie -->
+        <label for="">Movie title</label>
+        <input type="text" id="movieTitleInput" name="movieTitleInput" />
+
+        <!-- submit -->
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- section to display results on form submit -->
+      <section id="story" class="visually-hidden">
+        <h2>Meet <span id="name"></span></h2>
+        <p>
+          <span id="name"></span> is a/an <span id="animal"></span>.
+          <span id="name"></span> loves <span id="vegetable"></span> and
+          <span id="music-genre"></span>. <span id="name"></span> fell asleep
+          while watching <span id="movie"></span>.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
