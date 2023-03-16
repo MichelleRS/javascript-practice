@@ -7,7 +7,10 @@ function getAndSetValues() {
   const movieTitleInput = document.getElementById("movieTitleInput").value;
 
   // set input values in their spans
-  document.querySelector("span#name").innerText = nameInput;
+  document.querySelector("span#name-01").innerText = nameInput;
+  document.querySelector("span#name-02").innerText = nameInput;
+  document.querySelector("span#name-03").innerText = nameInput;
+  document.querySelector("span#name-04").innerText = nameInput;
   document.querySelector("span#animal").innerText = animalInput;
   document.querySelector("span#vegetable").innerText = vegetableInput;
   document.querySelector("span#music-genre").innerText = musicGenreInput;
