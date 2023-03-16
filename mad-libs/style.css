@@ -2,3 +2,8 @@
 .visually-hidden {
   display: none;
 }
+
+/* italicize name of movie */
+#movie {
+  font-style: italic;
+}
