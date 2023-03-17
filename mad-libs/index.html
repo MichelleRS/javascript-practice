@@ -19,28 +19,43 @@
       </hgroup>
     </header>
 
-    <!-- form -->
     <main>
+      <!-- TODO: form validation error message -->
+      <section id="form-validation">
+        <p id="error-message"></p>
+      </section>
+
+      <!-- form -->
       <form>
         <!-- name -->
         <label for="nameInput">A name</label>
-        <input type="text" id="nameInput" name="nameInput" />
+        <input type="text" id="nameInput" name="nameInput" required />
 
         <!-- type of animal -->
         <label for="animalInput">Type of animal</label>
-        <input type="text" id="animalInput" name="animalInput" />
+        <input type="text" id="animalInput" name="animalInput" required />
 
         <!-- vegetable -->
         <label for="vegetableInput">Vegetable</label>
-        <input type="text" id="vegetableInput" name="vegetableInput" />
+        <input type="text" id="vegetableInput" name="vegetableInput" required />
 
         <!-- music genre -->
         <label for="musicGenreInput">Music genre</label>
-        <input type="text" id="musicGenreInput" name="musicGenreInput" />
+        <input
+          type="text"
+          id="musicGenreInput"
+          name="musicGenreInput"
+          required
+        />
 
         <!-- movie -->
         <label for="">Movie title</label>
-        <input type="text" id="movieTitleInput" name="movieTitleInput" />
+        <input
+          type="text"
+          id="movieTitleInput"
+          name="movieTitleInput"
+          required
+        />
 
         <!-- submit -->
         <button type="submit">Submit</button>
