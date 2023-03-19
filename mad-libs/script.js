@@ -6,6 +6,22 @@ function getAndSetValues() {
   const musicGenreInput = document.getElementById("musicGenreInput").value;
   const movieTitleInput = document.getElementById("movieTitleInput").value;
 
+  // error handling for browsers that do not support required attribute
+  // get DOM element for error message
+  const errorMessage = document.querySelector("p#error-message");
+
+  // check for empty input(s)
+  if (
+    nameInput === "" ||
+    animalInput === "" ||
+    vegetableInput === "" ||
+    musicGenreInput === "" ||
+    movieTitleInput === ""
+  ) {
+    errorMessage.innerHTML = "Error. Missing one or more inputs";
+    return false;
+  }
+
   // set input values in their spans
   document.querySelector("span#name-01").innerText = nameInput;
   document.querySelector("span#name-02").innerText = nameInput;
