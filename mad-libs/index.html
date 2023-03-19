@@ -11,33 +11,50 @@
     <!-- title + directions -->
     <header>
       <hgroup>
+        <!-- title -->
         <h1>Mad Libs</h1>
-        <p>
-          Fill in an answer for each prompt.
-          <span class="new-line">Click submit to see your results.</span>
-        </p>
+        <!-- TODO: error message -->
+        <p id="error-message"></p>
+        <!-- directions -->
+        <ul>
+          <li>Fill in an answer for each prompt.</li>
+          <li>Click submit to see your results.</li>
+        </ul>
       </hgroup>
     </header>
 
     <main>
-      <!-- TODO: form validation error message -->
-      <section id="form-validation">
-        <p id="error-message"></p>
-      </section>
-
       <!-- form -->
       <form>
         <!-- name -->
         <label for="nameInput">A name</label>
-        <input type="text" id="nameInput" name="nameInput" required />
+        <input
+          type="text"
+          id="nameInput"
+          name="nameInput"
+          required
+          aria-required="true"
+        />
 
         <!-- type of animal -->
         <label for="animalInput">Type of animal</label>
-        <input type="text" id="animalInput" name="animalInput" required />
+        <input
+          type="text"
+          id="animalInput"
+          name="animalInput"
+          required
+          aria-required="true"
+        />
 
         <!-- vegetable -->
         <label for="vegetableInput">Vegetable</label>
-        <input type="text" id="vegetableInput" name="vegetableInput" required />
+        <input
+          type="text"
+          id="vegetableInput"
+          name="vegetableInput"
+          required
+          aria-required="true"
+        />
 
         <!-- music genre -->
         <label for="musicGenreInput">Music genre</label>
@@ -46,6 +63,7 @@
           id="musicGenreInput"
           name="musicGenreInput"
           required
+          aria-required="true"
         />
 
         <!-- movie -->
@@ -55,6 +73,7 @@
           id="movieTitleInput"
           name="movieTitleInput"
           required
+          aria-required="true"
         />
 
         <!-- submit -->
