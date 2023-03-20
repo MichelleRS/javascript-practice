@@ -2,11 +2,11 @@
 
 ## MVP Goal
 
-On button click, display a random number from 1-6.
+On button click, display a random number: 1-6.
 
 ## Status
 
-_In progress_
+- MVP complete
 
 ## Resources
 
