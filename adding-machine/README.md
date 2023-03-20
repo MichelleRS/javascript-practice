@@ -1,11 +1,12 @@
 # Adding Machine
 
+## MVP Goal
+
+Get two user inputs and display sum on button click.
+
 ## Status
 
-_In progress_
-
-- Basic functionality
-- TODO: add style with CSS
+- MVP complete
 
 ## Resources
 
