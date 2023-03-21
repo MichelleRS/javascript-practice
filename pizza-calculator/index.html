@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pizza Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>&#x1f355 Pizza Calculator</h1>
+    </header>
+
+    <main>
+        <!-- directions -->
+        <p>Calculate the number of pizzas you should order.</p>
+        <!-- form -->
+        <form id="pizza-calculator-form">
+            <!-- input number of people -->
+            <label for="numberInput">Number of people:</label>
+            <input type="number" name="numberInput" id="numberInput" value="0" />
+
+            <!-- button to calculate pizza count -->
+            <button type="button" id="calculatePizzas">Calculate Pizzas</button>
+        </form>
+        <!-- display results -->
+        <p>You should order <span id="result">0</span> pizza(s).</p>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
