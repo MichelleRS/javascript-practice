@@ -1,0 +1,55 @@
+/* ---
+global settings
+--- */
+:root {
+  /* light neutral */
+  --color1: hsla(42, 70%, 94%, 1);
+  /* dark neutral */
+  --color2: hsla(185, 22%, 10%, 1);
+}
+
+/* ---
+header container & its elements
+--- */
+
+header {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+/* ---
+game container & its elements
+--- */
+
+.game-container {
+  background-color: var(--color1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+}
+
+/* ---
+results box & its elements
+--- */
+
+.result-box {
+  border: 3px solid var(--color2);
+  order: 1;
+}
+
+/* -------
+roll box & its elements
+------- */
+.roll-box {
+  order: 2;
+}
+
+/* only apply if screen size is 500px and above */
+@media screen and (min-width: 500px) {
+  body {
+    background-color: green;
+  }
+}
