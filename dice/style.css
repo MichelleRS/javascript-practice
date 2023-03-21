@@ -1,0 +1,113 @@
+/* ---
+global settings
+--- */
+:root {
+  /* light neutral */
+  --color1: hsla(42, 70%, 94%, 1);
+  /* dark neutral */
+  --color2: hsla(185, 22%, 10%, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color1);
+}
+
+body,
+button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---
+header container & its elements
+--- */
+
+header {
+  background-color: var(--color2);
+  color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---
+game container & its elements
+--- */
+
+.game-container {
+  background-color: var(--color1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 100%;
+}
+
+/* ---
+results box & its elements
+--- */
+
+.result-box {
+  display: flex;
+  order: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+}
+
+#num {
+  /* size and spacing */
+  padding: 25px 40px;
+  width: 100%;
+  /* text */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 4rem;
+  font-weight: bolder;
+  /* style */
+  border: 5px solid var(--color2);
+  border-radius: 10%;
+}
+
+/* -------
+roll box & its elements
+------- */
+.roll-box {
+  display: flex;
+  order: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  /* size and spacing */
+  padding: 20px 30px;
+  width: 100%;
+  /* text */
+  font-size: 1.5rem;
+  font-weight: bolder;
+  /* color */
+  background-color: var(--color2);
+  color: var(--color1);
+  /* style */
+  border: none;
+}
+
+/* button hover, focus active */
+button:hover,
+button:focus,
+button:active {
+  cursor: pointer;
+  border: 5px solid var(--color2);
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+/* only apply if screen size is 500px and above */
+@media screen and (min-width: 500px) {
+}

@@ -7,11 +7,7 @@ On button click, display a random number: 1-6.
 ## Status
 
 - MVP complete
-
-## Feature Ideas
-
-- responsive design with minimal css styling
-  - use of relative positions
+- Also includes responsive design for mobile
 
 ## Resources
 
