@@ -18,7 +18,8 @@ function displayTime() {
   let secs = currentDate.getSeconds();
 
   // create a 12-hour display with am/pm
-  let amPm = "";
+  // set default to am
+  let amPm = "am";
 
   if (hrs > 12) {
     // subtract 12 from 13-24 hr
