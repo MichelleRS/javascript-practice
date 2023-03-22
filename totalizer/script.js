@@ -23,6 +23,13 @@ buttonAdd.addEventListener("click", (e) => {
 
   // display current total value
   totalDisplay.textContent = total;
+
+  // clear value from input
+  inputValue.value = "";
 });
 
 // reset total
+buttonReset.addEventListener("click", () => {
+  // display total as 0
+  totalDisplay.textContent = 0;
+});
