@@ -1,10 +1,11 @@
 // get DOM elements
 const fahrenheitInput = document.getElementById("fahrenheit");
 const celsiusInput = document.getElementById("celsius");
-const button = document.getElementById("convertButton");
+const convertButton = document.getElementById("convertButton");
+const resetButton = document.getElementById("resetButton");
 const results = document.getElementById("resultsText");
 
-button.addEventListener("click", () => {
+convertButton.addEventListener("click", () => {
   // get value and set to a number
   let fahrenheit = Number(fahrenheitInput.value);
   let celsius = Number(celsiusInput.value);
@@ -26,4 +27,10 @@ button.addEventListener("click", () => {
     results.textContent =
       celsius + "°C converts to " + fahrenheit.toFixed(1) + "°F";
   }
+});
+
+resetButton.addEventListener("click", () => {
+  // clear inputs
+  fahrenheitInput.value = "";
+  celsiusInput.value = "";
 });
