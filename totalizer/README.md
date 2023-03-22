@@ -7,7 +7,7 @@
 
 ## Status
 
-_In progress_
+- MVP complete
 
 ## Resources
 
