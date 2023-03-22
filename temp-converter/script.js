@@ -33,4 +33,6 @@ resetButton.addEventListener("click", () => {
   // clear inputs
   fahrenheitInput.value = "";
   celsiusInput.value = "";
+  // clear results text
+  results.textContent = "";
 });
