@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Adventure Wonderland</title>
+  </head>
+  <body>
+    <header>
+      <h1>Adventure Wonderland</h1>
+    </header>
+
+    <main>
+      <!-- list of rides -->
+      <h2>Our Rides</h2>
+      <ol class="rideList">
+        <li>Scenic River Cruise</li>
+        <li>Carnival Carousel</li>
+        <li>Jungle Adventure Water Splash</li>
+        <li>Downhill Mountain Run</li>
+        <li>The Regurgitator</li>
+      </ol>
+
+      <form>
+        <!-- input: ride number -->
+        <label for="rideInput">Enter a ride number:</label>
+        <input type="number" name="rideInput" id="rideInput" required />
+
+        <!-- input: age -->
+        <label for="ageInput">Enter age of person riding:</label>
+        <input type="number" name="ageInput" id="ageInput" required />
+
+        <!-- button: check age -->
+        <button type="submit" id="checkAgeInput">Check Age Requirements</button>
+        <!-- button: clear data -->
+        <button type="button" id="clearData">Clear Data</button>
+      </form>
+
+      <!-- display: whether user can go on ride selected -->
+      <p id="answerPar"></p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
