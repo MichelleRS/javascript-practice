@@ -18,7 +18,8 @@ form.addEventListener("submit", (e) => {
   // error handling
   if (rideNumber > 5) {
     answerPar.textContent =
-      "The ride number entered does not exist. Check the list of rides and try again.";
+      "Errror. The ride number entered does not exist. Check the list of rides and try again.";
+    answerPar.className = "error";
   }
 
   switch (rideNumber) {
@@ -26,6 +27,7 @@ form.addEventListener("submit", (e) => {
     case 1:
       answerPar.textContent =
         "Yes, the age entered may ride the Scenic River Cruise. It is open to all ages.";
+      answerPar.className = "permitted";
       break;
 
     // check carnival carousel
@@ -33,9 +35,11 @@ form.addEventListener("submit", (e) => {
       if (age < 3) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Carnival Carousel. It is open to those 3 and older.";
+        answerPar.className = "notPermitted";
       } else {
         answerPar.textContent =
           "Yes, the age entered is permitted to ride the Carnival Carousel. It is open to those 3 and older.";
+        answerPar.className = "permitted";
       }
       break;
 
@@ -44,9 +48,11 @@ form.addEventListener("submit", (e) => {
       if (age < 6) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Jungle Adventure Water Splash. It is open to those 6 and older.";
+        answerPar.className = "notPermitted";
       } else {
         answerPar.textContent =
           "Yes, the age entered may ride the Jungle Adventure Water Splash. It is open to those 6 and older.";
+        answerPar.className = "permitted";
       }
       break;
 
@@ -55,9 +61,11 @@ form.addEventListener("submit", (e) => {
       if (age < 12) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Downhill Mountain Run. It is open to those 12 and older.";
+        answerPar.className = "notPermitted";
       } else {
         answerPar.textContent =
           "Yes, the age entered may ride the Downhill Mountain Run. It is open to those 12 and older.";
+        answerPar.className = "permitted";
       }
       break;
 
@@ -66,9 +74,11 @@ form.addEventListener("submit", (e) => {
       if (age < 12 || age > 90) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Regurgitator. It is open to those between the ages of 12 and 90.";
+        answerPar.className = "notPermitted";
       } else {
         answerPar.textContent =
           "Yes, the age entered may ride the Regurgitator. It is open to those between the ages of 12 and 90.";
+        answerPar.className = "permitted";
       }
       break;
   }
