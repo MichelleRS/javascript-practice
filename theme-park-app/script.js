@@ -3,11 +3,14 @@ const form = document.querySelector("form");
 const rideInput = document.getElementById("rideInput");
 const ageInput = document.getElementById("ageInput");
 const answerPar = document.getElementById("answerPar");
+const clearDataButton = document.getElementById("clearData");
 
 /*  event listener on form submit */
 form.addEventListener("submit", (e) => {
   // prevent page from refreshing on form submit
   e.preventDefault();
+
+  // TODO error handling
 
   // get ride input value and convert string to number
   let rideNumber = Number(rideInput.value);
@@ -63,4 +66,11 @@ form.addEventListener("submit", (e) => {
         "Yes, the age entered may ride the Regurgitator. It is open to those between the ages of 12 and 90.";
     }
   }
+});
+
+// clear data
+clearDataButton.addEventListener("click", () => {
+  rideInput.value = "";
+  ageInput.value = "";
+  answerPar.textContent = "";
 });
