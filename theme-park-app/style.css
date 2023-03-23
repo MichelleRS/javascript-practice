@@ -1,0 +1,8 @@
+.permitted {
+  color: green;
+}
+
+.notPermitted,
+.error {
+  color: red;
+}
