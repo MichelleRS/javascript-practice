@@ -10,12 +10,16 @@ form.addEventListener("submit", (e) => {
   // prevent page from refreshing on form submit
   e.preventDefault();
 
-  // TODO error handling
-
   // get ride input value and convert string to number
   let rideNumber = Number(rideInput.value);
   // get age input value and convert string to number
   let age = Number(ageInput.value);
+
+  // error handling
+  if (rideNumber > 5) {
+    answerPar.textContent =
+      "The ride number you entered does not exist. Check the list of rides and try again.";
+  }
 
   // check scenic river cruise
   if (rideNumber === 1) {
