@@ -20,7 +20,7 @@ The purpose of this practice app is to work with conditional statements.
 
 ## Status
 
-_In progress_
+- MVP complete
 
 ## Resources
 
