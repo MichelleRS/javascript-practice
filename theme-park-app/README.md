@@ -11,7 +11,15 @@ The purpose of this practice app is to work with conditional statements. The app
 ## Status
 
 - MVP complete
-- refactored to include switch construction
+- Refactor to include:
+  - switch construction
+  - data attributes
+
+## Accessibility Notes
+
+> Do not store content that should be visible and accessible in data attributes, because assistive technology may not access them.
+
+Source: [_Using data attributes._](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) MDN Web Docs. Accessed March 2023.
 
 ## Ride Data
 
