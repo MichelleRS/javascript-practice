@@ -4,6 +4,49 @@ const rideInput = document.getElementById("rideInput");
 const ageInput = document.getElementById("ageInput");
 const answerPar = document.getElementById("answerPar");
 const clearDataButton = document.getElementById("clearData");
+// rides
+const carnivalCarouselEl = document.getElementById("carnivalCarousel");
+const jungleAdventureEl = document.getElementById("jungleAdventure");
+const downhillMountainEl = document.getElementById("downhillMountain");
+const theRegurgitatorEl = document.getElementById("theRegurgitator");
+
+/* get data attributes for ride age limits and convert strings to numbers */
+// carnival carousel
+// min age
+const carnivalCarouselMinAge = Number(
+  carnivalCarouselEl.getAttribute("data-min-age")
+);
+// max age
+const carnivalCarouselMaxAge = Number(
+  carnivalCarousel.getAttribute("data-max-age")
+);
+// jungle adventure
+// min age
+const jungleAdventureMinAge = Number(
+  jungleAdventureEl.getAttribute("data-min-age")
+);
+// max age
+const jungleAdventureMaxAge = Number(
+  jungleAdventureEl.getAttribute("data-max-age")
+);
+// downhill mountain
+// min age
+const downhillMountainMinAge = Number(
+  downhillMountainEl.getAttribute("data-min-age")
+);
+// max age
+const downhillMountainMaxAge = Number(
+  downhillMountainEl.getAttribute("data-max-age")
+);
+// the regurgitator
+// min age
+const theRegurgitatorMinAge = Number(
+  theRegurgitatorEl.getAttribute("data-min-age")
+);
+// max age
+const theRegurgitatorMaxAge = Number(
+  theRegurgitatorEl.getAttribute("data-max-age")
+);
 
 /*  event listener on form submit */
 form.addEventListener("submit", (e) => {
@@ -32,7 +75,7 @@ form.addEventListener("submit", (e) => {
 
     // check carnival carousel
     case 2:
-      if (age < 3) {
+      if (age < carnivalCarouselMinAge || age > carnivalCarouselMaxAge) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Carnival Carousel. It is open to those 3 and older.";
         answerPar.className = "notPermitted";
@@ -45,7 +88,7 @@ form.addEventListener("submit", (e) => {
 
     // check jungle adventure water splash
     case 3:
-      if (age < 6) {
+      if (age < jungleAdventureMinAge || age > carnivalCarouselMaxAge) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Jungle Adventure Water Splash. It is open to those 6 and older.";
         answerPar.className = "notPermitted";
@@ -58,7 +101,7 @@ form.addEventListener("submit", (e) => {
 
     // check downhill mountain run
     case 4:
-      if (age < 12) {
+      if (age < downhillMountainMinAge || age > downhillMountainMaxAge) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Downhill Mountain Run. It is open to those 12 and older.";
         answerPar.className = "notPermitted";
@@ -71,7 +114,7 @@ form.addEventListener("submit", (e) => {
 
     // check the regurgitator
     case 5:
-      if (age < 12 || age > 90) {
+      if (age < theRegurgitatorMinAge || age > theRegurgitatorMaxAge) {
         answerPar.textContent =
           "The age entered is not permitted to ride the Regurgitator. It is open to those between the ages of 12 and 90.";
         answerPar.className = "notPermitted";
