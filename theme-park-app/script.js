@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
   // error handling
   if (rideNumber > 5) {
     answerPar.textContent =
-      "Errror. The ride number entered does not exist. Check the list of rides and try again.";
+      "Error. The ride number entered does not exist. Check the list of rides and try again.";
     answerPar.className = "error";
   }
 
