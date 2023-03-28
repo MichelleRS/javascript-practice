@@ -11,8 +11,26 @@ Includes:
 
 ## Status
 
-_In progress_
+- MVP complete
+
+## Fixes
+
+1. Only first asterisk renders in list
+
+   **Solution:** Remove empty `span` elements from list items and append `span` in JavaScript loop.
+
+## Notes to Self
+
+- `cmd` + `shift` + `l` selects all occurrences of a highlighted word
+
+- After reviewing parts of Chapter 5 in Duckett's book (see [Resources](#resources)), I decided to:
+  - remove the empty `span` elements in HTML
+  - use `.createTextNode()` instead of `.textContent` to add the asterisk to the span element
 
 ## Resources
+
+Duckett, Jon. _JavaScript and jQuery: Interactive Front-End Web Development_. John Wiley & Sons, Inc., 2014, pp. 218-227.
+
+Lampron, J. [_I Think You Should Leave Database._](https://www.itysldb.com/). Accessed March 2023.
 
 Miles, Rob. "Making Decisions in Programs" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.
