@@ -19,10 +19,15 @@ button.addEventListener("click", () => {
       // apply a class that changes text color
       sketch.className = "includesTim";
 
-      // render a span element to add asterisk
-      let annotationSpan = document.createElement("span");
-      annotationSpan.textContent = "*";
-      sketch.appendChild(annotationSpan);
+      // render a span element
+      let spanEl = document.createElement("span");
+      // add asterisk to span element
+      let asterisk = document.createTextNode("*");
+      // add to the DOM tree
+      spanEl.appendChild(asterisk);
+
+      // add span element to sketch element
+      sketch.append(spanEl);
     }
   }
 });
