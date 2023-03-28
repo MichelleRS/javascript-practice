@@ -1,6 +1,5 @@
 /* get DOM elements */
 const sketchesListEl = document.getElementById("sketchesList");
-const annotationSpan = document.querySelector(".annotation");
 const button = document.getElementById("showSketches");
 
 /* button click event listener */
@@ -15,10 +14,15 @@ button.addEventListener("click", () => {
     // get data attribute for tim
     let includesTim = sketch.getAttribute("data-includes-tim");
 
-    // if 'data-includes-tim' is true: (1) add class of includesTim, (2) add asterisk to annotationSpan
+    // if 'data-includes-tim' is true:
     if (includesTim === "true") {
+      // apply a class that changes text color
       sketch.className = "includesTim";
+
+      // render a span element to add asterisk
+      let annotationSpan = document.createElement("span");
       annotationSpan.textContent = "*";
+      sketch.appendChild(annotationSpan);
     }
   }
 });
