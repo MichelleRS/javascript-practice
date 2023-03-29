@@ -4,27 +4,14 @@ const button = document.getElementById("showSketches");
 
 /* button click event listener */
 button.addEventListener("click", () => {
-  // TODO remove additional asterisks on multiple clicks
-
   // make a for of loop to iterate through the sketches
   for (let sketch of sketchesListEl.children) {
-    // get data attribute for tim
+    // get attribute for data including tim
     let includesTim = sketch.getAttribute("data-includes-tim");
 
-    // if 'data-includes-tim' is true:
-    if (includesTim === "true") {
-      // apply a class that changes text color
-      sketch.className = "includesTim";
-
-      // render a span element
-      let spanEl = document.createElement("span");
-      // add asterisk to span element
-      let asterisk = document.createTextNode("*");
-      // add to the DOM tree
-      spanEl.appendChild(asterisk);
-
-      // add span element to sketch element
-      sketch.append(spanEl);
+    // remove sketch from list if includesTim is false
+    if (includesTim === "false") {
+      sketchesListEl.removeChild(sketch);
     }
   }
 });
