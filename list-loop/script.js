@@ -1,9 +1,11 @@
 /* get DOM elements */
 const sketchesListEl = document.getElementById("sketchesList");
-const button = document.getElementById("showSketches");
+const buttonShowTim = document.getElementById("showTimSketches");
+const buttonShowAll = document.getElementById("showAllSketches");
 
-/* button click event listener */
-button.addEventListener("click", () => {
+/* button event listeners */
+
+buttonShowTim.addEventListener("click", () => {
   // make a for of loop to iterate through the sketches
   for (let sketch of sketchesListEl.children) {
     // get attribute for data including tim
@@ -14,4 +16,8 @@ button.addEventListener("click", () => {
       sketchesListEl.removeChild(sketch);
     }
   }
+
+  buttonShowAll.addEventListener("click", () => {
+    // TODO display all sketches (if includesTim is true or false)
+  });
 });
