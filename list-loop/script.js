@@ -4,6 +4,8 @@ const button = document.getElementById("showSketches");
 
 /* button click event listener */
 button.addEventListener("click", () => {
+  // TODO remove additional asterisks on multiple clicks
+
   // make a for of loop to iterate through the sketches
   for (let sketch of sketchesListEl.children) {
     // get data attribute for tim

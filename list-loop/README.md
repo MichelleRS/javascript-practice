@@ -11,13 +11,19 @@ Includes:
 
 ## Status
 
-- MVP complete
+- _MVP in progress_
+- Ideas for future changes:
+  - change button click event to remove sketches without Tim Robinson
 
 ## Fixes
 
 1. Only first asterisk renders in list
 
    **Solution:** Remove empty `span` elements from list items and append `span` in JavaScript loop.
+
+2. Asterisks are added on each button click
+
+   _Solution in progress_
 
 ## Notes to Self
 
