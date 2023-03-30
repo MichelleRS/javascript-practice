@@ -12,7 +12,8 @@ Includes:
 ## Status
 
 - Complete with change made to MVP Goal:
-  - button click event removes sketches without Tim Robinson
+  - button click event shows sketches with Tim Robinson
+  - button click event shows all sketches
 
 ## Fixes
 
