@@ -1,33 +1,31 @@
 /* get DOM elements */
 const sketchesListEl = document.getElementById("sketchesList");
-const button = document.getElementById("showSketches");
+const buttonShowTim = document.getElementById("showTimSketches");
+const buttonShowAll = document.getElementById("showAllSketches");
 
-/* button click event listener */
-button.addEventListener("click", () => {
-  // get the number of sketches
-  const numOfSketches = sketchesListEl.children.length;
+/* button event listeners */
 
-  // make a loop to iterate through the sketches
-  for (i = 0; i < numOfSketches; ++i) {
-    // get sketch element
-    let sketch = sketchesListEl.children[i];
-    // get data attribute for tim
+buttonShowTim.addEventListener("click", () => {
+  // make a for of loop to iterate through the sketches
+  for (let sketch of sketchesListEl.children) {
+    // get attribute for data including tim
     let includesTim = sketch.getAttribute("data-includes-tim");
 
-    // if 'data-includes-tim' is true:
-    if (includesTim === "true") {
-      // apply a class that changes text color
-      sketch.className = "includesTim";
+    // remove sketch from list if includesTim is false
+    if (includesTim === "false") {
+      sketchesListEl.removeChild(sketch);
+    }
+  }
+});
 
-      // render a span element
-      let spanEl = document.createElement("span");
-      // add asterisk to span element
-      let asterisk = document.createTextNode("*");
-      // add to the DOM tree
-      spanEl.appendChild(asterisk);
-
-      // add span element to sketch element
-      sketch.append(spanEl);
+buttonShowAll.addEventListener("click", () => {
+  // make a for of loop to iterate through the sketches
+  for (let sketch of sketchesListEl.children) {
+    // get attribute for data including tim
+    let includesTim = sketch.getAttribute("data-includes-tim");
+    // display all sketches if includesTim is true or false
+    if (includesTim === "true" || includesTim === "false") {
+      location.reload();
     }
   }
 });

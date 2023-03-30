@@ -11,7 +11,9 @@ Includes:
 
 ## Status
 
-- MVP complete
+- Complete with change made to MVP Goal:
+  - button click event shows sketches with Tim Robinson
+  - button click event shows all sketches
 
 ## Fixes
 
