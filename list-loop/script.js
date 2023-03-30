@@ -16,8 +16,16 @@ buttonShowTim.addEventListener("click", () => {
       sketchesListEl.removeChild(sketch);
     }
   }
+});
 
-  buttonShowAll.addEventListener("click", () => {
-    // TODO display all sketches (if includesTim is true or false)
-  });
+buttonShowAll.addEventListener("click", () => {
+  // make a for of loop to iterate through the sketches
+  for (let sketch of sketchesListEl.children) {
+    // get attribute for data including tim
+    let includesTim = sketch.getAttribute("data-includes-tim");
+    // display all sketches if includesTim is true or false
+    if (includesTim === "true" || includesTim === "false") {
+      location.reload();
+    }
+  }
 });
