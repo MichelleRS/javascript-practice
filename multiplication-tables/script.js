@@ -31,7 +31,9 @@ buttonShowTable.addEventListener("click", () => {
     // remove number from input
     tableNumberInput.value = "";
   } else {
-    return;
     // TODO error handling
+    // create a list element
+    // write an error message
+    // display error message before multiplication table list
   }
 });
