@@ -1,4 +1,5 @@
 /* get DOM elements */
+const mainEl = document.querySelector("main");
 const multiplicationTableListEl = document.getElementById(
   "multiplicationTableList"
 );
@@ -31,9 +32,17 @@ buttonShowTable.addEventListener("click", () => {
     // remove number from input
     tableNumberInput.value = "";
   } else {
-    // TODO error handling
-    // create a list element
-    // write an error message
-    // display error message before multiplication table list
+    /* error handling */
+    // create a paragraph element
+    let parEl = document.createElement("p");
+    // create error message
+    let errorMessage = document.createTextNode(
+      "There was an error. Check that the value entered is a number from 1 through 12."
+    );
+    // append error message to par
+    parEl.append(errorMessage);
+    // insert error message at start of main
+    // parent.insertBefore(newItem, target)
+    mainEl.insertBefore(parEl, mainEl.firstChild);
   }
 });
