@@ -12,7 +12,7 @@ buttonShowTable.addEventListener("click", () => {
 
   if (tableNumber >= 1 && tableNumber <= 12) {
     // loop through all 12 multiplication sets and display results in list
-    for (let i = 1; i < 12; i++) {
+    for (let i = 1; i <= 12; i++) {
       // calculate the result
       let resultNumber = tableNumber * i;
 
