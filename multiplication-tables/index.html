@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Multiplication Tables</h1>
+    </header>
+
+    <main>
+      <!-- error message renders here-->
+
+      <!-- unorganized list container for multiplication table -->
+      <ul id="multiplicationTableList">
+        <!-- li elements rendered with javascript -->
+      </ul>
+
+      <!-- input: multiplication table (1-12) -->
+      <label for="numberInput">Enter a number (1-12):</label>
+      <input
+        type="number"
+        name="numberInput"
+        id="numberInput"
+        min="1"
+        max="12"
+      />
+
+      <!-- button: show multiplication table -->
+      <button type="button" id="showMultTable">
+        Show Multiplication Table
+      </button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
