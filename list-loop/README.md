@@ -35,4 +35,4 @@ Duckett, Jon. _JavaScript and jQuery: Interactive Front-End Web Development_. Jo
 
 Lampron, J. [_I Think You Should Leave Database._](https://www.itysldb.com/). Accessed March 2023.
 
-Miles, Rob. "Making Decisions in Programs" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.
+Miles, Rob. "Repeating Actions in Programs" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.
