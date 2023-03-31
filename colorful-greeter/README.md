@@ -6,7 +6,7 @@ Use multiple parameters in a function to display text in different colors.
 
 ## Status
 
-_In progress_
+- MVP complete
 
 ## Resources
 
