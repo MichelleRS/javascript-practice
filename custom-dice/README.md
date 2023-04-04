@@ -7,8 +7,10 @@
 
 ## Status
 
-_In progress_
+- MVP complete
 
 ## Resources
+
+Duckett, Jon. _JavaScript and jQuery: Interactive Front-End Web Development_. John Wiley & Sons, Inc., 2014, p. 240.
 
 Miles, Rob. "Creating Functions" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.
