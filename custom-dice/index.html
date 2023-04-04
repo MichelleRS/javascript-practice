@@ -23,11 +23,27 @@
       <!-- show number rolled -->
       <form id="formMinMax">
         <!-- input: min -->
-        <label for="inputMin">Minimum number:</label>
-        <input type="number" name="inputMin" id="inputMin" required />
+        <label for="inputMin">Minimum number (1-99):</label>
+        <input
+          type="number"
+          class="numberInput"
+          name="inputMin"
+          id="inputMin"
+          min="1"
+          max="99"
+          required
+        />
         <!-- input: max -->
-        <label for="inputMax">Maximum number:</label>
-        <input type="number" name="inputMax" id="inputMax" required />
+        <label for="inputMax">Maximum number (2-100):</label>
+        <input
+          type="number"
+          class="numberInput"
+          name="inputMax"
+          id="inputMax"
+          min="2"
+          max="100"
+          required
+        />
         <!-- button: roll -->
         <button type="submit" id="buttonRoll">Roll</button>
       </form>

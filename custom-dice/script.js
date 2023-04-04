@@ -19,9 +19,24 @@ form.addEventListener("submit", (e) => {
   // take that range and get a random number that represents the number rolled
   let numberRolled = Math.floor(Math.random() * range) + min;
 
-  // display number rolled
+  // a paragraph to the DOM before the form
   let par = document.createElement("p");
-  let message = document.createTextNode("You rolled: " + numberRolled);
-  par.appendChild(message);
-  form.insertBefore(par, form.firstChild);
+  // initialize an empty string for message
+  let message = "";
+
+  // error handling for min number greater than max number
+  if (min >= max) {
+    message = document.createTextNode(
+      "There was an error. Minimum number should be less than the maximum number."
+    );
+    par.appendChild(message);
+    form.insertBefore(par, form.firstChild);
+    inputMin.className = "numberInputError";
+  } else {
+    // display number rolled
+    message = document.createTextNode("You rolled: " + numberRolled);
+    par.appendChild(message);
+    form.insertBefore(par, form.firstChild);
+    inputMin.className = "numberInput";
+  }
 });

@@ -1,0 +1,10 @@
+.numberInput {
+  background-color: linen;
+  font-size: 1rem;
+  width: 2rem;
+}
+
+.numberInputError {
+  background-color: darkred;
+  color: linen;
+}
