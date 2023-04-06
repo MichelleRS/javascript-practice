@@ -22,15 +22,15 @@ function getNumberFromInput(elementId) {
 
 function doCalc() {
   // initialize variables for each shop to hold number inputs
-  const shop01 = getNumberFromInput("inpShop01");
-  const shop02 = getNumberFromInput("inpShop02");
-  const shop03 = getNumberFromInput("inpShop03");
-  const shop04 = getNumberFromInput("inpShop04");
-  const shop05 = getNumberFromInput("inpShop05");
-  const shop06 = getNumberFromInput("inpShop06");
+  const sales01 = getNumberFromInput("inpSales01");
+  const sales02 = getNumberFromInput("inpSales02");
+  const sales03 = getNumberFromInput("inpSales03");
+  const sales04 = getNumberFromInput("inpSales04");
+  const sales05 = getNumberFromInput("inpSales05");
+  const sales06 = getNumberFromInput("inpSales06");
 
   // get total of all sales
-  let total = shop01 + shop02 + shop03 + shop04 + shop05 + shop06;
+  let total = sales01 + sales02 + sales03 + sales04 + sales05 + sales06;
 
   // TODO call calculation functions
 
@@ -42,8 +42,15 @@ function doCalc() {
 /* events */
 // TODO form submit event listener calling doCalc(), remove onclick event from html
 
-/* NOTES */
+/* --- * --- * --- NOTES --- * --- * --- */
+
+/* current tasks */
+// change naming convention from shop to sales
+// refactor doCalc() with array to store sales values
+
 // clo checklist
 // [x] get form
 // [x] get number from each input
 // [x] get total of all sales
+
+/* --- --- --- --- - * - --- --- --- --- */
