@@ -21,16 +21,18 @@ function getNumberFromInput(elementId) {
 // TODO get lowest sales number
 
 function doCalc() {
-  // initialize variables for each shop to hold number inputs
-  const sales01 = getNumberFromInput("inpSales01");
-  const sales02 = getNumberFromInput("inpSales02");
-  const sales03 = getNumberFromInput("inpSales03");
-  const sales04 = getNumberFromInput("inpSales04");
-  const sales05 = getNumberFromInput("inpSales05");
-  const sales06 = getNumberFromInput("inpSales06");
+  // initialize a sales variable as an array of sales numbers
+  const sales = [];
+
+  sales[0] = getNumberFromInput("inpShop01");
+  sales[1] = getNumberFromInput("inpShop02");
+  sales[2] = getNumberFromInput("inpShop03");
+  sales[3] = getNumberFromInput("inpShop04");
+  sales[4] = getNumberFromInput("inpShop05");
+  sales[5] = getNumberFromInput("inpShop06");
 
   // get total of all sales
-  let total = sales01 + sales02 + sales03 + sales04 + sales05 + sales06;
+  let total = sales[0] + sales[1] + sales[2] + sales[3] + sales[4] + sales[5];
 
   // TODO call calculation functions
 
@@ -44,13 +46,14 @@ function doCalc() {
 
 /* --- * --- * --- NOTES --- * --- * --- */
 
-/* current tasks */
-// change naming convention from shop to sales
-// refactor doCalc() with array to store sales values
+/* tasks */
+// [x] change naming convention from shop to sales
+// [x] refactor doCalc() with array, change sales back to shop in html
 
 // clo checklist
 // [x] get form
 // [x] get number from each input
 // [x] get total of all sales
+// [x] get array of sales
 
 /* --- --- --- --- - * - --- --- --- --- */
