@@ -30,6 +30,8 @@ buttonAdd.addEventListener("click", (e) => {
 
 // reset total
 buttonReset.addEventListener("click", () => {
-  // display total as 0
-  totalDisplay.textContent = 0;
+  // set total back to 0
+  total = 0;
+  // display total
+  totalDisplay.textContent = total;
 });
