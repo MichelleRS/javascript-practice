@@ -1,5 +1,6 @@
 /* get DOM elements */
 const form = document.getElementById("salesForm");
+const salesDataHeading = document.getElementById("salesData");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
@@ -99,8 +100,8 @@ form.addEventListener("submit", (e) => {
   );
   // add message to paragraph element
   par.appendChild(message);
-  // add paragraph element to the DOM
-  form.insertBefore(par, form.firstChild);
+  // add paragraph element to the DOM; show after sales data heading
+  salesDataHeading.after(par);
 });
 
 /* --- * --- * --- NOTES --- * --- * --- */
@@ -114,6 +115,7 @@ form.addEventListener("submit", (e) => {
 // [x] get message
 // [x] refactor on button click to on form submit event listener
 // [x] on form submit, show sales data message
+// [x] refactor method used for adding par el to DOM
 
 // clo checklist
 // [x] get form
