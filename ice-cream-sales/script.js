@@ -57,7 +57,11 @@ function getLowestNumber(inputArray) {
   return min;
 }
 
-function doCalc() {
+/* events */
+// form submit event listener
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   // initialize a sales variable as an array of sales numbers
   const sales = [];
 
@@ -88,10 +92,7 @@ function doCalc() {
     ".";
 
   console.log("message", message);
-}
-
-/* events */
-// TODO form submit event listener calling doCalc(), remove onclick event from html
+});
 
 /* --- * --- * --- NOTES --- * --- * --- */
 
@@ -102,7 +103,7 @@ function doCalc() {
 // [x] function call for highest sales number
 // [X] function call for lowest sales number
 // [x] get message
-// [] refactor on button click to on form submit event listener
+// [x] refactor on button click to on form submit event listener
 
 // clo checklist
 // [x] get form
@@ -112,6 +113,6 @@ function doCalc() {
 // [x] get total sales
 // [x] get highest sale
 // [X] get lowest sale
-// [] get message
+// [x] get message
 
 /* --- --- --- --- - * - --- --- --- --- */
