@@ -6,11 +6,17 @@ The user of the app is the owner of six ice cream shops. User can input the sale
 
 - the total sales from all shops
 - highest selling sales number
-- worst selling sales number
+- lowest selling sales number
 
 ## Status
 
-_In progress_
+- MVP complete
+
+## Fixes
+
+1. > `Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.`
+
+   **Solution:** In form event listener, `message` was set to a string. To fix, I set message to a new text node using `document.createTextNode()`.
 
 ## Resources
 
