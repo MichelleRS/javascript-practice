@@ -69,7 +69,7 @@ function doCalc() {
   sales[4] = getNumberFromInput("inpShop05");
   sales[5] = getNumberFromInput("inpShop06");
 
-  // TODO call calculation functions
+  // call calculation functions
   // get total of all sales
   const totalSales = getTotal(sales);
   // get highest sales number
@@ -78,6 +78,16 @@ function doCalc() {
   const lowestSales = getLowestNumber(sales);
 
   // TODO insert sales data message with calculations into DOM
+  let message =
+    "The total sales is " +
+    totalSales +
+    ". The highest sales number is " +
+    highestSales +
+    ", and the lowest sales number is " +
+    lowestSales +
+    ".";
+
+  console.log("message", message);
 }
 
 /* events */
@@ -91,6 +101,8 @@ function doCalc() {
 // [x] refactor sales total calculation as a function call
 // [x] function call for highest sales number
 // [X] function call for lowest sales number
+// [x] get message
+// [] refactor on button click to on form submit event listener
 
 // clo checklist
 // [x] get form
@@ -100,5 +112,6 @@ function doCalc() {
 // [x] get total sales
 // [x] get highest sale
 // [X] get lowest sale
+// [] get message
 
 /* --- --- --- --- - * - --- --- --- --- */
