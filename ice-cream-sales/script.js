@@ -28,7 +28,21 @@ function getTotal(inputArray) {
   return total;
 }
 
-// TODO get highest sales number
+// get highest sales number
+function getHighestNumber(inputArray) {
+  // set max to the first element
+  let max = inputArray[0];
+
+  // work through sales array
+  for (let value of inputArray) {
+    // if the value of an element is higher than the current max, set as the new max value
+    if (value > max) {
+      max = value;
+    }
+  }
+  return max;
+}
+
 // TODO get lowest sales number
 
 function doCalc() {
@@ -46,11 +60,12 @@ function doCalc() {
   // TODO call calculation functions
   // get total of all sales
   const totalSales = getTotal(sales);
-  // TODO get highest sales number
+  // get highest sales number
+  const highestSales = getHighestNumber(sales);
+
   // TODO get lowest sales number
 
   // TODO insert sales data message with calculations into DOM
-  return totalSales;
 }
 
 /* events */
@@ -62,8 +77,8 @@ function doCalc() {
 // [x] change naming convention from shop to sales
 // [x] refactor doCalc() with array, change sales back to shop in html
 // [x] refactor sales total calculation as a function call
-// [] function call for highest number
-// [] function call for lowest number
+// [x] function call for highest sales number
+// [] function call for lowest sales number
 
 // clo checklist
 // [x] get form
@@ -71,5 +86,6 @@ function doCalc() {
 // [x] get total of all sales
 // [x] get array of sales
 // [x] get total sales
+// [x] get highest sale
 
 /* --- --- --- --- - * - --- --- --- --- */
