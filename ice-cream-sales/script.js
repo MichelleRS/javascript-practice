@@ -73,7 +73,7 @@ form.addEventListener("submit", (e) => {
   sales[4] = getNumberFromInput("inpShop05");
   sales[5] = getNumberFromInput("inpShop06");
 
-  // call calculation functions
+  /* call calculation functions */
   // get total of all sales
   const totalSales = getTotal(sales);
   // get highest sales number
@@ -81,17 +81,26 @@ form.addEventListener("submit", (e) => {
   // get lowest sales number
   const lowestSales = getLowestNumber(sales);
 
-  // TODO insert sales data message with calculations into DOM
-  let message =
-    "The total sales is " +
-    totalSales +
-    ". The highest sales number is " +
-    highestSales +
-    ", and the lowest sales number is " +
-    lowestSales +
-    ".";
+  /* insert sales data message with calculations into DOM */
+  // initialize an empty string for message
+  let message = "";
 
-  console.log("message", message);
+  // create a new paragraph element node
+  let par = document.createElement("p");
+  // create a text node
+  message = document.createTextNode(
+    "The total sales is " +
+      totalSales +
+      ". The highest sales number is " +
+      highestSales +
+      ", and the lowest sales number is " +
+      lowestSales +
+      "."
+  );
+  // add message to paragraph element
+  par.appendChild(message);
+  // add paragraph element to the DOM
+  form.insertBefore(par, form.firstChild);
 });
 
 /* --- * --- * --- NOTES --- * --- * --- */
@@ -104,6 +113,7 @@ form.addEventListener("submit", (e) => {
 // [X] function call for lowest sales number
 // [x] get message
 // [x] refactor on button click to on form submit event listener
+// [x] on form submit, show sales data message
 
 // clo checklist
 // [x] get form
