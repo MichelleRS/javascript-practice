@@ -5,7 +5,7 @@ let allInputEl = document.querySelectorAll("input");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
-  // get the input element
+  // get the input element by id
   const element = document.getElementById(elementId);
   // get text from input element
   const text = element.value;
@@ -64,21 +64,16 @@ function getLowestNumber(inputArray) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  /* REFACTOR sales array */
-  // initialize a variable for sales
+  /* sales array */
+  // initialize a variable for sales and set to empty array
   sales = [];
 
-  // get each input and convert to a number
-  sales[0] = getNumberFromInput("inpShop01");
-  sales[1] = getNumberFromInput("inpShop02");
-  sales[2] = getNumberFromInput("inpShop03");
-  sales[3] = getNumberFromInput("inpShop04");
-  sales[4] = getNumberFromInput("inpShop05");
-  sales[5] = getNumberFromInput("inpShop06");
-
-  console.log("sales", sales);
-  console.log("allInputEl", allInputEl);
-  // push numbers into sales array
+  allInputEl.forEach((inputEl) => {
+    // get each input by id and convert to a number
+    let sale = getNumberFromInput(inputEl.id);
+    // push numbers into sales array
+    sales.push(sale);
+  });
 
   /* call calculation functions */
   // get total of all sales
@@ -122,9 +117,7 @@ form.addEventListener("submit", (e) => {
 // [x] refactor on button click to on form submit event listener
 // [x] on form submit, show sales data message
 // [x] refactor method used for adding par el to DOM
-/* WIP refactor sales array */
-// [] get each input and convert to a number
-// [] push numbers into a sales array
+// [x] refactor sales array
 
 // clo checklist
 // [x] get form
@@ -136,5 +129,6 @@ form.addEventListener("submit", (e) => {
 // [X] get lowest sale
 // [x] get message
 // [x] get all inputs
+// [x] get sale
 
 /* --- --- --- --- - * - --- --- --- --- */
