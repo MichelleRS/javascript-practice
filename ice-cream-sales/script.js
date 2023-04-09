@@ -12,7 +12,21 @@ function getNumberFromInput(elementId) {
   // convert text into a number
   const result = Number(text);
 
-  // TODO error handling
+  /* error handling */
+  // if not a number
+  if (isNaN(result)) {
+    alert("Error. Check that sales inputs are numbers in the 0-10000 range.");
+    return NaN;
+  }
+
+  // numbers outside range
+  let maxAttrValue = element.getAttribute("max");
+  let minAttrValue = element.getAttribute("min");
+
+  if (result > maxAttrValue || result < minAttrValue) {
+    alert("Error. Check that sales inputs are numbers in the 0-10000 range.");
+    return NaN;
+  }
 
   return result;
 }
