@@ -16,8 +16,8 @@ The user of the app is the owner of six ice cream shops. User can input the sale
 
 1. > `Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.`
 
-   **Solution:** In form event listener, `message` was set to a string. To fix, I set message to a new text node using `document.createTextNode()`.
+   **Solution:** In form event listener, `message` was set to a string. To fix, I set `message` to a new text node using `document.createTextNode()`.
 
 ## Resources
 
-Miles, Rob. "Storing Data" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.
+Miles, Rob. "Chapter 8: Storing Data" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.

@@ -1,17 +1,32 @@
 /* get DOM elements */
 const form = document.getElementById("salesForm");
 const salesDataHeading = document.getElementById("salesData");
+let allInputEl = document.querySelectorAll("input");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
-  // get the input element
+  // get the input element by id
   const element = document.getElementById(elementId);
   // get text from input element
   const text = element.value;
   // convert text into a number
   const result = Number(text);
 
-  // TODO error handling
+  /* error handling */
+  // if not a number
+  if (isNaN(result)) {
+    alert("Error. Check that sales inputs are numbers in the 0-10000 range.");
+    return NaN;
+  }
+
+  // numbers outside range
+  let maxAttrValue = element.getAttribute("max");
+  let minAttrValue = element.getAttribute("min");
+
+  if (result > maxAttrValue || result < minAttrValue) {
+    alert("Error. Check that sales inputs are numbers in the 0-10000 range.");
+    return NaN;
+  }
 
   return result;
 }
@@ -63,16 +78,16 @@ function getLowestNumber(inputArray) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // initialize a sales variable as an array of sales numbers
-  const sales = [];
+  /* sales array */
+  // initialize a variable for sales and set to empty array
+  sales = [];
 
-  // set elements in sales array
-  sales[0] = getNumberFromInput("inpShop01");
-  sales[1] = getNumberFromInput("inpShop02");
-  sales[2] = getNumberFromInput("inpShop03");
-  sales[3] = getNumberFromInput("inpShop04");
-  sales[4] = getNumberFromInput("inpShop05");
-  sales[5] = getNumberFromInput("inpShop06");
+  allInputEl.forEach((inputEl) => {
+    // get each input by id and convert to a number
+    let sale = getNumberFromInput(inputEl.id);
+    // push numbers into sales array
+    sales.push(sale);
+  });
 
   /* call calculation functions */
   // get total of all sales
@@ -116,6 +131,7 @@ form.addEventListener("submit", (e) => {
 // [x] refactor on button click to on form submit event listener
 // [x] on form submit, show sales data message
 // [x] refactor method used for adding par el to DOM
+// [x] refactor sales array
 
 // clo checklist
 // [x] get form
@@ -126,5 +142,7 @@ form.addEventListener("submit", (e) => {
 // [x] get highest sale
 // [X] get lowest sale
 // [x] get message
+// [x] get all inputs
+// [x] get sale
 
 /* --- --- --- --- - * - --- --- --- --- */
