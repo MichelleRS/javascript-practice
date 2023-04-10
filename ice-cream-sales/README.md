@@ -8,9 +8,15 @@ The user of the app is the owner of six ice cream shops. User can input the sale
 - highest selling sales number
 - lowest selling sales number
 
+### Update
+
+- instead of hardcoding each input and label, insert elements in the DOM
+- generate inputs and their labels using a `for loop`
+
 ## Status
 
 - MVP complete
+- _Update in progress_
 
 ## Fixes
 
