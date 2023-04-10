@@ -2,6 +2,7 @@
 const form = document.getElementById("salesForm");
 const salesDataHeading = document.getElementById("salesData");
 let allInputEl = document.querySelectorAll("input");
+const button = document.getElementById("btnCalc");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
@@ -119,6 +120,25 @@ form.addEventListener("submit", (e) => {
   salesDataHeading.after(par);
 });
 
+// TEST display function: insert test element at start of form (before button)
+function displayTest() {
+  console.log("hello! the page loaded!");
+  // create a new paragraph element node
+  let par = document.createElement("p");
+
+  // create a test message text node (hello, hello)
+  let testMessage = document.createTextNode("Hello hello!");
+  // add test message to paragraph element
+  par.appendChild(testMessage);
+  // add paragraph element to the DOM
+  //   FIX show at start of form, before button
+  form.append(par);
+  //   form.insertBefore(button, form.firstChild);
+}
+
+// TEST on page load, call displayTest()
+displayTest();
+
 /* --- * --- * --- NOTES --- * --- * --- */
 
 /* tasks */
@@ -132,6 +152,14 @@ form.addEventListener("submit", (e) => {
 // [x] on form submit, show sales data message
 // [x] refactor method used for adding par el to DOM
 // [x] refactor sales array
+/* update: rendering to the DOM */
+// [x] plan tasks
+// [x] plan rendered elements in HTML comments
+// [] test rendering in form
+// [] build makeDivCtrl() to create a div parent element with label and input as children
+// [] build doBuildSalesInputItems() function that generates divs using a for loop
+// [] append divs at start of form (before button)
+// [] on page load, render sales input items
 
 // clo checklist
 // [x] get form
@@ -144,5 +172,9 @@ form.addEventListener("submit", (e) => {
 // [x] get message
 // [x] get all inputs
 // [x] get sale
+// [x] get display function on page load
+// [x] insert test message in DOM
+// [x] get button
+// [] get test message to show before button
 
 /* --- --- --- --- - * - --- --- --- --- */
