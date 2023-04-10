@@ -19,67 +19,21 @@
         <!-- render: on form submit, show sales data message -->
 
       <form id="salesForm">
-        <!-- inputs -->
-        <!-- shop 1 -->
-        <label for="inpShop01">Shop 1</label>
-        <input
-          type="number"
-          name="inpShop01"
-          id="inpShop01"
-          min="0"
-          max="10000"
-        />
-
-        <!-- shop 2 -->
-        <label for="inpShop02">Shop 2</label>
-        <input
-          type="number"
-          name="inpShop02"
-          id="inpShop02"
-          min="0"
-          max="10000"
-        />
-
-        <!-- shop 3 -->
-        <label for="inpShop03">Shop 3</label>
-        <input
-          type="number"
-          name="inpShop03"
-          id="inpShop03"
-          min="0"
-          max="10000"
-        />
-
-        <!-- shop 4 -->
-        <label for="inpShop04">Shop 4</label>
-        <input
-          type="number"
-          name="inpShop04"
-          id="inpShop04"
-          min="0"
-          max="10000"
-        />
-
-        <!-- shop 5 -->
-        <label for="inpShop05">Shop 5</label>
-        <input
-          type="number"
-          name="inpShop05"
-          id="inpShop05"
-          min="0"
-          max="10000"
-        />
-
-        <!-- shop 6 -->
-        <label for="inpShop06">Shop 6</label>
-        <input
-          type="number"
-          name="inpShop06"
-          id="inpShop06"
-          min="0"
-          max="10000"
-        />
-
+        <!-- render on page load: div.control containers for inputs and their labels -->
+        
+        <!-- expected html for rendered elements:
+          <div class="control">
+            <label for="inpShop01">Shop 1</label>
+            <input
+              type="number"
+              name="inpShop01"
+              id="inpShop01"
+              min="0"
+              max="10000"
+            />
+          </div>
+          -->
+          
         <!-- button: calculate -->
         <button type="submit" id="btnCalc">Calculate Sales Data</button>
       </form>
