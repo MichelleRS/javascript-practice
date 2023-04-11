@@ -139,7 +139,7 @@ function displayTest() {
 displayTest();
 */
 
-function makeDivCtrl() {
+function makeDivCtrl(labelText) {
   /* parent element */
   // create a div, which will hold each label and input
   let divEl = document.createElement("div");
@@ -150,9 +150,9 @@ function makeDivCtrl() {
   /* create label element */
   let labelEl = document.createElement("label");
   // set attribute value
-  labelEl.setAttribute("for", "Shop 1");
+  labelEl.setAttribute("for", labelText);
   // create text node for label
-  let text = document.createTextNode("I am the label text for Shop 1");
+  let text = document.createTextNode(labelText);
   // append text node to label
   labelEl.appendChild(text);
   console.log("labelEl", labelEl);
@@ -161,8 +161,8 @@ function makeDivCtrl() {
   let inputEl = document.createElement("input");
   // set attribute values
   inputEl.setAttribute("type", "number");
-  inputEl.setAttribute("name", "Shop 1");
-  inputEl.setAttribute("id", "Shop 1");
+  inputEl.setAttribute("name", labelText);
+  inputEl.setAttribute("id", labelText);
   inputEl.setAttribute("min", 0);
   inputEl.setAttribute("max", 10000);
   console.log("inputEl", inputEl);
@@ -177,8 +177,19 @@ function makeDivCtrl() {
   return divEl;
 }
 
-makeDivCtrl();
+// function build sales input items,
+function doBuildSalesInputItems(numOfItems) {
+  for (let itemCount = 1; itemCount <= numOfItems; itemCount = itemCount + 1) {
+    // build label for item
+    let labelText = "Shop " + itemCount;
+    // get the div parent element
+    let item = makeDivCtrl(labelText);
+    // insert div parent element as first element in form
+    form.insertBefore(item, form.firstChild);
+  }
+}
 
+doBuildSalesInputItems(6);
 /* --- * --- * --- NOTES --- * --- * --- */
 
 /* tasks */
