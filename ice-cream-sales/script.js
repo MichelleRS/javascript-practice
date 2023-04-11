@@ -121,6 +121,7 @@ form.addEventListener("submit", (e) => {
 });
 
 // TEST display function: insert par element as first child of form, before button element
+/*
 function displayTest() {
   console.log("hello! the page loaded!");
   // create a new paragraph element node
@@ -136,6 +137,43 @@ function displayTest() {
 
 // TEST call displayTest()
 displayTest();
+*/
+
+function makeDivCtrl() {
+  /* parent element */
+  // create a div, which will hold each label and input
+  let divEl = document.createElement("div");
+  // assign a class of "control"
+  divEl.className = "control";
+
+  /* children elements */
+  // create label element
+  let labelEl = document.createElement("label");
+  // set attribute value
+  labelEl.setAttribute("for", "Shop 1");
+  // create text node for label
+  let text = document.createTextNode("I am the label text for Shop 1");
+  // append text node to label
+  labelEl.appendChild(text);
+  console.log("labelEl", labelEl);
+
+  // create input element
+  let inputEl = document.createElement("input");
+  // set attribute values
+  inputEl.setAttribute("type", "number");
+  inputEl.setAttribute("name", "Shop 1");
+  inputEl.setAttribute("id", "Shop 1");
+  inputEl.setAttribute("min", 0);
+  inputEl.setAttribute("max", 10000);
+  console.log("inputEl", inputEl);
+
+  /* append child elements to parent element */
+  divEl.append(labelEl, inputEl);
+  console.log("divEl", divEl);
+
+  return divEl;
+}
+makeDivCtrl();
 
 /* --- * --- * --- NOTES --- * --- * --- */
 
@@ -153,7 +191,7 @@ displayTest();
 /* update: rendering to the DOM */
 // [x] plan tasks
 // [x] plan rendered elements in HTML comments
-// [] test rendering in form
+// [x] test rendering in form
 // [] build makeDivCtrl() to create a div parent element with label and input as children
 // [] build doBuildSalesInputItems() function that generates divs using a for loop
 // [] append divs at start of form (before button)
@@ -175,6 +213,9 @@ displayTest();
 // [x] get displayTest() on page load
 // [x] get test message
 // [x] get button
-// [] get test message to show before button
+// [x] get test message to show before button
+// [x] get label
+// [x] get input
+// [x] get div
 
 /* --- --- --- --- - * - --- --- --- --- */
