@@ -120,7 +120,7 @@ form.addEventListener("submit", (e) => {
   salesDataHeading.after(par);
 });
 
-// TEST display function: insert test element at start of form (before button)
+// TEST display function: insert par element as first child of form, before button element
 function displayTest() {
   console.log("hello! the page loaded!");
   // create a new paragraph element node
@@ -130,13 +130,11 @@ function displayTest() {
   let testMessage = document.createTextNode("Hello hello!");
   // add test message to paragraph element
   par.appendChild(testMessage);
-  // add paragraph element to the DOM
-  //   FIX show at start of form, before button
-  form.append(par);
-  //   form.insertBefore(button, form.firstChild);
+  // insert par element as first element in form (before button)
+  form.insertBefore(par, form.firstChild);
 }
 
-// TEST on page load, call displayTest()
+// TEST call displayTest()
 displayTest();
 
 /* --- * --- * --- NOTES --- * --- * --- */
@@ -160,6 +158,8 @@ displayTest();
 // [] build doBuildSalesInputItems() function that generates divs using a for loop
 // [] append divs at start of form (before button)
 // [] on page load, render sales input items
+// [] improve code organization: DOM elements, edit/add comments, remove gets from clo checklist,
+// [] migrate tasks and clo checklist to README as sections; add Table of Contents
 
 // clo checklist
 // [x] get form
@@ -172,8 +172,8 @@ displayTest();
 // [x] get message
 // [x] get all inputs
 // [x] get sale
-// [x] get display function on page load
-// [x] insert test message in DOM
+// [x] get displayTest() on page load
+// [x] get test message
 // [x] get button
 // [] get test message to show before button
 
