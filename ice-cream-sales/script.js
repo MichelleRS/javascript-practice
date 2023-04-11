@@ -147,7 +147,7 @@ function makeDivCtrl() {
   divEl.className = "control";
 
   /* children elements */
-  // create label element
+  /* create label element */
   let labelEl = document.createElement("label");
   // set attribute value
   labelEl.setAttribute("for", "Shop 1");
@@ -157,7 +157,7 @@ function makeDivCtrl() {
   labelEl.appendChild(text);
   console.log("labelEl", labelEl);
 
-  // create input element
+  /* create input element */
   let inputEl = document.createElement("input");
   // set attribute values
   inputEl.setAttribute("type", "number");
@@ -167,12 +167,16 @@ function makeDivCtrl() {
   inputEl.setAttribute("max", 10000);
   console.log("inputEl", inputEl);
 
-  /* append child elements to parent element */
+  // append child elements to parent element
   divEl.append(labelEl, inputEl);
   console.log("divEl", divEl);
 
+  // insert div parent element as first element in form
+  form.insertBefore(divEl, form.firstChild);
+
   return divEl;
 }
+
 makeDivCtrl();
 
 /* --- * --- * --- NOTES --- * --- * --- */
