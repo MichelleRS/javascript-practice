@@ -120,26 +120,7 @@ form.addEventListener("submit", (e) => {
   salesDataHeading.after(par);
 });
 
-// TEST display function: insert par element as first child of form, before button element
-/*
-function displayTest() {
-  console.log("hello! the page loaded!");
-  // create a new paragraph element node
-  let par = document.createElement("p");
-
-  // create a test message text node (hello, hello)
-  let testMessage = document.createTextNode("Hello hello!");
-  // add test message to paragraph element
-  par.appendChild(testMessage);
-  // insert par element as first element in form (before button)
-  form.insertBefore(par, form.firstChild);
-}
-
-// TEST call displayTest()
-displayTest();
-*/
-
-function makeDivCtrl(labelText) {
+function makeDiv(labelText) {
   /* parent element */
   // create a div, which will hold each label and input
   let divEl = document.createElement("div");
@@ -177,37 +158,43 @@ function makeDivCtrl(labelText) {
   return divEl;
 }
 
+// make button element
 function makeButton() {
   // create button element
   let buttonEl = document.createElement("button");
+
   // set attribute values
   buttonEl.setAttribute("type", "submit");
   buttonEl.setAttribute("id", "btnCalc");
+
   // create text node for button
   let text = document.createTextNode("Calculate Sales Data");
+
   // append text node to button
   buttonEl.appendChild(text);
-
   // append button to form
   form.append(buttonEl);
 
   return buttonEl;
 }
 
-// TODO change to doBuildSalesForm
+// build sales form
 function doBuildSalesForm(numOfInputs) {
   for (let inputCount = 1; inputCount <= numOfInputs; inputCount++) {
     // build label for item
     let labelText = "Shop " + inputCount;
     // get the div parent element
-    let item = makeDivCtrl(labelText);
+    let item = makeDiv(labelText);
     // insert div parent element as first element in form
     form.appendChild(item);
   }
+  // get button element
   let button = makeButton();
+  // append button to end of form
   form.append(button);
 }
 
+// function call to render sales form on page load
 doBuildSalesForm(6);
 /* --- * --- * --- NOTES --- * --- * --- */
 
@@ -226,12 +213,11 @@ doBuildSalesForm(6);
 // [x] plan tasks
 // [x] plan rendered elements in HTML comments
 // [x] test rendering in form
-// [] build makeDivCtrl() to create a div parent element with label and input as children
-// [] build doBuildSalesInputItems() function that generates divs using a for loop
-// [] append divs at start of form (before button)
-// [] on page load, render sales input items
-// [] get total, highest, and lowest
-// [] small refactors: for loop update - use itemCount++,
+// [x] build makeDiv() to create a div parent element with label and input as children
+// [x] build makeButton() to replace hardcoded button
+// [x] build doBuildSalesForm() to generate divs using a for loop, append divs and button
+// [x] on page load, render form
+// [] get calculations for total, highest, and lowest
 // [] improve code organization: DOM elements, edit/add comments, remove gets from clo checklist,
 // [] migrate tasks and clo checklist to README as sections; add Table of Contents
 
