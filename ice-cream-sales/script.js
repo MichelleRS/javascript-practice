@@ -177,22 +177,38 @@ function makeDivCtrl(labelText) {
   return divEl;
 }
 
-// TODO make button
+function makeButton() {
+  // create button element
+  let buttonEl = document.createElement("button");
+  // set attribute values
+  buttonEl.setAttribute("type", "submit");
+  buttonEl.setAttribute("id", "btnCalc");
+  // create text node for button
+  let text = document.createTextNode("Calculate Sales Data");
+  // append text node to button
+  buttonEl.appendChild(text);
 
-// TODO change to doBuildFormItems
-function doBuildSalesInputItems(numOfItems) {
-  for (let itemCount = 1; itemCount <= numOfItems; itemCount++) {
+  // append button to form
+  form.append(buttonEl);
+
+  return buttonEl;
+}
+
+// TODO change to doBuildSalesForm
+function doBuildSalesForm(numOfInputs) {
+  for (let inputCount = 1; inputCount <= numOfInputs; inputCount++) {
     // build label for item
-    let labelText = "Shop " + itemCount;
+    let labelText = "Shop " + inputCount;
     // get the div parent element
     let item = makeDivCtrl(labelText);
     // insert div parent element as first element in form
     form.appendChild(item);
   }
-  //   TODO append button
+  let button = makeButton();
+  form.append(button);
 }
 
-doBuildSalesInputItems(6);
+doBuildSalesForm(6);
 /* --- * --- * --- NOTES --- * --- * --- */
 
 /* tasks */
