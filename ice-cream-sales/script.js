@@ -155,7 +155,7 @@ function makeDivCtrl(labelText) {
   let text = document.createTextNode(labelText);
   // append text node to label
   labelEl.appendChild(text);
-  console.log("labelEl", labelEl);
+  //   console.log("labelEl", labelEl);
 
   /* create input element */
   let inputEl = document.createElement("input");
@@ -165,11 +165,11 @@ function makeDivCtrl(labelText) {
   inputEl.setAttribute("id", labelText);
   inputEl.setAttribute("min", 0);
   inputEl.setAttribute("max", 10000);
-  console.log("inputEl", inputEl);
+  //   console.log("inputEl", inputEl);
 
   // append child elements to parent element
   divEl.append(labelEl, inputEl);
-  console.log("divEl", divEl);
+  //   console.log("divEl", divEl);
 
   // insert div parent element as first element in form
   form.insertBefore(divEl, form.firstChild);
@@ -177,16 +177,19 @@ function makeDivCtrl(labelText) {
   return divEl;
 }
 
-// function build sales input items,
+// TODO make button
+
+// TODO change to doBuildFormItems
 function doBuildSalesInputItems(numOfItems) {
-  for (let itemCount = 1; itemCount <= numOfItems; itemCount = itemCount + 1) {
+  for (let itemCount = 1; itemCount <= numOfItems; itemCount++) {
     // build label for item
     let labelText = "Shop " + itemCount;
     // get the div parent element
     let item = makeDivCtrl(labelText);
     // insert div parent element as first element in form
-    form.insertBefore(item, form.firstChild);
+    form.appendChild(item);
   }
+  //   TODO append button
 }
 
 doBuildSalesInputItems(6);
@@ -211,6 +214,8 @@ doBuildSalesInputItems(6);
 // [] build doBuildSalesInputItems() function that generates divs using a for loop
 // [] append divs at start of form (before button)
 // [] on page load, render sales input items
+// [] get total, highest, and lowest
+// [] small refactors: for loop update - use itemCount++,
 // [] improve code organization: DOM elements, edit/add comments, remove gets from clo checklist,
 // [] migrate tasks and clo checklist to README as sections; add Table of Contents
 
