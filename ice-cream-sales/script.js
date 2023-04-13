@@ -1,7 +1,6 @@
 /* get DOM elements */
-const form = document.getElementById("salesForm");
 const salesDataHeading = document.getElementById("salesData");
-let allInputEl = document.querySelectorAll("input");
+const form = document.getElementById("salesForm");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
@@ -82,6 +81,10 @@ form.addEventListener("submit", (e) => {
   // initialize a variable for sales and set to empty array
   sales = [];
 
+  // get all rendered inputs elements from DOM
+  let allInputEl = document.querySelectorAll("input");
+
+  // loop through each input element
   allInputEl.forEach((inputEl) => {
     // get each input by id and convert to a number
     let sale = getNumberFromInput(inputEl.id);
@@ -119,30 +122,79 @@ form.addEventListener("submit", (e) => {
   salesDataHeading.after(par);
 });
 
-/* --- * --- * --- NOTES --- * --- * --- */
+/* build DOM elements for form */
+// make a div to contain each label and input
+function makeDiv(labelText) {
+  /* parent element */
+  // create div element
+  let divEl = document.createElement("div");
+  // assign class of "control"
+  divEl.className = "control";
 
-/* tasks */
-// [x] change naming convention from shop to sales
-// [x] refactor doCalc() with array, change sales back to shop in html
-// [x] refactor sales total calculation as a function call
-// [x] function call for highest sales number
-// [X] function call for lowest sales number
-// [x] get message
-// [x] refactor on button click to on form submit event listener
-// [x] on form submit, show sales data message
-// [x] refactor method used for adding par el to DOM
-// [x] refactor sales array
+  /* children elements */
+  /* create label element */
+  let labelEl = document.createElement("label");
+  // set attribute value
+  labelEl.setAttribute("for", labelText);
+  // create text node for label
+  let text = document.createTextNode(labelText);
+  // append text node to label
+  labelEl.appendChild(text);
 
-// clo checklist
-// [x] get form
-// [x] get number from each input
-// [x] get total of all sales
-// [x] get array of sales
-// [x] get total sales
-// [x] get highest sale
-// [X] get lowest sale
-// [x] get message
-// [x] get all inputs
-// [x] get sale
+  /* create input element */
+  let inputEl = document.createElement("input");
+  // set attribute values
+  inputEl.setAttribute("type", "number");
+  inputEl.setAttribute("name", labelText);
+  inputEl.setAttribute("id", labelText);
+  inputEl.setAttribute("min", 0);
+  inputEl.setAttribute("max", 10000);
 
-/* --- --- --- --- - * - --- --- --- --- */
+  // append child elements to parent element
+  divEl.append(labelEl, inputEl);
+
+  // insert div parent element as first element in form
+  form.insertBefore(divEl, form.firstChild);
+
+  return divEl;
+}
+
+// make button element
+function makeButton() {
+  // create button element
+  let buttonEl = document.createElement("button");
+
+  // set attribute values
+  buttonEl.setAttribute("type", "submit");
+  buttonEl.setAttribute("id", "btnCalc");
+
+  // create text node for button
+  let text = document.createTextNode("Calculate Sales Data");
+
+  // append text node to button
+  buttonEl.appendChild(text);
+  // append button to form
+  form.append(buttonEl);
+
+  return buttonEl;
+}
+
+// build sales form
+function doBuildSalesForm(numOfInputs) {
+  for (let inputCount = 1; inputCount <= numOfInputs; inputCount++) {
+    // build label for item
+    let labelText = "Shop " + inputCount;
+    // get the div parent element
+    let item = makeDiv(labelText);
+    // insert div parent element as first element in form
+    form.appendChild(item);
+  }
+  // get button element
+  let button = makeButton();
+  // append button to end of form
+  form.append(button);
+}
+
+/* display function */
+// function call to render sales form on page load
+doBuildSalesForm(6);
