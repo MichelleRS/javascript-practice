@@ -1,8 +1,6 @@
 /* get DOM elements */
 const form = document.getElementById("salesForm");
 const salesDataHeading = document.getElementById("salesData");
-let allInputEl = document.querySelectorAll("input");
-const button = document.getElementById("btnCalc");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
@@ -83,6 +81,10 @@ form.addEventListener("submit", (e) => {
   // initialize a variable for sales and set to empty array
   sales = [];
 
+  // get all rendered inputs elements from DOM
+  let allInputEl = document.querySelectorAll("input");
+
+  // loop through each input element
   allInputEl.forEach((inputEl) => {
     // get each input by id and convert to a number
     let sale = getNumberFromInput(inputEl.id);
@@ -120,11 +122,13 @@ form.addEventListener("submit", (e) => {
   salesDataHeading.after(par);
 });
 
+/* build DOM elements for form */
+// make a div to contain each label and input
 function makeDiv(labelText) {
   /* parent element */
-  // create a div, which will hold each label and input
+  // create div element
   let divEl = document.createElement("div");
-  // assign a class of "control"
+  // assign class of "control"
   divEl.className = "control";
 
   /* children elements */
@@ -136,7 +140,6 @@ function makeDiv(labelText) {
   let text = document.createTextNode(labelText);
   // append text node to label
   labelEl.appendChild(text);
-  //   console.log("labelEl", labelEl);
 
   /* create input element */
   let inputEl = document.createElement("input");
@@ -146,11 +149,9 @@ function makeDiv(labelText) {
   inputEl.setAttribute("id", labelText);
   inputEl.setAttribute("min", 0);
   inputEl.setAttribute("max", 10000);
-  //   console.log("inputEl", inputEl);
 
   // append child elements to parent element
   divEl.append(labelEl, inputEl);
-  //   console.log("divEl", divEl);
 
   // insert div parent element as first element in form
   form.insertBefore(divEl, form.firstChild);
@@ -194,8 +195,10 @@ function doBuildSalesForm(numOfInputs) {
   form.append(button);
 }
 
+/* display function */
 // function call to render sales form on page load
 doBuildSalesForm(6);
+
 /* --- * --- * --- NOTES --- * --- * --- */
 
 /* tasks */
@@ -217,9 +220,10 @@ doBuildSalesForm(6);
 // [x] build makeButton() to replace hardcoded button
 // [x] build doBuildSalesForm() to generate divs using a for loop, append divs and button
 // [x] on page load, render form
-// [] get calculations for total, highest, and lowest
+// [x] get calculations for total, highest, and lowest
 // [] improve code organization: DOM elements, edit/add comments, remove gets from clo checklist,
 // [] migrate tasks and clo checklist to README as sections; add Table of Contents
+// [] Future fix idea would be to have a fetch-utils file.
 
 // clo checklist
 // [x] get form
@@ -239,5 +243,6 @@ doBuildSalesForm(6);
 // [x] get label
 // [x] get input
 // [x] get div
+// [x] get all inputs
 
 /* --- --- --- --- - * - --- --- --- --- */
