@@ -1,6 +1,6 @@
 /* get DOM elements */
-const form = document.getElementById("salesForm");
 const salesDataHeading = document.getElementById("salesData");
+const form = document.getElementById("salesForm");
 
 /* convert inputs to a number */
 function getNumberFromInput(elementId) {
@@ -198,51 +198,3 @@ function doBuildSalesForm(numOfInputs) {
 /* display function */
 // function call to render sales form on page load
 doBuildSalesForm(6);
-
-/* --- * --- * --- NOTES --- * --- * --- */
-
-/* tasks */
-// [x] change naming convention from shop to sales
-// [x] refactor doCalc() with array, change sales back to shop in html
-// [x] refactor sales total calculation as a function call
-// [x] function call for highest sales number
-// [X] function call for lowest sales number
-// [x] get message
-// [x] refactor on button click to on form submit event listener
-// [x] on form submit, show sales data message
-// [x] refactor method used for adding par el to DOM
-// [x] refactor sales array
-/* update: rendering to the DOM */
-// [x] plan tasks
-// [x] plan rendered elements in HTML comments
-// [x] test rendering in form
-// [x] build makeDiv() to create a div parent element with label and input as children
-// [x] build makeButton() to replace hardcoded button
-// [x] build doBuildSalesForm() to generate divs using a for loop, append divs and button
-// [x] on page load, render form
-// [x] get calculations for total, highest, and lowest
-// [] improve code organization: DOM elements, edit/add comments, remove gets from clo checklist,
-// [] migrate tasks and clo checklist to README as sections; add Table of Contents
-// [] Future fix idea would be to have a fetch-utils file.
-
-// clo checklist
-// [x] get form
-// [x] get number from each input
-// [x] get total of all sales
-// [x] get array of sales
-// [x] get total sales
-// [x] get highest sale
-// [X] get lowest sale
-// [x] get message
-// [x] get all inputs
-// [x] get sale
-// [x] get displayTest() on page load
-// [x] get test message
-// [x] get button
-// [x] get test message to show before button
-// [x] get label
-// [x] get input
-// [x] get div
-// [x] get all inputs
-
-/* --- --- --- --- - * - --- --- --- --- */
