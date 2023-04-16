@@ -4,6 +4,7 @@ import { renderCard } from "./render-utils.js";
 
 /* get DOM elements */
 const season1 = document.getElementById("season1");
+const season2 = document.getElementById("season2");
 
 /* events */
 window.addEventListener("load", async () => {
@@ -19,6 +20,8 @@ window.addEventListener("load", async () => {
     }
     // TODO season 2 list
     if (sketch.season === 2) {
+      const card = renderCard(sketch);
+      season2.append(card);
     }
   }
 });
