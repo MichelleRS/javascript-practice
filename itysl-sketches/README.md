@@ -6,14 +6,14 @@ Render a list of all sketches from _I Think You Should Leave_.
 
 ## Status
 
-- _MVP in progress_
+- MVP complete
 
 ## Task Planning
 
-- [] Build `sketch-data.js` file that includes the following for each sketch:
+- [x] Build `sketch-data.js` file that includes the following for each sketch:
   - id, season, episode, title, includesTim
-- [] In `render-utils.js`, make a card for each sketch using data from `sketch-data.js`
-- [] Loop through data in `script.js` to display data as rendered elements on page load
+- [x] In `render-utils.js`, make a card for each sketch using data from `sketch-data.js`
+- [x] Loop through data in `script.js` to display data as rendered elements on page load
 
 ## Fixes
 
