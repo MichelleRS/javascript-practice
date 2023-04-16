@@ -3,6 +3,8 @@ import sketchData from "./sketch-data.js";
 import { renderCard } from "./render-utils.js";
 
 /* get DOM elements */
+const buttonShowTim = document.getElementById("showTimSketches");
+const buttonShowAll = document.getElementById("showAllSketches");
 const season1 = document.getElementById("season1");
 const season2 = document.getElementById("season2");
 
@@ -25,3 +27,10 @@ window.addEventListener("load", async () => {
     }
   }
 });
+
+// TODO button click events: show sketches with Tim, show all sketches
+
+// TODO doShowIncludesTim()
+
+/* display functions */
+// TODO refactor to include fetchAndDisplaySketches() to use as a function call in event listeners
