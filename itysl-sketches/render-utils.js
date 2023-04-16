@@ -8,11 +8,17 @@ export function renderCard(sketch) {
   const title = document.createElement("h3");
   const titleText = document.createTextNode(sketch.title);
   title.appendChild(titleText);
-  // TODO create p elements for: season, episode number
+
+  // create p element for season, episode
+  const details = document.createElement("p");
+  const detailsText = document.createTextNode(
+    "Season " + sketch.season + ", " + "Episode " + sketch.episode
+  );
+  details.appendChild(detailsText);
 
   /* append child elements to parent element */
-  li.append(title);
+  li.append(title, details);
 
-  // return parent element
+  /* return parent element */
   return li;
 }

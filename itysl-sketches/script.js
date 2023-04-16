@@ -18,7 +18,7 @@ window.addEventListener("load", async () => {
       const card = renderCard(sketch);
       season1.append(card);
     }
-    // TODO season 2 list
+    // season 2 list
     if (sketch.season === 2) {
       const card = renderCard(sketch);
       season2.append(card);
