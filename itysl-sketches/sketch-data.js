@@ -1,13 +1,6 @@
 export default [
   // season 1
   {
-    id: 31,
-    season: 1,
-    episode: 6,
-    title: "Party House",
-    includesTim: true,
-  },
-  {
     id: 1,
     season: 1,
     episode: 1,
