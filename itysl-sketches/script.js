@@ -7,6 +7,8 @@ const buttonShowTim = document.getElementById("showTimSketches");
 const buttonShowAll = document.getElementById("showAllSketches");
 const season1 = document.getElementById("season1");
 const season2 = document.getElementById("season2");
+// initialize a variable to hold sketch data
+const sketches = await sketchData;
 
 /* events */
 window.addEventListener("load", async () => {
@@ -14,14 +16,19 @@ window.addEventListener("load", async () => {
 });
 
 // TODO button click events: show sketches with Tim, show all sketches
+buttonShowTim.addEventListener("click", async () => {
+  await doShowIncludesTim();
+});
 
 // TODO doShowIncludesTim()
+async function doShowIncludesTim() {
+  const includesTim = sketches.filter((sketch) => sketch.includesTim != false);
+  console.log("includesTim", includesTim);
+  return includesTim;
+}
 
 /* display functions */
 async function fetchAndDisplaySketches() {
-  // initialize a variable to hold sketch data
-  const sketches = await sketchData;
-
   // loop, render, append: create a card for each sketch and append to season container
   for (let sketch of sketches) {
     // season 1 list
@@ -36,3 +43,14 @@ async function fetchAndDisplaySketches() {
     }
   }
 }
+
+/* --- * --- * --- NOTES --- * --- * --- *
+
+clo checklist
+[x] get season 1 list
+[x] get season 2 list
+[x] get buttonShowTim
+[x] get includesTim
+
+
+* --- --- --- --- - * - --- --- --- --- */
