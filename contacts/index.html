@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contacts App</title>
+  </head>
+  <body>
+    <header>
+      <h1>&#128199 Contacts App</h1>
+    </header>
+
+    <main>
+        <!-- contacts form -->
+        <form>
+            <!-- inputs -->
+            <!-- name -->
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required/>
+            <!-- address -->
+            <label for="address">Address</label>
+            <input type="text" name="address" id="address" required/>
+            <!-- phone -->
+            <label for="phone">Phone</label>   
+            <input type="number" name="phone" id="phone" required/> 
+            <!-- buttons -->
+            <!-- button: find contact -->
+            <button type="button" id="find">Find Contact</button>
+            <!-- button: save contact -->
+            <button type="submit" id="save">Save Contact</button>
+        </form>
+
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
