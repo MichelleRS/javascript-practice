@@ -7,6 +7,7 @@ Render a list of all sketches from _I Think You Should Leave_.
 ## Status
 
 - MVP complete
+- Button click events in progress
 
 ## Task Planning
 
@@ -35,3 +36,5 @@ Render a list of all sketches from _I Think You Should Leave_.
   - [List Loop](../list-loop/README.md)
 
 - [Import and Display List](https://github.com/MichelleRS/wk-03-spotlight-deliverable-import-and-display-list/tree/dev)
+
+- [Array Methods](https://github.dev/MichelleRS/react-wk02-spotlight-array-methods/tree/dev)
