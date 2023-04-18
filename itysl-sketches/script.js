@@ -7,8 +7,12 @@ const buttonShowTim = document.getElementById("showTimSketches");
 const buttonShowAll = document.getElementById("showAllSketches");
 const season1 = document.getElementById("season1");
 const season2 = document.getElementById("season2");
+
+/* get data */
 // initialize a variable to hold sketch data
 const sketches = await sketchData;
+// initialize a variable to hold array of sketches that include tim
+const includesTim = sketches.filter((sketch) => sketch.includesTim != false);
 
 /* events */
 window.addEventListener("load", async () => {
@@ -17,15 +21,13 @@ window.addEventListener("load", async () => {
 
 // TODO button click events: show sketches with Tim, show all sketches
 buttonShowTim.addEventListener("click", async () => {
-  await doShowIncludesTim();
-});
+  // delete current list of sketches
+  season1.remove();
+  season2.remove();
 
-// TODO doShowIncludesTim()
-async function doShowIncludesTim() {
-  const includesTim = sketches.filter((sketch) => sketch.includesTim != false);
+  // TODO show sketches with tim
   console.log("includesTim", includesTim);
-  return includesTim;
-}
+});
 
 /* display functions */
 async function fetchAndDisplaySketches() {
