@@ -3,6 +3,12 @@ const form = document.getElementById("contactsForm");
 const findButton = document.getElementById("find");
 const saveButton = document.getElementById("save");
 
+/* state */
+// hold contact data in array elements
+const contactNames = [];
+const contactAddresses = [];
+const contactPhones = [];
+
 /* events */
 // button click: find
 findButton.addEventListener("click", () => {
@@ -39,6 +45,16 @@ function displayElementValue(id, text) {
   element.value = text;
 }
 
+// store contact info in state at the given index value
+function storeContact(pos) {
+  // store name
+  contactNames[pos] = getElementValue("name");
+  // store address
+  contactAddresses[pos] = getElementValue("address");
+  // store phone
+  contactPhones[pos] = getElementValue("phone");
+}
+
 function displayNotFound() {
   alert("Contact not found. Try searching again.");
 }
@@ -48,4 +64,6 @@ clo checklist
 [x] get form
 [x] get buttons
 
+tasks
+[] store contact details
 * --- --- --- --- - * - --- --- --- --- */
