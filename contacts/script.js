@@ -55,6 +55,20 @@ function storeContact(pos) {
   contactPhones[pos] = getElementValue("phone");
 }
 
+// find contact position
+function findContactPos(name) {
+  // loop through each element in the contactNames array
+  for (let pos = 0; pos < contactNames.length; pos++) {
+    // check if stored element name matches name being searched
+    if (contactNames[pos] == name) {
+      // if name match found, return position in array
+      return pos;
+    }
+  }
+  // if name match not found, return Nan
+  return NaN;
+}
+
 function displayNotFound() {
   alert("Contact not found. Try searching again.");
 }
@@ -64,6 +78,4 @@ clo checklist
 [x] get form
 [x] get buttons
 
-tasks
-[] store contact details
 * --- --- --- --- - * - --- --- --- --- */
