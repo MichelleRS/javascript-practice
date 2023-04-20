@@ -27,7 +27,19 @@ findButton.addEventListener("click", () => {
 
 // button click: save
 saveButton.addEventListener("click", () => {
-  alert("This will save contact");
+  // get the name of the contact being saved
+  let name = getElementValue("name");
+
+  // find the position of the name to save
+  let pos = findContactPos(name);
+
+  // if contact name does not exist, add to contactNames
+  if (isNaN(pos)) {
+    pos = contactNames.length;
+  }
+
+  // update the contact info for an existing contact
+  storeContact(pos);
 });
 
 /* helper functions */
@@ -84,5 +96,7 @@ function displayNotFound() {
 clo checklist
 [x] get form
 [x] get buttons
+[x] get saved contact name
+[x] get position of saved contact name
 
 * --- --- --- --- - * - --- --- --- --- */
