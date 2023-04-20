@@ -69,6 +69,13 @@ function findContactPos(name) {
   return NaN;
 }
 
+// display contact details as values in form
+function displayContact(pos) {
+  displayElementValue("name", contactNames[pos]);
+  displayElementValue("address", contactAddresses[pos]);
+  displayElementValue("phone", contactPhones[pos]);
+}
+
 function displayNotFound() {
   alert("Contact not found. Try searching again.");
 }
