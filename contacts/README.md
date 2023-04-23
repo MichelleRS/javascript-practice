@@ -15,6 +15,8 @@ Build a contact form with inputs for name, address, and phone number. Include bu
    - Solution: Change phone input type from number to text.
      Source: [_Why the number input is the worst input._](https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/) Stack Overflow. December 26, 2022.
 
+2. On save, contact data (name, address, phone) is replacing previous saved data and not being added as new data in an array.
+
 ## Resources
 
 Miles, Rob. "Objects" in _Begin to Code with JavaScript_. Pearson Education, Inc., 2022.

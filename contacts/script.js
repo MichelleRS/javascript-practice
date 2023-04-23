@@ -5,9 +5,9 @@ const saveButton = document.getElementById("save");
 
 /* state */
 // hold contact data in array elements
-const contactNames = [];
-const contactAddresses = [];
-const contactPhones = [];
+let contactNames = [];
+let contactAddresses = [];
+let contactPhones = [];
 
 /* events */
 // button click: find
@@ -40,9 +40,13 @@ saveButton.addEventListener("click", () => {
 
   // update the contact info for an existing contact
   storeContact(pos);
+  console.log("contactNames", contactNames);
+  console.log("contactAddresses", contactAddresses);
+  console.log("contactPhones", contactPhones);
 });
 
 /* helper functions */
+// use to get DOM elements
 function getElementValue(id) {
   // get the element being read
   let element = document.getElementById(id);
@@ -50,6 +54,7 @@ function getElementValue(id) {
   return element.value;
 }
 
+// use to display text values
 function displayElementValue(id, text) {
   // get the element being changed
   let element = document.getElementById(id);
@@ -91,6 +96,7 @@ function displayContact(pos) {
 function displayNotFound() {
   alert("Contact not found. Try searching again.");
 }
+
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
@@ -98,5 +104,7 @@ clo checklist
 [x] get buttons
 [x] get saved contact name
 [x] get position of saved contact name
+[] get contact data
+
 
 * --- --- --- --- - * - --- --- --- --- */
