@@ -13,15 +13,18 @@ let contactPhones = [];
 // button click: find
 findButton.addEventListener("click", () => {
   // get the name value
-  let name = getElementValue("name");
-  // if name matches "Michelle", display values in form
-  if (name == "Michelle") {
-    displayElementValue("address", "123 Street\nCity, State Zip");
-    displayElementValue("phone", "(123) 456-7890");
-  }
-  // if name is not "Michelle", show alert that contact is not found
-  else {
+  const name = getElementValue("name");
+
+  // find the position of the name
+  const pos = findContactPos(name);
+
+  // if contact does not exist, show alert that contact is not found
+  if (isNaN(pos)) {
     displayNotFound();
+  }
+  // if name matches, display values in form
+  else {
+    displayContact(pos);
   }
 });
 
@@ -104,7 +107,7 @@ clo checklist
 [x] get buttons
 [x] get saved contact name
 [x] get position of saved contact name
-[] get contact data
+[x] get contact data
 
 
 * --- --- --- --- - * - --- --- --- --- */
