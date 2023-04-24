@@ -4,10 +4,8 @@ const findButton = document.getElementById("find");
 const saveButton = document.getElementById("save");
 
 /* state */
-// hold contact data in array elements
-let contactNames = [];
-let contactAddresses = [];
-let contactPhones = [];
+// store contact data in an array
+let contactData = [];
 
 /* events */
 // button click: find
@@ -38,14 +36,12 @@ saveButton.addEventListener("click", () => {
 
   // if contact name does not exist, add to contactNames
   if (isNaN(pos)) {
-    pos = contactNames.length;
+    pos = contactData.length;
   }
 
   // update the contact info for an existing contact
   storeContact(pos);
-  console.log("contactNames", contactNames);
-  console.log("contactAddresses", contactAddresses);
-  console.log("contactPhones", contactPhones);
+  console.log("contactData", contactData);
 });
 
 /* helper functions */
@@ -65,22 +61,29 @@ function displayElementValue(id, text) {
   element.value = text;
 }
 
-// store contact info in state at the given index value
+// store contact data in state at the given index value
 function storeContact(pos) {
-  // store name
-  contactNames[pos] = getElementValue("name");
-  // store address
-  contactAddresses[pos] = getElementValue("address");
-  // store phone
-  contactPhones[pos] = getElementValue("phone");
+  // create an empty object
+  let contact = {};
+
+  /* contact data to store */
+  // name
+  contact.name = getElementValue("name");
+  // address
+  contact.contactAddress = getElementValue("address");
+  // phone
+  contact.phone = getElementValue("phone");
+
+  // store contact data in an array and set to contact
+  contactData[pos] = contact;
 }
 
-// find contact position
+// TODO find contact position
 function findContactPos(name) {
-  // loop through each element in the contactNames array
-  for (let pos = 0; pos < contactNames.length; pos++) {
+  // loop through each element in the contactData array
+  for (let pos = 0; pos < contactData.length; pos++) {
     // check if stored element name matches name being searched
-    if (contactNames[pos] == name) {
+    if (contactData[pos] == name) {
       // if name match found, return position in array
       return pos;
     }
@@ -89,7 +92,7 @@ function findContactPos(name) {
   return NaN;
 }
 
-// display contact details as values in form
+// TODO display contact details as values in form
 function displayContact(pos) {
   displayElementValue("name", contactNames[pos]);
   displayElementValue("address", contactAddresses[pos]);
@@ -108,6 +111,7 @@ clo checklist
 [x] get saved contact name
 [x] get position of saved contact name
 [x] get contact data
+[x] get contact data after refactor
 
 
 * --- --- --- --- - * - --- --- --- --- */
