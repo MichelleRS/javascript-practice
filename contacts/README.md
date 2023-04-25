@@ -13,7 +13,8 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 1. > The specified value "(123) 456-7890" cannot be parsed, or is out of range.
 
    - Solution: Change phone input type from number to text.
-     Source: [_Why the number input is the worst input._](https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/) Stack Overflow. December 26, 2022.
+
+     - Source: [_Why the number input is the worst input._](https://stackoverflow.blog/2022/12/26/why-the-number-input-is-the-worst-input/) Stack Overflow. December 26, 2022.
 
 2. On save, contact data (name, address, phone) is replacing previously saved data and not being added as new data in an array.
 
@@ -21,7 +22,12 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 
      > If your buttons are not for submitting form data to a server, be sure to set their type attribute to button. Otherwise they will try to submit form data and to load the (nonexistent) response, possibly destroying the current state of the document.
 
-     Source: [_<button\>: The Button element._](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) MDN Web Docs. Accessed April 2023.
+     - Source: [_<button\>: The Button element._](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) MDN Web Docs. Accessed April 2023.
+
+3. On find, contact address is displaying `undefined`.
+
+   - Solution: In `storeContact()`, the property for storing an address was mistyped as `contact.contactAddress`. Changed to `contact.address`.
+     - Source: Running the debugger in VS Code.
 
 ## Resources
 
