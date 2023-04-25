@@ -6,7 +6,7 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 
 ## Status
 
-- _In progress_
+- MVP complete
 
 ## Fixes
 
