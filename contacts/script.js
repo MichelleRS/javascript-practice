@@ -26,7 +26,7 @@ findButton.addEventListener("click", () => {
   }
 });
 
-// button click: save
+// button click: store contact data and reset form
 saveButton.addEventListener("click", () => {
   // get the name of the contact being saved
   let name = getElementValue("name");
@@ -41,6 +41,9 @@ saveButton.addEventListener("click", () => {
 
   // update the contact data for an existing contact
   storeContact(pos);
+
+  // reset form
+  form.reset();
 });
 
 /* helper functions */
@@ -116,5 +119,6 @@ clo checklist
 [x] get contact data
 [x] get contact data after refactor
 
-
+tasks
+[] clear display on save
 * --- --- --- --- - * - --- --- --- --- */
