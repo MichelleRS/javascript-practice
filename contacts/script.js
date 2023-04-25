@@ -11,10 +11,10 @@ let contactData = [];
 // button click: find
 findButton.addEventListener("click", () => {
   // get the name value
-  const name = getElementValue("name");
+  let name = getElementValue("name");
 
   // find the position of the name
-  const pos = findContactPos(name);
+  let pos = findContactPos(name);
 
   // if contact does not exist, show alert that contact is not found
   if (isNaN(pos)) {
@@ -39,9 +39,8 @@ saveButton.addEventListener("click", () => {
     pos = contactData.length;
   }
 
-  // update the contact info for an existing contact
+  // update the contact data for an existing contact
   storeContact(pos);
-  console.log("contactData", contactData);
 });
 
 /* helper functions */
@@ -70,7 +69,7 @@ function storeContact(pos) {
   // name
   contact.name = getElementValue("name");
   // address
-  contact.contactAddress = getElementValue("address");
+  contact.address = getElementValue("address");
   // phone
   contact.phone = getElementValue("phone");
 
@@ -78,12 +77,14 @@ function storeContact(pos) {
   contactData[pos] = contact;
 }
 
-// TODO find contact position
+// find contact position
 function findContactPos(name) {
   // loop through each element in the contactData array
   for (let pos = 0; pos < contactData.length; pos++) {
+    // initialize variable for contact name
+    let nameData = contactData[pos].name;
     // check if stored element name matches name being searched
-    if (contactData[pos] == name) {
+    if (nameData == name) {
       // if name match found, return position in array
       return pos;
     }
@@ -92,11 +93,13 @@ function findContactPos(name) {
   return NaN;
 }
 
-// TODO display contact details as values in form
+// display contact data as values in form
 function displayContact(pos) {
-  displayElementValue("name", contactNames[pos]);
-  displayElementValue("address", contactAddresses[pos]);
-  displayElementValue("phone", contactPhones[pos]);
+  let contact = contactData[pos];
+
+  displayElementValue("name", contact.name);
+  displayElementValue("address", contact.address);
+  displayElementValue("phone", contact.phone);
 }
 
 function displayNotFound() {
