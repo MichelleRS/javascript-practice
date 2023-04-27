@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dew Point Calculator</title>
+  </head>
+  <body>
+    <header>
+      <hgroup>
+        <h1>&#128167; Dew Point Calculator</h1>
+      </hgroup>
+    </header>
+
+    <main>
+      <form id="dwptCalculator">
+        <!-- fieldset: air temperature -->
+        <fieldset>
+          <legend>Air Temperature</legend>
+          <!-- select: temperature unit -->
+          <label for="tempScale">Temperature Scale</label>
+          <select name="tempScale" id="tempScale">
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="celsius">Celsius</option>
+          </select>
+          <!-- input: air temperature -->
+          <label for="tempNum">Temperature (°)</label>
+          <input type="number" name="tempNum" id="tempNum" required />
+        </fieldset>
+
+        <!-- fieldset: relative humidity -->
+        <fieldset>
+          <legend>Relative Humidity</legend>
+          <!-- input: relative humidity -->
+          <label for="humidityNum">Humidity (%)</label>
+          <input type="number" name="humidityNum" id="humidityNum" required />
+        </fieldset>
+
+        <!-- button: calculate dew point -->
+        <button type="submit" id="calcDwpt">Calculate Dew Point</button>
+      </form>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
