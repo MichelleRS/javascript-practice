@@ -40,24 +40,20 @@ function doStyleSuggestion(dwpt) {
   // initialize an empty string for message
   let message = "";
 
-  /* style suggestion messages */
-  // TODO use switch construction, one for each temp scale
+  /* messages: style suggestion */
   // fahrenheit
   if (tempScaleEl.value === "Fahrenheit") {
-    if (dwpt === 51) {
-      message = document.createTextNode(
-        "Dew point is 51" + " " + tempScaleEl.value
-      );
-      console.log("message", message);
-    } else {
-      message = document.createTextNode("Dew point is not 51");
-      console.log("message", message);
-    }
+    // dry: 15 to 30°F
+    // mid-range: 30 to 40°F
+    // best: 40 to 60°F
+    // high: 61+°F
   }
   // celsius
   else {
-    message = document.createTextNode("You've selected Celsius");
-    console.log("message", message);
+    // dry: -1°C
+    // mid-range: -1 to 4°C
+    // best: 4 to 16°C
+    // high: 16+°C
   }
 
   /* add style suggestion message to DOM */
@@ -81,5 +77,7 @@ tasks
 [x] show dew point result
 [x] show dew point result with temperature scale selection
 [] show style suggestions after dew point result
+[] clear previous result on click
+[] FIX incorrect dew point calculation
 
 * --- --- --- --- - * - --- --- --- --- */
