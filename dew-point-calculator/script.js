@@ -23,7 +23,9 @@ formEl.addEventListener("submit", (e) => {
   // initialize a new paragraph element node
   let par = document.createElement("p");
   // set message to a text node with calculation results
-  message = document.createTextNode("The dew point is " + dwpt);
+  message = document.createTextNode(
+    "The dew point is " + dwpt + " " + tempScaleEl.value
+  );
   // append text node to paragraph element
   par.appendChild(message);
   // add paragraph element to DOM; show in results section
@@ -39,6 +41,7 @@ clo checklist
 
 tasks
 [x] calculate dew point
-[x] show dew point results
+[x] show dew point result
+[] show dew point result with temperature scale selection
 
 * --- --- --- --- - * - --- --- --- --- */
