@@ -37,19 +37,36 @@ formEl.addEventListener("submit", (e) => {
 /* functions */
 // TODO render dew point with styling suggestions for curly hair
 function doStyleSuggestion(dwpt) {
-  /* TODO insert style suggestion message into DOM */
   // initialize an empty string for message
   let message = "";
 
-  /* */
-  // TODO use switch construction
-  if (dwpt === 51) {
-    message = "Dew point is 51";
-    console.log("message", message);
-  } else {
-    message = "Dew point is not 51";
+  /* style suggestion messages */
+  // TODO use switch construction, one for each temp scale
+  // fahrenheit
+  if (tempScaleEl.value === "Fahrenheit") {
+    if (dwpt === 51) {
+      message = document.createTextNode(
+        "Dew point is 51" + " " + tempScaleEl.value
+      );
+      console.log("message", message);
+    } else {
+      message = document.createTextNode("Dew point is not 51");
+      console.log("message", message);
+    }
+  }
+  // celsius
+  else {
+    message = document.createTextNode("You've selected Celsius");
     console.log("message", message);
   }
+
+  /* add style suggestion message to DOM */
+  // initialize a new paragraph element node
+  let par = document.createElement("p");
+  // append message to paragraph element
+  par.appendChild(message);
+  // append paragraph element as last child in results section
+  resultsEl.appendChild(par);
 }
 
 /* --- * --- * --- NOTES --- * --- * --- *
@@ -63,5 +80,6 @@ tasks
 [x] calculate dew point
 [x] show dew point result
 [x] show dew point result with temperature scale selection
+[] show style suggestions after dew point result
 
 * --- --- --- --- - * - --- --- --- --- */
