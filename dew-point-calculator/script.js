@@ -4,19 +4,31 @@ const tempScaleEl = document.getElementById("tempScale");
 const tempNumEl = document.getElementById("tempNum");
 const humidityNumEl = document.getElementById("humidityNum");
 
-console.log("form", formEl);
-console.log("tempScale", tempScaleEl);
-console.log("tempNum", tempNumEl);
-console.log("humidityNum", humidityNumEl);
-
 /* events */
-// TODO calculate button event listener
+// calculate dew point on form submit
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-/* functions */
+  // convert input elements to numbers
+  let temp = Number(tempNumEl.value);
+  let humidity = Number(humidityNumEl.value);
+
+  // calculate dew point
+  let dwpt = temp - (100 - humidity) / 5;
+
+  console.log("dwpt", dwpt);
+  return dwpt;
+});
 
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
 [x] get form and its child elements
+[x] get input elements as numbers
+[x] get dew point
+
+tasks
+[x] calculate dew point
+[] show dew point 
 
 * --- --- --- --- - * - --- --- --- --- */
