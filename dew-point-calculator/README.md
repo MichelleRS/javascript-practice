@@ -6,7 +6,7 @@ A form that takes inputs for air temperature and relative humidity. On form subm
 
 ## Status
 
-- _MVP in progress_
+- MVP complete
 
 ## Planning
 
@@ -31,4 +31,5 @@ A form that takes inputs for air temperature and relative humidity. On form subm
 
 - Projects in this repo:
 
+  - [Ice Cream Sales](../ice-cream-sales/)
   - [Temperature Converter](../temp-converter/)
