@@ -1,4 +1,5 @@
 /* get DOM elements */
+const resultsEl = document.getElementById("results");
 const formEl = document.getElementById("formCalc");
 const tempScaleEl = document.getElementById("tempScale");
 const tempNumEl = document.getElementById("tempNum");
@@ -16,8 +17,17 @@ formEl.addEventListener("submit", (e) => {
   // calculate dew point
   let dwpt = temp - (100 - humidity) / 5;
 
-  console.log("dwpt", dwpt);
-  return dwpt;
+  /* insert dew point message with calculation into DOM */
+  // initialize an empty string for message
+  let message = "";
+  // initialize a new paragraph element node
+  let par = document.createElement("p");
+  // set message to a text node with calculation results
+  message = document.createTextNode("The dew point is " + dwpt);
+  // append text node to paragraph element
+  par.appendChild(message);
+  // add paragraph element to DOM; show in results section
+  resultsEl.insertBefore(par, resultsEl.firstChild);
 });
 
 /* --- * --- * --- NOTES --- * --- * --- *
@@ -29,6 +39,6 @@ clo checklist
 
 tasks
 [x] calculate dew point
-[] show dew point 
+[x] show dew point results
 
 * --- --- --- --- - * - --- --- --- --- */
