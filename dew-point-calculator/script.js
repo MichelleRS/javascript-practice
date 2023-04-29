@@ -35,7 +35,7 @@ formEl.addEventListener("submit", (e) => {
 });
 
 /* functions */
-// TODO render dew point with styling suggestions for curly hair
+// TODO get message with style suggestion based on dew point
 function doStyleSuggestion(dwpt) {
   // initialize an empty string for message
   let message = "";
@@ -44,16 +44,40 @@ function doStyleSuggestion(dwpt) {
   // fahrenheit
   if (tempScaleEl.value === "Fahrenheit") {
     // dry: 15 to 30°F
+    if (dwpt >= 15 && dwpt <= 30) {
+      message = document.createTextNode("Dry");
+    }
     // mid-range: 30 to 40°F
+    if (dwpt >= 30 && dwpt <= 40) {
+      message = document.createTextNode("Mid-range");
+    }
     // best: 40 to 60°F
+    if (dwpt >= 40 && dwpt <= 60) {
+      message = document.createTextNode("Best");
+    }
     // high: 61+°F
+    if (dwpt >= 61) {
+      message = document.createTextNode("High");
+    }
   }
   // celsius
   else {
     // dry: -1°C
+    if (dwpt <= -1) {
+      message = document.createTextNode("Dry");
+    }
     // mid-range: -1 to 4°C
+    if (dwpt >= -1 && dwpt <= 4) {
+      message = document.createTextNode("Mid-range");
+    }
     // best: 4 to 16°C
+    if (dwpt >= 4 && dwpt <= 16) {
+      message = document.createTextNode("Best");
+    }
     // high: 16+°C
+    if (dwpt >= 16) {
+      message = document.createTextNode("High");
+    }
   }
 
   /* add style suggestion message to DOM */
@@ -76,8 +100,11 @@ tasks
 [x] calculate dew point
 [x] show dew point result
 [x] show dew point result with temperature scale selection
-[] show style suggestions after dew point result
+[] show initial style message after dew point result
 [] clear previous result on click
 [] FIX incorrect dew point calculation
+[] FIX overlapping ranges
+[] refactor doStyleSuggestion() with helper function
+[] add to style message
 
 * --- --- --- --- - * - --- --- --- --- */
