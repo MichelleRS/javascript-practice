@@ -4,6 +4,7 @@ const formEl = document.getElementById("formCalc");
 const tempScaleEl = document.getElementById("tempScale");
 const tempNumEl = document.getElementById("tempNum");
 const humidityNumEl = document.getElementById("humidityNum");
+const calcBtn = document.getElementById("calcBtn");
 
 /* events */
 // calculate dew point on form submit
@@ -32,10 +33,17 @@ formEl.addEventListener("submit", (e) => {
   resultsEl.insertBefore(par, resultsEl.firstChild);
 
   doStyleSuggestion(dwpt);
+
+  // remove calculate dew point button
+  calcBtn.remove();
+
+  // TODO render reset button below message
 });
 
+// TODO event listener for reset button click
+
 /* functions */
-// TODO get message with style suggestion based on dew point
+// get message with style suggestion based on dew point
 function doStyleSuggestion(dwpt) {
   // initialize an empty string for message
   let message = "";
@@ -89,22 +97,34 @@ function doStyleSuggestion(dwpt) {
   resultsEl.appendChild(par);
 }
 
+// TODO render reset button
+function renderResetButton() {
+  // button element with attributes for type and id
+  // button text
+}
+
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
 [x] get form and its child elements
 [x] get input elements as numbers
 [x] get dew point
+[x] get calculate button
 
 tasks
 [x] calculate dew point
 [x] show dew point result
 [x] show dew point result with temperature scale selection
-[] show initial style message after dew point result
-[] clear previous result on click
+[x] show initial style message after dew point result
+[] clear messages above form on calculate button click: 
+  [] remove calculate button
+  [] render reset button after message
+  [] add event listener to reset button to clear messages and inputs
 [] FIX incorrect dew point calculation
 [] FIX overlapping ranges
 [] refactor doStyleSuggestion() with helper function
+  (see top answer):
+  https://stackoverflow.com/questions/6454198/check-if-a-value-is-within-a-range-of-numbers
 [] add to style message
 
 * --- --- --- --- - * - --- --- --- --- */
