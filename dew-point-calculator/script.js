@@ -15,22 +15,54 @@ formEl.addEventListener("submit", (e) => {
   let temp = Number(tempNumEl.value);
   let humidity = Number(humidityNumEl.value);
 
-  // calculate dew point
-  let dwpt = temp - (100 - humidity) / 5;
+  // initialize empty string for dew point
+  let dwpt = "";
 
-  /* insert dew point calculation message into DOM */
+  /* initialize DOM elements for results message */
   // initialize an empty string for message
-  let message = "";
+  let resultsMsg = "";
   // initialize a new paragraph element node
-  let par = document.createElement("p");
-  // set message to a text node with calculation results
-  message = document.createTextNode(
-    "The dew point is " + dwpt + " " + tempScaleEl.value
-  );
-  // append text node to paragraph element
-  par.appendChild(message);
-  // add paragraph element to DOM; show in results section
-  resultsEl.insertBefore(par, resultsEl.firstChild);
+  let resultsPar = document.createElement("p");
+
+  /* if user selects fahrenheit */
+  if (tempScaleEl.value === "Fahrenheit") {
+    // convert temp to celsius
+    let celsius = (temp - 32) / 1.8;
+    // calculate dew point
+    dwpt = celsius - (100 - humidity) / 5;
+    // convert dewpoint to fahrenheit
+    dwpt = dwpt * 1.8 + 32;
+
+    // set message to a text node with calculation results
+    resultsMsg = document.createTextNode(
+      "The dew point is approximately " +
+        dwpt.toFixed(1) +
+        " " +
+        tempScaleEl.value
+    );
+    // append text node to paragraph element
+    resultsPar.appendChild(resultsMsg);
+    // add paragraph element to DOM; show in results section
+    resultsEl.insertBefore(resultsPar, resultsEl.firstChild);
+  } else {
+    /* if user selects celsius */
+    // convert temp to celsius
+    let celsius = (temp - 32) / 1.8;
+    // calculate dew point
+    dwpt = celsius - (100 - humidity) / 5;
+
+    // set message to a text node with calculation results
+    resultsMsg = document.createTextNode(
+      "The dew point is approximately " +
+        dwpt.toFixed(1) +
+        " " +
+        tempScaleEl.value
+    );
+    // append text node to paragraph element
+    resultsPar.appendChild(resultsMsg);
+    // add paragraph element to DOM; show in results section
+    resultsEl.insertBefore(resultsPar, resultsEl.firstChild);
+  }
 
   // render style suggestion message
   doStyleSuggestion(dwpt);
@@ -136,9 +168,9 @@ tasks
   [x] render clear results button after message
   [x] add event listener to results button to clear messages and inputs
   [x] move rendering clear results button to its own function
-  [x] refactor, render resetBtn in a function
-[] FIX incorrect dew point calculation
-[] FIX overlapping ranges
+  [x] refactor render resetBtn in a function
+[x] calculate dew point based on temperature scale selection
+[] fix overlapping ranges
 [] refactor doStyleSuggestion() with helper function
   (see top answer):
   https://stackoverflow.com/questions/6454198/check-if-a-value-is-within-a-range-of-numbers
