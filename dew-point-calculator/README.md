@@ -32,6 +32,8 @@ A form that takes inputs for air temperature and relative humidity. On form subm
 
 ## Resources
 
+[Check if a value is within a range of numbers.](https://stackoverflow.com/questions/6454198/check-if-a-value-is-within-a-range-of-numbers) Stack Overflow. Accessed May 2023.
+
 [Dew Point: Simple approximation.](https://en.wikipedia.org/wiki/Dew_point#Simple_approximation) Wikipedia. Accessed April 2023.
 
 Mary, Diane. [The 411 on Dew Points and Humectants.](https://www.naturallycurly.com/curlreading/wavy-hair-type-2/the-411-on-dew-points-humectants) Naturally Curly. October 10, 2017.
