@@ -48,9 +48,12 @@ formEl.addEventListener("submit", (e) => {
   resetBtn.textContent = "Clear Results and Form";
   // append reset button to results element
   resultsEl.appendChild(resetBtn);
-});
 
-// TODO event listener for render reset button
+  // clear form on reset button click
+  resetBtn.addEventListener("click", () => {
+    location.reload();
+  });
+});
 
 /* functions */
 // get message with style suggestion based on dew point
@@ -121,10 +124,10 @@ tasks
 [x] show dew point result
 [x] show dew point result with temperature scale selection
 [x] show initial style message after dew point result
-[] clear messages above form on calculate button click: 
+[x] clear messages above form on calculate button click: 
   [x] remove calculate button
   [x] render clear results button after message
-  [] add event listener to clear results button to clear messages and inputs
+  [x] add event listener to results button to clear messages and inputs
 [] FIX incorrect dew point calculation
 [] FIX overlapping ranges
 [] refactor doStyleSuggestion() with helper function
