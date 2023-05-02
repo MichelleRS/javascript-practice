@@ -18,7 +18,7 @@ formEl.addEventListener("submit", (e) => {
   // calculate dew point
   let dwpt = temp - (100 - humidity) / 5;
 
-  /* insert dew point message with calculation into DOM */
+  /* insert dew point calculation message into DOM */
   // initialize an empty string for message
   let message = "";
   // initialize a new paragraph element node
@@ -38,16 +38,8 @@ formEl.addEventListener("submit", (e) => {
   // remove calculate dew point button
   calcBtn.remove();
 
-  /* render reset button below message */
-  // create button element
-  const resetBtn = document.createElement("button");
-  // add attributes to button element
-  resetBtn.setAttribute("type", "button");
-  resetBtn.setAttribute("id", "resetBtn");
-  // add button text
-  resetBtn.textContent = "Clear Results and Form";
-  // append reset button to results element
-  resultsEl.appendChild(resetBtn);
+  /* render reset button after messages */
+  renderResetBtn();
 
   // clear form on reset button click
   resetBtn.addEventListener("click", () => {
@@ -110,6 +102,21 @@ function doStyleSuggestion(dwpt) {
   resultsEl.appendChild(par);
 }
 
+// render a button to clear results and form
+function renderResetBtn() {
+  // create button element
+  const resetBtn = document.createElement("button");
+
+  // add attributes to button element
+  resetBtn.setAttribute("type", "button");
+  resetBtn.setAttribute("id", "resetBtn");
+
+  // add button text
+  resetBtn.textContent = "Clear Results and Form";
+
+  // append reset button to results element
+  resultsEl.appendChild(resetBtn);
+}
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
@@ -117,7 +124,7 @@ clo checklist
 [x] get input elements as numbers
 [x] get dew point
 [x] get calculate button
-[] get reset button
+[x] get reset button
 
 tasks
 [x] calculate dew point
@@ -128,6 +135,8 @@ tasks
   [x] remove calculate button
   [x] render clear results button after message
   [x] add event listener to results button to clear messages and inputs
+  [x] move rendering clear results button to its own function
+  [x] refactor, render resetBtn in a function
 [] FIX incorrect dew point calculation
 [] FIX overlapping ranges
 [] refactor doStyleSuggestion() with helper function
