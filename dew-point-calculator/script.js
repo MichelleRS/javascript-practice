@@ -32,15 +32,25 @@ formEl.addEventListener("submit", (e) => {
   // add paragraph element to DOM; show in results section
   resultsEl.insertBefore(par, resultsEl.firstChild);
 
+  // render style suggestion message
   doStyleSuggestion(dwpt);
 
   // remove calculate dew point button
   calcBtn.remove();
 
-  // TODO render reset button below message
+  /* render reset button below message */
+  // create button element
+  const resetBtn = document.createElement("button");
+  // add attributes to button element
+  resetBtn.setAttribute("type", "button");
+  resetBtn.setAttribute("id", "resetBtn");
+  // add button text
+  resetBtn.textContent = "Clear Results and Form";
+  // append reset button to results element
+  resultsEl.appendChild(resetBtn);
 });
 
-// TODO event listener for reset button click
+// TODO event listener for render reset button
 
 /* functions */
 // get message with style suggestion based on dew point
@@ -97,12 +107,6 @@ function doStyleSuggestion(dwpt) {
   resultsEl.appendChild(par);
 }
 
-// TODO render reset button
-function renderResetButton() {
-  // button element with attributes for type and id
-  // button text
-}
-
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
@@ -110,6 +114,7 @@ clo checklist
 [x] get input elements as numbers
 [x] get dew point
 [x] get calculate button
+[] get reset button
 
 tasks
 [x] calculate dew point
@@ -117,9 +122,9 @@ tasks
 [x] show dew point result with temperature scale selection
 [x] show initial style message after dew point result
 [] clear messages above form on calculate button click: 
-  [] remove calculate button
-  [] render reset button after message
-  [] add event listener to reset button to clear messages and inputs
+  [x] remove calculate button
+  [x] render clear results button after message
+  [] add event listener to clear results button to clear messages and inputs
 [] FIX incorrect dew point calculation
 [] FIX overlapping ranges
 [] refactor doStyleSuggestion() with helper function
