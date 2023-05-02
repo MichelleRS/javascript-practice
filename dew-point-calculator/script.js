@@ -89,15 +89,15 @@ function doStyleSuggestion(dwpt) {
   // fahrenheit
   if (tempScaleEl.value === "Fahrenheit") {
     // dry: 15 to 30°F
-    if (dwpt >= 15 && dwpt <= 30) {
+    if (between(dwpt, 15, 30)) {
       message = document.createTextNode("Dry");
     }
     // mid-range: 30 to 40°F
-    if (dwpt >= 30 && dwpt <= 40) {
+    if (between(dwpt, 30, 40)) {
       message = document.createTextNode("Mid-range");
     }
     // best: 40 to 60°F
-    if (dwpt >= 40 && dwpt <= 60) {
+    if (between(dwpt, 40, 60)) {
       message = document.createTextNode("Best");
     }
     // high: 61+°F
@@ -112,11 +112,11 @@ function doStyleSuggestion(dwpt) {
       message = document.createTextNode("Dry");
     }
     // mid-range: -1 to 4°C
-    if (dwpt >= -1 && dwpt <= 4) {
+    if (between(dwpt, -1, 4)) {
       message = document.createTextNode("Mid-range");
     }
     // best: 4 to 16°C
-    if (dwpt >= 4 && dwpt <= 16) {
+    if (between(dwpt, 4, 16)) {
       message = document.createTextNode("Best");
     }
     // high: 16+°C
@@ -149,6 +149,12 @@ function renderResetBtn() {
   // append reset button to results element
   resultsEl.appendChild(resetBtn);
 }
+
+/* helper function */
+// return condition for temp ranges in doStyleSuggestion()
+function between(dwpt, min, max) {
+  return dwpt >= min && dwpt <= max;
+}
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
@@ -171,7 +177,7 @@ tasks
   [x] refactor render resetBtn in a function
 [x] calculate dew point based on temperature scale selection
 [] fix overlapping ranges
-[] refactor doStyleSuggestion() with helper function
+[x] refactor doStyleSuggestion() with helper function
   (see top answer):
   https://stackoverflow.com/questions/6454198/check-if-a-value-is-within-a-range-of-numbers
 [] add to style message
