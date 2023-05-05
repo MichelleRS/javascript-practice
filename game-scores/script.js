@@ -6,36 +6,48 @@ import dataSchema from "./data-schema.js";
 const gameForm = document.getElementById("gameForm");
 
 /* events */
-// TODO display form elements on page load
+// display form elements on page load
 window.addEventListener("load", () => {
   // function call to display form elements
   displayFormElements();
 });
 
-/* TODO render functions */
-// renderInputElement()
-// renderSelectElement()
+/* render functions */
+// TODO render a select element
+
+// render an input element
+function renderInputElement(element) {
+  // create an input element
+  let inputEl = document.createElement("input");
+  console.log("inputEl", inputEl);
+  // TODO add attributes to input element
+  //   inputEl.setAttribute("id", element.id);
+  inputEl.setAttribute("type", "text");
+
+  // return input element
+  return inputEl;
+}
 
 /* display function */
 function displayFormElements() {
   console.log("Hello!");
-  /*
+
   // work through each of the items in the data schema
   for (let item of dataSchema) {
-    // render an element for input
+    // TODO render an element for maze select
+    // let selectElement = renderSelectElement(item);
+    // render an element for score input
     let inputElement = renderInputElement(item);
-    // render an element for select
-    let selectElement = renderSelectElement(item);
     // add the input and select elements to the game form
-    gameForm.appendChild(inputElement, selectElement);
+    gameForm.appendChild(inputElement);
   }
-  */
 }
 
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
 [x] - get displayFormElements on page load
+[x] - get inputEl on page load
 
 tasks
 initial rendering (mvp)
@@ -52,4 +64,6 @@ stretch goal ideas
 - [] display scores
 - [] add style
 
+debugging
+- [] fix input displaying twice
 * --- --- --- --- - * - --- --- --- --- */
