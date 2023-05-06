@@ -16,7 +16,6 @@ window.addEventListener("load", (dataSchema) => {
 // TODO render a select element
 
 // render an input element
-// WIP: move some code to renderDivCtrlElement()
 function renderInputElement(element) {
   element = dataSchema;
   // create an input element
@@ -46,6 +45,8 @@ function renderDivElement(element) {
   let text = document.createTextNode(element.label);
   // append text node to label
   labelEl.appendChild(text);
+  // append label to div element
+  divEl.appendChild(labelEl);
 
   /* get form control by element type */
   // initialize a variable for form control element
@@ -72,13 +73,12 @@ function renderDivElement(element) {
 /* display function */
 function displayFormElements(item) {
   console.log("Hello!");
-  let divEl = renderDivElement(item);
-  // TODO render an element for maze select
-  // let selectElement = renderSelectElement(item);
-  // render an element for score input
-  // let inputElement = renderInputElement(item);
-  // add the select and input elements to the game form
-  gameForm.appendChild(divEl);
+  for (item of dataSchema) {
+    // make a div element for the item
+    let divEl = renderDivElement(item);
+    // add the div element to form
+    gameForm.append(divEl);
+  }
 }
 
 /* --- * --- * --- NOTES --- * --- * --- *
@@ -87,12 +87,13 @@ clo checklist
 - [x] get displayFormElements
 - [x] get gameForm
 - [x] get inputEl
-- [] get divEl
+- [x] get divEl
 
 tasks
 initial rendering (mvp)
-- [] get renderInputElement() to display in form
+- [x] get renderInputElement() to display in form
 - [] get renderSelectElement() to display in form
+- [] get input and select to display before button
 
 local storage (mvp)
 - [] save to local storage on form submit
