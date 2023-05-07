@@ -72,12 +72,12 @@ function renderDivElement(element) {
   let formCtrlEl = null;
 
   switch (element.id) {
-    case "score":
-      formCtrlEl = renderInputElement(element);
-      break;
-
     case "maze":
       formCtrlEl = renderSelectElement(element);
+      break;
+
+    case "score":
+      formCtrlEl = renderInputElement(element);
       break;
   }
 
@@ -100,7 +100,8 @@ function displayFormElements(schema) {
     // make a div element for the item
     let divEl = renderDivElement(objectEl);
     // add the div element to form
-    gameForm.append(divEl);
+    // gameForm.append(divEl);
+    gameForm.insertBefore(divEl, gameForm.firstChild);
   }
 }
 
@@ -117,7 +118,7 @@ tasks
 initial rendering (mvp)
 - [x] get renderInputElement() to display in form
 - [x] get renderSelectElement() to display in form
-- [] get input and select to display before button
+- [x] get input and select to display before button
 
 local storage (mvp)
 - [] save to local storage on form submit
