@@ -13,25 +13,25 @@ window.addEventListener("load", () => {
 });
 
 /* render functions */
-// TODO render a select element
+// render a select element
 function renderSelectElement(element) {
   // create a select element
   let selectEl = document.createElement("select");
-  // add attributes to select element
+  // add id to select element
   selectEl.setAttribute("id", element.id);
-  // loop through data values and add as option
-  console.log("element", element);
-  for (let option in element) {
-    // add options
+  // get array of maze values from select object
+  let myArray = element.value;
+  // loop through maze values
+  for (let index in myArray) {
+    // create option element
     let optionEl = document.createElement("option");
     // add text value
-    let value = document.createTextNode(element.value);
-    // append text value to option
-    optionEl.appendChild(value);
-    // append option to select
-    selectEl.append(optionEl);
+    let optionText = document.createTextNode(myArray[index]);
+    // append text value to option element
+    optionEl.appendChild(optionText);
+    // append option to select element
+    selectEl.appendChild(optionEl);
   }
-
   // return select element
   return selectEl;
 }
@@ -44,7 +44,6 @@ function renderInputElement(element) {
   // add attributes to input element
   inputEl.setAttribute("id", element.id);
   inputEl.setAttribute("type", "number");
-
   // return input element
   return inputEl;
 }
@@ -112,11 +111,12 @@ clo checklist
 - [x] get gameForm
 - [x] get inputEl
 - [x] get divEl
+- [x] get selectEl and optionEl
 
 tasks
 initial rendering (mvp)
 - [x] get renderInputElement() to display in form
-- [] get renderSelectElement() to display in form
+- [x] get renderSelectElement() to display in form
 - [] get input and select to display before button
 
 local storage (mvp)
