@@ -20,16 +20,15 @@ function renderInputElement(element) {
   element = dataSchema;
   // create an input element
   let inputEl = document.createElement("input");
-  console.log("inputEl", inputEl);
-  // TODO add attributes to input element
+  // add attributes to input element
   inputEl.setAttribute("id", element.id);
-  inputEl.setAttribute("type", "text");
+  inputEl.setAttribute("type", "number");
 
   // return input element
   return inputEl;
 }
 
-// render div control element to contain a label and element tag for data scheme
+// render div control element to contain a label and element tag
 function renderDivElement(element) {
   /* parent element */
   // create a div element
