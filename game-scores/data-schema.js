@@ -1,7 +1,7 @@
 export default [
   {
-    id: "level",
-    label: "Level",
+    id: "maze",
+    label: "Maze",
     type: "select",
     value: ["Cemetery", "Corn Maze", "Forest", "Library", "Mansion", "Museum"],
   },
@@ -9,5 +9,6 @@ export default [
     id: "score",
     label: "High Score",
     type: "input",
+    value: "",
   },
 ];

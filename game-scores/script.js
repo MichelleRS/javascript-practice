@@ -7,13 +7,34 @@ const gameForm = document.getElementById("gameForm");
 
 /* events */
 // display form elements on page load
-window.addEventListener("load", (dataSchema) => {
+window.addEventListener("load", () => {
   // function call to display form elements
   displayFormElements(dataSchema);
 });
 
 /* render functions */
 // TODO render a select element
+function renderSelectElement(element) {
+  // create a select element
+  let selectEl = document.createElement("select");
+  // add attributes to select element
+  selectEl.setAttribute("id", element.id);
+  // loop through data values and add as option
+  console.log("element", element);
+  for (let option in element) {
+    // add options
+    let optionEl = document.createElement("option");
+    // add text value
+    let value = document.createTextNode(element.value);
+    // append text value to option
+    optionEl.appendChild(value);
+    // append option to select
+    selectEl.append(optionEl);
+  }
+
+  // return select element
+  return selectEl;
+}
 
 // render an input element
 function renderInputElement(element) {
@@ -51,9 +72,13 @@ function renderDivElement(element) {
   // initialize a variable for form control element
   let formCtrlEl = null;
 
-  switch (element.type) {
-    case "input":
+  switch (element.id) {
+    case "score":
       formCtrlEl = renderInputElement(element);
+      break;
+
+    case "maze":
+      formCtrlEl = renderSelectElement(element);
       break;
   }
 
@@ -70,11 +95,11 @@ function renderDivElement(element) {
 }
 
 /* display function */
-function displayFormElements(item) {
-  console.log("Hello!");
-  for (item of dataSchema) {
+function displayFormElements(schema) {
+  // work through each of the object elements in the data schema
+  for (let objectEl of schema) {
     // make a div element for the item
-    let divEl = renderDivElement(item);
+    let divEl = renderDivElement(objectEl);
     // add the div element to form
     gameForm.append(divEl);
   }
