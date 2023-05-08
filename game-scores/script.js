@@ -5,12 +5,45 @@ import dataSchema from "./data-schema.js";
 /* get DOM elements */
 const gameForm = document.getElementById("gameForm");
 
+/* state */
+let savedData = [];
+
+let storeScore;
+
 /* events */
 // display form elements on page load
 window.addEventListener("load", () => {
   // function call to display form elements
   displayFormElements(dataSchema);
 });
+
+// save
+gameForm.addEventListener("submit", (e) => {
+  console.log("hello");
+  // prevent form from submitting itself
+  e.preventDefault();
+
+  // get the score of the data being saved
+  let score = getElementValue("score");
+
+  // initialize a variable to find the index position of the score to save
+  let pos = findDataPos(score);
+
+  // if the index doesn't exist, get the position
+  if (isNaN(pos)) {
+    pos = savedData.length;
+  }
+
+  // store the data at position
+  storeData(pos);
+});
+
+/* function */
+function saveDataStore() {
+  let storeJson = JSON.stringify(savedData);
+
+  localStorage.setItem(storeScore, storeJson);
+}
 
 /* render functions */
 // render a select element
@@ -105,6 +138,49 @@ function displayFormElements(schema) {
   }
 }
 
+/* helper functions */
+// get element value
+function getElementValue(id) {
+  // get the id
+  let element = document.getElementById(id);
+  // return the value of the id
+  return element.value;
+}
+// get position
+function findDataPos(score) {
+  // loop through each item in the savedData array
+  for (let pos = 0; pos < savedData.length; pos++) {
+    // initialize variable for score
+    let savedScore = savedData[pos].score;
+    // check if stored item matches score being search
+    if (savedScore == score) {
+      // if score match found, return position in array
+      return pos;
+    }
+  }
+  // if score match not found, return NaN
+  return NaN;
+}
+
+// store data
+function storeData(pos) {
+  // create an empty data item
+  let newData = {};
+
+  // work through the data schema
+  for (let property of dataSchema) {
+    // get the data out of the HTML element
+    let itemData = getElementValue(property.id);
+    // create a property to store that data
+    newData[property.id] = itemData;
+  }
+  // put the new data in the saved data array
+  savedData[pos] = newData;
+
+  // save the data store
+  saveDataStore();
+}
+
 /* --- * --- * --- NOTES --- * --- * --- *
 
 clo checklist
@@ -122,6 +198,7 @@ initial rendering (mvp)
 
 local storage (mvp)
 - [] save to local storage on form submit
+  - [x] get input values stored in savedData
 
 stretch goal ideas
 - [] renderFormElement()
