@@ -6,7 +6,7 @@ Build a form that saves data for game scores. Data schema includes level name an
 
 ## Status
 
-- _MVP in progress_
+- MVP complete
 
 ## Fixes
 
