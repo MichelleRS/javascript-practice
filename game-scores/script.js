@@ -15,6 +15,11 @@ let storeScore;
 window.addEventListener("load", () => {
   // function call to display form elements
   displayFormElements(dataSchema);
+
+  // function call to load saved data
+  doStartData("ScoreStore");
+
+  console.log("savedData", savedData);
 });
 
 // save
@@ -43,6 +48,27 @@ function saveDataStore() {
   let storeJson = JSON.stringify(savedData);
 
   localStorage.setItem(storeScore, storeJson);
+}
+
+function doStartData(storeScoreToUse) {
+  storeScore = storeScoreToUse;
+
+  if (!loadSavedData()) {
+    alert("There is no data.");
+  }
+}
+
+function loadSavedData() {
+  let dataString = localStorage.getItem(storeScore);
+
+  if (dataString == null) {
+    savedData = [];
+    return false;
+  }
+
+  savedData = JSON.parse(dataString);
+
+  return true;
 }
 
 /* render functions */
