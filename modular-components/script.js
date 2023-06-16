@@ -3,41 +3,52 @@ import { renderComponentOne, renderComponentTwo } from "./render-utils.js";
 
 /* get DOM elements */
 const modularComponentSection = document.getElementById("modularComponent");
+const componentOneDiv = renderComponentOne();
+const componentTwoDiv = renderComponentTwo();
 
 /* events */
 window.addEventListener("load", async () => {
-  doModularComponents();
+  displayComponentOne();
+  handleComponentOneButton();
 });
 
 /* functions */
-function doModularComponents() {
-  // initialize variables to store components
-  let componentOne = renderComponentOne();
-  let componentTwo = renderComponentTwo();
-  // display component one elements
-  modularComponentSection.append(componentOne);
-  // listen for button clicks to toggle between component one and two
-  doListenForButtonClicks(componentOne, componentTwo);
+function displayComponentOne() {
+  // display component one
+  modularComponentSection.append(componentOneDiv);
+  console.log("I am displaying component one on page load!");
 }
 
-function doListenForButtonClicks(componentOne, componentTwo) {
+function handleComponentOneButton() {
   // get component one button
   let componentOneButton = document.getElementById("componentOneButton");
-  // listen for component one button click
+  // listen for click
   componentOneButton.addEventListener("click", async () => {
+    console.log("I clicked component one button");
     // remove component one elements from DOM
-    modularComponentSection.removeChild(componentOne);
+    modularComponentSection.removeChild(componentOneDiv);
+    console.log("I removed component one div");
     // append component two elements to modularComponentSection
-    modularComponentSection.append(componentTwo);
-    // get component two button
-    let componentTwoButton = document.getElementById("componentTwoButton");
-    console.log("componentTwoButton", componentTwoButton);
-    // listen for component two button click
-    componentTwoButton.addEventListener("click", async () => {
-      // remove component two elements from DOM
-      modularComponentSection.removeChild(componentTwo);
-      // append component one elements to modularComponentSection
-      modularComponentSection.append(componentOne);
-    });
+    modularComponentSection.append(componentTwoDiv);
+    console.log("I am displaying component two div");
+    // function call to handle component two button
+    handleComponentTwoButton();
+  });
+}
+
+function handleComponentTwoButton() {
+  // get component two button
+  let componentTwoButton = document.getElementById("componentTwoButton");
+  // listen for click
+  componentTwoButton.addEventListener("click", async () => {
+    console.log("I clicked component two button");
+    // remove component two elements from DOM
+    modularComponentSection.removeChild(componentTwoDiv);
+    console.log("I removed component two div");
+    // append component one elements to modularComponentSection
+    modularComponentSection.append(componentOneDiv);
+    console.log("I am displaying component one");
+    // function call to handle component one button
+    handleComponentOneButton();
   });
 }
