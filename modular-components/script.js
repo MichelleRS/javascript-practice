@@ -18,9 +18,6 @@ function handleComponents() {
   modularComponentSection.append(componentOneDiv, componentTwoDiv);
   // hide component two
   componentTwoDiv.classList.add("hidden");
-  console.log(
-    "I am displaying component one on page load! Component two is hidden"
-  );
 }
 
 function handleButtons() {
@@ -31,26 +28,20 @@ function handleButtons() {
 function handleComponentOneButton() {
   // get button
   const componentOneButton = document.getElementById("componentOneButton");
-  console.log("componentOneButton", componentOneButton);
   // listen for click
   componentOneButton.addEventListener("click", async () => {
-    console.log("I clicked component one button");
     // hide component one and display component two
     toggleComponents();
-    console.log("Hide component one and display component two");
   });
 }
 
 function handleComponentTwoButton() {
   // get button
   const componentTwoButton = document.getElementById("componentTwoButton");
-  console.log("componentTwoButton", componentTwoButton);
   // listen for click
   componentTwoButton.addEventListener("click", async () => {
-    console.log("I clicked component two button");
     // hide component two and display component one
     toggleComponents();
-    console.log("Hide component two and display component one");
   });
 }
 
