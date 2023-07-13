@@ -7,7 +7,15 @@ const saveButton = document.getElementById("save");
 // store contact data in an array
 let contactData = [];
 
+// declare variable to store the name in local storage
+let storeName;
+
 /* events */
+window.addEventListener("load", () => {
+  // function call to load contact data stored locally
+  loadContactData();
+});
+
 // button click: find
 findButton.addEventListener("click", () => {
   // get the name value
@@ -46,7 +54,29 @@ saveButton.addEventListener("click", () => {
   form.reset();
 });
 
-/* helper functions */
+/* functions */
+// save contact in local storage
+function saveContactData() {
+  // convert the contacts to a string
+  let storeJson = JSON.stringify(contactData);
+  // store the string in local storage
+  localStorage.setItem(storeName, storeJson);
+}
+
+// load contacts
+function loadContactData() {
+  // get the string from local storage
+  let dataString = localStorage.getItem(storeName);
+  // check for empty string
+  if (dataString === null) {
+    contactData = [];
+    return false;
+  }
+  // convert string back into an object
+  contactData = JSON.parse(dataString);
+  return true;
+}
+
 // use to get DOM elements
 function getElementValue(id) {
   // get the element being read
@@ -78,6 +108,8 @@ function storeContact(pos) {
 
   // store contact data in an array and set to contact
   contactData[pos] = contact;
+  // function call to save contact
+  saveContactData();
 }
 
 // find contact position
@@ -120,5 +152,5 @@ clo checklist
 [x] get contact data after refactor
 
 tasks
-[] clear display on save
+[x] clear display on save
 * --- --- --- --- - * - --- --- --- --- */
