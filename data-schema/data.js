@@ -3,14 +3,14 @@ export default [
   {
     id: "name",
     type: "input",
-    prompt: "Name:",
+    label: "Name",
     autocomplete: "name",
   },
   // address
   {
     id: "address",
     type: "textarea",
-    prompt: "Address",
+    label: "Address",
     autocomplete: "street-address",
     col: "40",
     rows: "5",
@@ -19,7 +19,7 @@ export default [
   {
     id: "phone",
     type: "input",
-    prompt: "Phone",
+    label: "Phone",
     autocomplete: "tel",
   },
 ];
