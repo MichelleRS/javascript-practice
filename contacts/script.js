@@ -1,3 +1,10 @@
+/* imports */
+import data from "./data.js";
+import { renderElement } from "./render-utils.js";
+
+/* get data */
+const dataSchema = data;
+
 /* get DOM elements */
 const form = document.getElementById("contactsForm");
 const findButton = document.getElementById("find");
@@ -12,6 +19,8 @@ let storeName;
 
 /* events */
 window.addEventListener("load", () => {
+  // function call to render form
+  fetchAndDisplayForm();
   // function call to load contact data stored locally
   loadContactData();
 });
@@ -55,6 +64,16 @@ saveButton.addEventListener("click", () => {
 });
 
 /* functions */
+async function fetchAndDisplayForm() {
+  // loop, render, append: for each item in data schema, create a containing element and append to form
+  for (let item of dataSchema) {
+    // make a containing element for item
+    let itemElement = renderElement(item);
+    // append containing element to form
+    form.appendChild(itemElement);
+  }
+}
+
 // save contact in local storage
 function saveContactData() {
   // convert the contacts to a string
