@@ -6,7 +6,7 @@ import { renderElement } from "./render-utils.js";
 const dataSchema = data;
 
 /* get DOM elements */
-const form = document.getElementById("contactsForm");
+const inputsContainer = document.getElementById("inputs");
 const findButton = document.getElementById("find");
 const saveButton = document.getElementById("save");
 
@@ -69,8 +69,8 @@ async function fetchAndDisplayForm() {
   for (let item of dataSchema) {
     // make a containing element for item
     let itemElement = renderElement(item);
-    // render element at start of form
-    form.insertBefore(itemElement, form.firstChild);
+    // append element to inputs container
+    inputsContainer.appendChild(itemElement);
   }
 }
 
