@@ -1,12 +1,20 @@
-# Contacts App: Using a Data Schema
+# Contacts App Form: Using a Data Schema
 
 ## MVP Goal
 
-Rebuild my [Contacts](../contacts/) app using a data schema.
+Rebuild my [Contacts App](../contacts/) form using a data schema.
 
 ## Status
 
-- MVP in progress
+- MVP complete.
+
+## Tasks
+
+- [x] Build HTML
+- [x] Define data items
+- [x] Render form elements
+  - [x] Render container for each data item in form
+  - [x] Render label and input for each data item in form
 
 ## Resources
 
