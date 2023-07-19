@@ -69,8 +69,8 @@ async function fetchAndDisplayForm() {
   for (let item of dataSchema) {
     // make a containing element for item
     let itemElement = renderElement(item);
-    // append containing element to form
-    form.appendChild(itemElement);
+    // render element at start of form
+    form.insertBefore(itemElement, form.firstChild);
   }
 }
 
