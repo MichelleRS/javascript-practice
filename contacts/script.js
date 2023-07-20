@@ -6,6 +6,7 @@ import { renderElement } from "./render-utils.js";
 const dataSchema = data;
 
 /* get DOM elements */
+const form = document.getElementById("contactsForm");
 const inputsContainer = document.getElementById("inputs");
 const findButton = document.getElementById("find");
 const saveButton = document.getElementById("save");
