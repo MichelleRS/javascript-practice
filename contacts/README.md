@@ -8,6 +8,7 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 
 - MVP complete
 - Contact data is saved in local storage
+- In progress: Improving "Find Contact"
 
 ## Fixes
 
@@ -29,6 +30,18 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 
    - Solution: In `storeContact()`, the property for storing an address was mistyped as `contact.contactAddress`. Changed to `contact.address`.
      - Source: Running the debugger in VS Code.
+
+4. After adding a `toLowerCase()` method to the for loop in `findContactPos()`, console is logging an error:
+
+   > TypeError: Cannot read properties of undefined (reading 'toLowerCase') at findContactPos
+
+   - Solution: The loop stops because the first item in contactData does not have a `name` key, so it is returning `undefined`. Adding a `continue` statement allows the loop to continue on to the next iteration.
+
+   ```
+   if (nameData === undefined) {
+      continue;
+    }
+   ```
 
 ## Resources
 
