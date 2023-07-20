@@ -133,17 +133,25 @@ function storeContact(pos) {
 
 // find contact position
 function findContactPos(name) {
+  // convert name to lowercase
+  name = name.toLowerCase();
   // loop through each element in the contactData array
   for (let pos = 0; pos < contactData.length; pos++) {
     // initialize variable for contact name
     let nameData = contactData[pos].name;
+    // skip undefined items in data array
+    if (nameData === undefined) {
+      continue;
+    }
+    // convert nameData to lowercase
+    nameData = nameData.toLowerCase();
     // check if stored element name matches name being searched
     if (nameData == name) {
       // if name match found, return position in array
       return pos;
     }
   }
-  // if name match not found, return Nan
+  // if name match not found, return NaN
   return NaN;
 }
 
