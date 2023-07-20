@@ -1,5 +1,12 @@
+/* imports */
+import data from "./data.js";
+import { renderElement } from "./render-utils.js";
+
+/* get data */
+const dataSchema = data;
+
 /* get DOM elements */
-const form = document.getElementById("contactsForm");
+const inputsContainer = document.getElementById("inputs");
 const findButton = document.getElementById("find");
 const saveButton = document.getElementById("save");
 
@@ -12,6 +19,8 @@ let storeName;
 
 /* events */
 window.addEventListener("load", () => {
+  // function call to render form
+  fetchAndDisplayForm();
   // function call to load contact data stored locally
   loadContactData();
 });
@@ -55,6 +64,16 @@ saveButton.addEventListener("click", () => {
 });
 
 /* functions */
+async function fetchAndDisplayForm() {
+  // loop, render, append: for each item in data schema, create a containing element and append to form
+  for (let item of dataSchema) {
+    // make a containing element for item
+    let itemElement = renderElement(item);
+    // append element to inputs container
+    inputsContainer.appendChild(itemElement);
+  }
+}
+
 // save contact in local storage
 function saveContactData() {
   // convert the contacts to a string
@@ -114,17 +133,25 @@ function storeContact(pos) {
 
 // find contact position
 function findContactPos(name) {
+  // convert name to lowercase
+  name = name.toLowerCase();
   // loop through each element in the contactData array
   for (let pos = 0; pos < contactData.length; pos++) {
     // initialize variable for contact name
     let nameData = contactData[pos].name;
+    // skip undefined items in data array
+    if (nameData === undefined) {
+      continue;
+    }
+    // convert nameData to lowercase
+    nameData = nameData.toLowerCase();
     // check if stored element name matches name being searched
     if (nameData == name) {
       // if name match found, return position in array
       return pos;
     }
   }
-  // if name match not found, return Nan
+  // if name match not found, return NaN
   return NaN;
 }
 
