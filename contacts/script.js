@@ -15,8 +15,13 @@ const saveButton = document.getElementById("save");
 // store contact data in an array
 let contactData = [];
 
+/* more global variables */
 // declare variable to store the name in local storage
 let storeName;
+// hold the string for finding contact
+let findString = "";
+// hold the current find position
+let findPos = 0;
 
 /* events */
 window.addEventListener("load", () => {
@@ -24,15 +29,14 @@ window.addEventListener("load", () => {
   fetchAndDisplayForm();
   // function call to load contact data stored locally
   loadContactData();
+  // function call to reset find
+  resetFind();
 });
 
 // button click: find
 findButton.addEventListener("click", () => {
-  // get the name value
-  let name = getElementValue("name");
-
-  // find the position of the name
-  let pos = findContactPos(name);
+  // function call to search for a contact
+  let pos = findStartsWithContactPos(findString, findPos);
 
   // if contact does not exist, show alert that contact is not found
   if (isNaN(pos)) {
@@ -40,7 +44,10 @@ findButton.addEventListener("click", () => {
   }
   // if name matches, display values in form
   else {
+    // display the contact found
     displayContact(pos);
+    // store the find position
+    findPos = pos + 1;
   }
 });
 
@@ -154,6 +161,40 @@ function findContactPos(name) {
   }
   // if name match not found, return NaN
   return NaN;
+}
+
+function findStartsWithContactPos(name, startPos) {
+  // convert name to lowercase
+  name = name.toLowerCase();
+  // start the search at the startPos
+  for (let pos = startPos; pos < contactData.length; pos = pos + 1) {
+    // get name out of the search contact
+    let storedName = contactData[pos].name;
+    if (storedName === undefined) {
+      continue;
+    }
+    // convert name to lowercase
+    let lowerCaseStoredName = storedName.toLowerCase();
+    // check for a match
+    if (lowerCaseStoredName.startsWith(name)) {
+      return pos;
+    }
+  }
+  return NaN;
+}
+
+function resetFind() {
+  // get name input element from DOM
+  const nameInput = document.getElementById("name");
+  // listen for changes to name input
+  nameInput.addEventListener("input", () => {
+    // initialize variable for name input value
+    let nameString = getElementValue("name");
+    // remove leading and trailing spaces and set to findString
+    findString = nameString.trim();
+    // set find position to start of array
+    findPos = 0;
+  });
 }
 
 // display contact data as values in form
