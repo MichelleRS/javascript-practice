@@ -7,8 +7,9 @@ Build a contact form with inputs for name, address, and phone number. Include bu
 ## Status
 
 - MVP complete
-- Contact data is saved in local storage
-- In progress: Improving "Find Contact"
+- Added features:
+  - Contact data is saved in local storage
+  - Find contacts using first letter or part of name
 
 ## Fixes
 
