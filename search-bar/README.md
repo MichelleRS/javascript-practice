@@ -6,7 +6,7 @@ Render data from an API that is searchable in app.
 
 ## Status
 
-- In progress
+- MVP complete
 
 ## Resources
 
