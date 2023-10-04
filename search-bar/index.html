@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <header>
+        <h1>&#128269; Search Bar</h1>
+      </header>
+      <section class="search-wrapper">
+        <label for="search">Search names:</label>
+        <input type="search" id="search" data-search-input />
+      </section>
+      <ul class="cards" data-user-cards-container>
+        <!-- list of cards -->
+      </ul>
+    </div>
+    <template data-card-template>
+      <li class="card">
+        <h2 class="name" data-name></h2>
+        <p class="email" data-email></p>
+      </li>
+    </template>
+  </body>
+</html>
