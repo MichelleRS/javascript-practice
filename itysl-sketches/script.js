@@ -18,8 +18,35 @@ window.addEventListener("load", async () => {
   await fetchAndDisplaySketches();
 });
 
+// TODO button click events: show sketches with Tim, show all sketches
 buttonShowTim.addEventListener("click", async () => {
-  // TODO if includesTim is false, hide sketch card element
+  // if includesTim is false, hide sketch card element
+  for (let sketch of sketches) {
+    // season 1 list
+    if (sketch.season === 1 && !sketch.includesTim) {
+      // get card element
+      let cardEl = document.getElementById(sketch.id);
+      console.log("cardEl", cardEl);
+      // hide card element
+      cardEl.classList.add("hide");
+    }
+    // season 2 list
+    if (sketch.season === 2 && !sketch.includesTim) {
+      // get card element
+      let cardEl = document.getElementById(sketch.id);
+      console.log("cardEl", cardEl);
+      // hide card element
+      cardEl.classList.add("hide");
+    }
+    // season 3 list
+    if (sketch.season === 3 && !sketch.includesTim) {
+      // get card element
+      let cardEl = document.getElementById(sketch.id);
+      console.log("cardEl", cardEl);
+      // hide card element
+      cardEl.classList.add("hide");
+    }
+  }
 });
 
 // TODO show all sketches
