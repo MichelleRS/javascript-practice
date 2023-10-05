@@ -7,14 +7,9 @@ Render a list of all sketches from _I Think You Should Leave_.
 ## Status
 
 - MVP complete
-- Button click events in progress
-
-## Task Planning
-
-- [x] Build `sketch-data.js` file that includes the following for each sketch:
-  - id, season, episode, title, includesTim
-- [x] In `render-utils.js`, make a card for each sketch using data from `sketch-data.js`
-- [x] Loop through data in `script.js` to display data as rendered elements on page load
+- Updates:
+  - Season 3: add to data and display
+  - User can filter by sketches with Tim or show all sketches
 
 ## Fixes
 

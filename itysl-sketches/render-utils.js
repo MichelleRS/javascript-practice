@@ -2,6 +2,9 @@ export function renderCard(sketch) {
   /* parent element */
   // create li container
   const li = document.createElement("li");
+  // add id and class attribute
+  li.id = sketch.id;
+  li.classList.add("card");
 
   /* child elements */
   // create h3 element for episode title

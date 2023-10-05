@@ -6,6 +6,7 @@ export default [
     episode: 1,
     title: "Both Ways",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 2,
@@ -13,6 +14,7 @@ export default [
     episode: 1,
     title: "Has This Ever Happened to You?",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 3,
@@ -20,6 +22,7 @@ export default [
     episode: 1,
     title: "Baby of the Year",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 4,
@@ -27,6 +30,7 @@ export default [
     episode: 1,
     title: "Instagram",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 5,
@@ -34,6 +38,7 @@ export default [
     episode: 1,
     title: "Gift Receipt",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 6,
@@ -41,6 +46,7 @@ export default [
     episode: 2,
     title: "Biker Guy",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 7,
@@ -48,6 +54,7 @@ export default [
     episode: 2,
     title: "River Mountain High, Part 1",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 8,
@@ -55,6 +62,7 @@ export default [
     episode: 2,
     title: "Wilson's Toupees",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 9,
@@ -62,6 +70,7 @@ export default [
     episode: 2,
     title: "Pink Bag",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 10,
@@ -69,6 +78,7 @@ export default [
     episode: 2,
     title: "River Mountain High, Part 2",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 11,
@@ -76,6 +86,7 @@ export default [
     episode: 2,
     title: "The Man",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 12,
@@ -83,6 +94,7 @@ export default [
     episode: 3,
     title: "Which Hand",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 13,
@@ -90,6 +102,7 @@ export default [
     episode: 3,
     title: "Focus Group",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 14,
@@ -97,6 +110,7 @@ export default [
     episode: 3,
     title: "Laser Spine Specialists",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 15,
@@ -104,6 +118,7 @@ export default [
     episode: 3,
     title: "New Joe",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 16,
@@ -111,6 +126,7 @@ export default [
     episode: 3,
     title: "Game Night",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 17,
@@ -118,6 +134,7 @@ export default [
     episode: 4,
     title: "Lifetime Achievement Award",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 18,
@@ -125,6 +142,7 @@ export default [
     episode: 4,
     title: "Christmas Carol",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 19,
@@ -132,6 +150,7 @@ export default [
     episode: 4,
     title: "Nachos",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 20,
@@ -139,6 +158,7 @@ export default [
     episode: 4,
     title: "Honk if You're Horny",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 21,
@@ -146,6 +166,7 @@ export default [
     episode: 5,
     title: "Brooks Brothers",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 22,
@@ -153,6 +174,7 @@ export default [
     episode: 5,
     title: "Choking",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 23,
@@ -160,6 +182,7 @@ export default [
     episode: 5,
     title: "New Printer",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 24,
@@ -167,6 +190,7 @@ export default [
     episode: 5,
     title: "The Day Robert Palin's Murdered Me",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 25,
@@ -174,6 +198,7 @@ export default [
     episode: 5,
     title: "The Babysitter",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 26,
@@ -181,6 +206,7 @@ export default [
     episode: 6,
     title: "Fenton's Stable and Horse Ranch",
     includesTim: false,
+    categories: ["Season 1"],
   },
   {
     id: 27,
@@ -188,6 +214,7 @@ export default [
     episode: 6,
     title: "Chunky",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 28,
@@ -195,6 +222,7 @@ export default [
     episode: 6,
     title: "Bozo Part 1",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 29,
@@ -202,6 +230,7 @@ export default [
     episode: 6,
     title: "Baby Shower",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 30,
@@ -209,6 +238,7 @@ export default [
     episode: 6,
     title: "Bozo Part 2",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   {
     id: 31,
@@ -216,6 +246,7 @@ export default [
     episode: 6,
     title: "Party House",
     includesTim: true,
+    categories: ["Season 1", "Includes Tim"],
   },
   // season 2
   {
@@ -224,6 +255,7 @@ export default [
     episode: 1,
     title: "Lunch Meeting",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 33,
@@ -231,6 +263,7 @@ export default [
     episode: 1,
     title: "Coffin Flop",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 34,
@@ -238,6 +271,7 @@ export default [
     episode: 1,
     title: "Prank Show",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 35,
@@ -245,6 +279,7 @@ export default [
     episode: 1,
     title: "Little Buff Boys",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 36,
@@ -252,6 +287,7 @@ export default [
     episode: 1,
     title: "Ghost Tour",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 37,
@@ -259,6 +295,7 @@ export default [
     episode: 2,
     title: "The Capital Room",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 38,
@@ -266,6 +303,7 @@ export default [
     episode: 2,
     title: "Dan Flashes",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 39,
@@ -273,6 +311,7 @@ export default [
     episode: 2,
     title: "Diner Wink",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 40,
@@ -280,6 +319,7 @@ export default [
     episode: 2,
     title: "Shops at the Creek",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 41,
@@ -287,6 +327,7 @@ export default [
     episode: 2,
     title: "Baby Cries",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 42,
@@ -294,6 +335,7 @@ export default [
     episode: 3,
     title: "Graham's Lorelei Lounge",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 43,
@@ -301,6 +343,7 @@ export default [
     episode: 3,
     title: "Detective Crashmore Trailer",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 44,
@@ -308,6 +351,7 @@ export default [
     episode: 3,
     title: "HD Vac Commercial",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 45,
@@ -315,6 +359,7 @@ export default [
     episode: 3,
     title: "Detective Crashmore Press Junket",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 46,
@@ -322,6 +367,7 @@ export default [
     episode: 3,
     title: "Qualstarr Trial",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 47,
@@ -329,6 +375,7 @@ export default [
     episode: 4,
     title: "Wife Joke",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 48,
@@ -336,6 +383,7 @@ export default [
     episode: 4,
     title: "Friends Weekend",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 49,
@@ -343,6 +391,7 @@ export default [
     episode: 4,
     title: "Calico Cut Pants",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 50,
@@ -350,6 +399,7 @@ export default [
     episode: 5,
     title: "Parking Lot",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 51,
@@ -357,6 +407,7 @@ export default [
     episode: 5,
     title: "Del Frisco's Double Eagle",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 52,
@@ -364,6 +415,7 @@ export default [
     episode: 5,
     title: "Joanie's Birthday",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 53,
@@ -371,6 +423,7 @@ export default [
     episode: 5,
     title: "Dave Campor",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 54,
@@ -378,6 +431,7 @@ export default [
     episode: 5,
     title: "Mars Restaurant",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 55,
@@ -385,6 +439,7 @@ export default [
     episode: 6,
     title: "Dave Suit",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 56,
@@ -392,6 +447,7 @@ export default [
     episode: 6,
     title: "Driver's Ed",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 57,
@@ -399,6 +455,7 @@ export default [
     episode: 6,
     title: "Tammy Craps",
     includesTim: false,
+    categories: ["Season 2"],
   },
   {
     id: 58,
@@ -406,6 +463,7 @@ export default [
     episode: 6,
     title: "Big Wave",
     includesTim: true,
+    categories: ["Season 2", "Includes Tim"],
   },
   {
     id: 59,
@@ -413,5 +471,223 @@ export default [
     episode: 6,
     title: "Claire's",
     includesTim: false,
+    categories: ["Season 2"],
+  },
+  // season 3
+  {
+    id: 60,
+    season: 3,
+    episode: 1,
+    title: "Barley Tonight",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 61,
+    season: 3,
+    episode: 1,
+    title: "Mortal Enemies",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 62,
+    season: 3,
+    episode: 1,
+    title: "Summer Loving",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 63,
+    season: 3,
+    episode: 1,
+    title: "Street Sets",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 64,
+    season: 3,
+    episode: 1,
+    title: "The Driving Crooner",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 65,
+    season: 3,
+    episode: 2,
+    title: "Supermarket Swap VR Edition",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 66,
+    season: 3,
+    episode: 2,
+    title: "Darmine Doggy Door",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 67,
+    season: 3,
+    episode: 2,
+    title: "You Can't Park on the Sidewalk",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 68,
+    season: 3,
+    episode: 2,
+    title: "Nude Egg",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 69,
+    season: 3,
+    episode: 2,
+    title: "Sitcom Taping",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 70,
+    season: 3,
+    episode: 3,
+    title: "Richard Brecky as Jellybean",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 71,
+    season: 3,
+    episode: 3,
+    title: "Dog Hair",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 72,
+    season: 3,
+    episode: 3,
+    title: "Club Haunted House",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 73,
+    season: 3,
+    episode: 3,
+    title: "Pay it Forward",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 74,
+    season: 3,
+    episode: 3,
+    title: "Rat Mom",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 75,
+    season: 3,
+    episode: 4,
+    title: "Friend Group",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 76,
+    season: 3,
+    episode: 4,
+    title: "Pacific Proposal Park",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 77,
+    season: 3,
+    episode: 4,
+    title: "Gelutol",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 78,
+    season: 3,
+    episode: 4,
+    title: "Summer Loving Part 2",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 79,
+    season: 3,
+    episode: 4,
+    title: "Shirt Brothers",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 80,
+    season: 3,
+    episode: 5,
+    title: "Volcano",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 81,
+    season: 3,
+    episode: 5,
+    title: "Photo Booth",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 82,
+    season: 3,
+    episode: 5,
+    title: "House Party",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 83,
+    season: 3,
+    episode: 6,
+    title: "Banana Breath",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 84,
+    season: 3,
+    episode: 6,
+    title: "Photo Wall of Metal: Metal Motto Search",
+    includesTim: false,
+    categories: ["Season 3"],
+  },
+  {
+    id: 85,
+    season: 3,
+    episode: 6,
+    title: "Don Bondarley, King of Dirty Songs",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
+  },
+  {
+    id: 86,
+    season: 3,
+    episode: 6,
+    title: "Tasty Time Vids",
+    includesTim: true,
+    categories: ["Season 3", "Includes Tim"],
   },
 ];
