@@ -57,4 +57,28 @@ class Ball {
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
+
+  // method for moving ball
+  update() {
+    /* check if ball reaches edge of canvas */
+    // if x coordinate is greater than width of canvas (ball going off right edge)
+    if (this.x + this.size >= width) {
+      this.velX = -this.velX;
+    }
+    // if x coordinate is smaller than 0 (ball going off left edge)
+    if (this.x - this.size <= 0) {
+      this.velX = -this.velX;
+    }
+    // if y coordinate is grater than height of canvas (ball going off bottom edge)
+    if (this.y + this.size >= height) {
+      this.velY = -this.velY;
+    }
+    // if y coordinate is smaller than 0 (ball going off top edge)
+    if (this.y - this.size <= 0) {
+      this.velY = -this.velY;
+    }
+    // add velocity values to coordinates
+    this.x += this.velX;
+    this.y += this.velY;
+  }
 }
