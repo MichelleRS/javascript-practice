@@ -11,5 +11,5 @@ body {
   /* removes scroll bar */
   overflow: hidden;
   height: inherit;
-  background-color: midnightblue;
+  background-color: rgb(0, 0, 0);
 }

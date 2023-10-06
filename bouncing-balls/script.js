@@ -82,3 +82,38 @@ class Ball {
     this.y += this.velY;
   }
 }
+
+// storage for balls
+const balls = [];
+
+// create an instance for 25 random balls
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    // to avoid drawing errors, ball position drawn at least one ball width away from the edge of the canvas
+    random(0 + size, width - size),
+    random(0 + size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size
+  );
+  // add ball to balls array
+  balls.push(ball);
+}
+
+function loop() {
+  // slight transparency creates a trail behind moving ball
+  ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+  // prevents long snakes
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+  }
+  // calling function repeatedly creates smooth animation
+  requestAnimationFrame(loop);
+}
+
+loop();
