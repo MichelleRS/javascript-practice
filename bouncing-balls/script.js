@@ -81,6 +81,23 @@ class Ball {
     this.x += this.velX;
     this.y += this.velY;
   }
+
+  // method for collision detection
+  collisionDetect() {
+    for (const ball of balls) {
+      // if current ball is not itself, get values
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // if the balls overlap, change ball color
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
 }
 
 // storage for balls
@@ -111,6 +128,7 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect();
   }
   // calling function repeatedly creates smooth animation
   requestAnimationFrame(loop);
