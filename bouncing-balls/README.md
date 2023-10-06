@@ -6,7 +6,7 @@ Bounce balls around the screen and change their color on collision. [_Finished e
 
 ## Status
 
-- In progress
+- MVP complete
 
 ## Resource
 
