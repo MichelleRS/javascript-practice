@@ -6,6 +6,33 @@ const context = canvas.getContext("2d");
 // set width and height equal to the browser viewport
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
+// define colors
+colors = [
+  // red
+  "#ff5050",
+  "#ff0066",
+  "#ff3300",
+  //orange
+  "#ff9900",
+  "#ff9966",
+  "#ff9933",
+  // yellow
+  "#ffcc66",
+  "#ffff99",
+  "#ffcc00",
+  // green
+  "#006666",
+  "#669999",
+  "#009999",
+  // blue
+  "#003366",
+  "#336699",
+  "#3366cc",
+  // purple
+  "#6600ff",
+  "#9900cc",
+  "#ccccff",
+];
 
 window.addEventListener("load", () => {
   doDrawArt();
@@ -18,6 +45,11 @@ function getRandomInt(min, max) {
   let range = max - min + 1;
   let result = Math.floor(Math.random() * range + min);
   return result;
+}
+
+// helper function: get random color
+function getRandomColor() {
+  return colors[getRandomInt(0, colors.length)];
 }
 
 // helper function: rules for drawing a circle
@@ -36,7 +68,7 @@ function drawRandomCircle() {
   let radius = getRandomInt(5, 100);
   let x = getRandomInt(radius, width - radius);
   let y = getRandomInt(radius, height - radius);
-  let color = "green";
+  let color = getRandomColor();
   drawCircle(x, y, radius, color);
 }
 
