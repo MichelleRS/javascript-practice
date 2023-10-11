@@ -3,6 +3,55 @@ window.addEventListener("load", () => {
   doLoadImage();
 });
 
+/* classes */
+
+// define all sprites
+class Sprite {
+  constructor(game, url) {
+    // store the game the sprite is part of
+    this.game = game;
+    // store path to sprite image
+    this.url = url;
+  }
+  // reset sprite for new game
+  reset() {
+    // set x draw coordinate to 0
+    this.x = 0;
+    // set y draw coordinate to 0
+    this.y = 0;
+  }
+  // manage multiple image loads with a promise to perform image initialization
+  getInitializePromise() {
+    return new Promise((resolve, reject) => {
+      // initialize a new image object
+      this.image = new Image();
+      // set src property to location of image
+      this.image.src = this.url;
+      // on load
+      this.image.onload = () => {
+        // reset sprite when image loads
+        this.reset();
+        // resolve load promise
+        resolve(true);
+      };
+      // connect the onerror event to the broken parameter
+      this.image.onerror = () => reject(new Error("Could not load" + this.url));
+    });
+  }
+  // update sprite
+  update() {}
+  // draw sprite
+  draw() {
+    this.game.context.drawImage(this.image, this.x, this.y);
+  }
+}
+
+// TODO define player sprite
+
+// TODO define item sprite
+
+// TODO define enemy sprite
+
 /* functions */
 
 // manage multiple image loads
