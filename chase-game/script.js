@@ -1,6 +1,7 @@
 /* events */
 window.addEventListener("load", () => {
-  doLoadImage();
+  //   doLoadImage();
+  doGame();
 });
 
 /* classes */
@@ -76,7 +77,8 @@ class ChaseGame {
   // create and initialize the game object
   constructor() {
     // get a reference to the game canvas
-    this.canvas = document.querySelector("canvas");
+    // solution note: querySelector method was not getting a reference to canvas
+    this.canvas = document.getElementById("canvas");
     // get object for drawing area
     this.context = canvas.getContext("2d");
     // set canvas width and height
@@ -102,7 +104,7 @@ class ChaseGame {
   }
   // method to start the game
   gameStart() {
-    // reset game
+    // reset the game
     this.gameReset();
     // start game animation
     window.requestAnimationFrame(this.gameUpdate.bind(this));
@@ -179,4 +181,13 @@ async function doLoadImage() {
   else {
     alert("Graphics not supported");
   }
+}
+
+async function doGame() {
+  // initialize a new game
+  let activeGame = new ChaseGame();
+  // get game sprites
+  await activeGame.gameInitialize();
+  // start the new game
+  activeGame.gameStart();
 }
