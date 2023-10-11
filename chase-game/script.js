@@ -46,7 +46,29 @@ class Sprite {
     this.game.context.drawImage(this.image, this.x, this.y);
   }
 }
-// TODO define player sprite class
+// define player sprite class
+class Player extends Sprite {
+  constructor(game, url) {
+    super(game, url);
+    // set width and height of player
+    this.width = game.canvasWidth / 15;
+    this.height = game.canvasWidth / 15;
+  }
+  // update player
+  update() {
+    super.update();
+  }
+  // draw player
+  draw() {
+    this.game.context.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.width,
+      this.height
+    );
+  }
+}
 
 // TODO define item sprite class
 
@@ -86,10 +108,12 @@ class ChaseGame {
     this.canvasHeight = canvas.height;
     // initialize an empty sprite array
     this.sprites = [];
-    // initialize a background sprite
+    // initialize a background sprite and add to sprites array
     this.background = new Sprite(this, "./assets/background.png");
-    // add background sprite to sprites array
     this.sprites[this.sprites.length] = this.background;
+    // initialize a player sprite and add to sprites array
+    this.player = new Player(this, "./assets/cheese.png");
+    this.sprites[this.sprites.length] = this.player;
   }
   // method to load all sprite images
   async gameInitialize() {
