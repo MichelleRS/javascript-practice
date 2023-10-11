@@ -45,12 +45,69 @@ class Sprite {
     this.game.context.drawImage(this.image, this.x, this.y);
   }
 }
+// TODO define player sprite class
 
-// TODO define player sprite
+// TODO define item sprite class
 
-// TODO define item sprite
+// TODO define enemy sprite class
 
-// TODO define enemy sprite
+// define game object class
+class ChaseGame {
+  // method to update game
+  gameUpdate(timeStamp) {
+    // loop through sprites to update all
+    for (let sprite of this.sprites) {
+      sprite.update();
+    }
+    // loop through sprites to draw all
+    for (let sprite of this.sprites) {
+      sprite.draw();
+    }
+    // request the next update
+    window.requestAnimationFrame(this.gameUpdate.bind(this));
+  }
+  // method to reset game
+  gameReset() {
+    // loop through sprites to reset all
+    for (let sprite of this.sprites) {
+      sprite.reset();
+    }
+  }
+  // create and initialize the game object
+  constructor() {
+    // get a reference to the game canvas
+    this.canvas = document.querySelector("canvas");
+    // get object for drawing area
+    this.context = canvas.getContext("2d");
+    // set canvas width and height
+    this.canvasWidth = canvas.width;
+    this.canvasHeight = canvas.height;
+    // initialize an empty sprite array
+    this.sprites = [];
+    // initialize a background sprite
+    this.background = new Sprite(this, "./assets/background.png");
+    // add background sprite to sprites array
+    this.sprites[this.sprites.length] = this.background;
+  }
+  // method to load all sprite images
+  async gameInitialize() {
+    // initialize an empty promises array
+    let promiseList = [];
+    // loop through sprites in the game
+    for (let sprite of this.sprites) {
+      promiseList[promiseList.length] = sprite.getInitializePromise();
+    }
+    // wait for sprites to finish loading
+    await Promise.all(promiseList);
+  }
+  // method to start the game
+  gameStart() {
+    // reset game
+    this.gameReset();
+    // start game animation
+    window.requestAnimationFrame(this.gameUpdate.bind(this));
+  }
+}
 
 /* functions */
 
