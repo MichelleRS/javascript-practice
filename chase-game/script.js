@@ -72,7 +72,8 @@ class Item extends Sprite {
   update() {
     // if item sprite collides with player sprite
     if (this.collidesWith(this.game.player)) {
-      console.log("collides!");
+      // increase game score by 10
+      this.game.score = this.game.score + 10;
       // remove item sprite from display
       this.reset();
     }
@@ -201,6 +202,13 @@ class ChaseGame {
     for (let sprite of this.sprites) {
       sprite.draw();
     }
+    /* score board */
+    // set font and size
+    this.context.font = "2.5rem Courier New";
+    // use fillStyle method to set the color of the text
+    this.context.fillStyle = "black";
+    // use fillText method to draw the score on canvas at chosen coordinates
+    this.context.fillText("Score: " + this.score, 10, 40);
     // request the next update
     window.requestAnimationFrame(this.gameUpdate.bind(this));
   }
@@ -221,6 +229,8 @@ class ChaseGame {
     // set canvas width and height
     this.canvasWidth = canvas.width;
     this.canvasHeight = canvas.height;
+    // set game score to 0
+    this.score = 0;
     // initialize an empty sprite array
     this.sprites = [];
     // initialize a background sprite and add to sprites array
