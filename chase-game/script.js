@@ -53,10 +53,79 @@ class Player extends Sprite {
     // set width and height of player
     this.width = game.canvasWidth / 15;
     this.height = game.canvasWidth / 15;
+    // set overall speed
+    this.speed = 5;
+    // set current x speed
+    this.xSpeed = 0;
+    // set current y speed
+    this.ySpeed = 0;
+    // listen for key down messages to move player on update
+    window.addEventListener("keydown", (e) => {
+      switch (e.code) {
+        case "ArrowLeft":
+          // decrease x to move to the left
+          this.xSpeed = -this.speed;
+          break;
+        case "ArrowRight":
+          // increase x to move to the right
+          this.xSpeed = this.speed;
+          break;
+        case "ArrowUp":
+          // decrease y to move up
+          this.ySpeed = -this.speed;
+          break;
+        case "ArrowDown":
+          // increase y to move down
+          this.ySpeed = this.speed;
+          break;
+      }
+    });
+    // listen for key up messages to stop player from moving on update
+    window.addEventListener("keyup", (e) => {
+      switch (e.code) {
+        case "ArrowLeft":
+          // set x speed to 0
+          this.xSpeed = 0;
+          break;
+        case "ArrowRight":
+          // set x speed to 0
+          this.xSpeed = 0;
+          break;
+        case "ArrowUp":
+          // set y speed to 0
+          this.ySpeed = 0;
+          break;
+        case "ArrowDown":
+          // set y speed to 0
+          this.ySpeed = 0;
+          break;
+      }
+    });
   }
-  // update player
+  // on reset, place player sprite in middle of canvas
+  reset() {
+    this.x = (this.game.canvasWidth - this.width) / 2.0;
+    this.y = (this.game.canvasHeight - this.height) / 2.0;
+  }
+  // update player to move
   update() {
     super.update();
+    // update coordinate value of x
+    this.x = this.x + this.xSpeed;
+    // update coordinate value of y
+    this.y = this.y + this.ySpeed;
+    // set any x coordinate less than 0 to 0
+    if (this.x < 0) this.x = 0;
+    // prevent player from moving off screen (left/right)
+    if (this.x + this.width > this.game.canvasWidth) {
+      this.x = this.game.canvasWidth - this.width;
+    }
+    // set any y coordinate less than 0 to 0
+    if (this.y < 0) this.y = 0;
+    // prevent player from moving off screen (top/bottom)
+    if (this.y + this.height > this.game.canvasHeight) {
+      this.y = this.game.canvasHeight - this.height;
+    }
   }
   // draw player
   draw() {
