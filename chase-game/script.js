@@ -39,6 +39,14 @@ class Sprite {
       this.image.onerror = () => reject(new Error("Could not load" + this.url));
     });
   }
+  // method to check if sprites collide
+  collidesWith(sprite) {
+    if (this.x + this.width < sprite.x) return false;
+    if (this.y + this.height < sprite.y) return false;
+    if (this.x > sprite.x + sprite.width) return false;
+    if (this.y > sprite.y + sprite.width) return false;
+    return true;
+  }
   // update sprite
   update() {}
   // draw sprite
@@ -59,6 +67,15 @@ class Item extends Sprite {
     let range = max - min + 1;
     let result = Math.floor(Math.random() * range) + min;
     return result;
+  }
+  // update
+  update() {
+    // if item sprite collides with player sprite
+    if (this.collidesWith(this.game.player)) {
+      console.log("collides!");
+      // remove item sprite from display
+      this.reset();
+    }
   }
   // on reset, display at random coordinates
   reset() {
