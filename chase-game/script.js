@@ -94,7 +94,28 @@ class Item extends Sprite {
     );
   }
 }
-
+// define enemy sprite class
+class Enemy extends Sprite {
+  constructor(game, url) {
+    super(game, url);
+    // set width and height of enemy
+    this.width = game.canvasWidth / 12;
+    this.height = game.canvasWidth / 12;
+    // TODO acceleration and friction
+  }
+  // TODO reset enemy
+  // TODO update enemy movement
+  // draw enemy
+  draw() {
+    this.game.context.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.width,
+      this.height
+    );
+  }
+}
 // define player sprite class
 class Player extends Sprite {
   constructor(game, url) {
@@ -188,8 +209,6 @@ class Player extends Sprite {
   }
 }
 
-// TODO define enemy sprite class
-
 // define game object class
 class ChaseGame {
   // method to update game
@@ -243,6 +262,9 @@ class ChaseGame {
         "./assets/cracker.png"
       );
     }
+    // initialize an enemy sprite and add to sprites array
+    this.enemy = new Enemy(this, "./assets/tomato.png");
+    this.sprites[this.sprites.length] = this.enemy;
     // initialize a player sprite and add to sprites array
     this.player = new Player(this, "./assets/cheese.png");
     this.sprites[this.sprites.length] = this.player;
