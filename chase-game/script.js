@@ -209,9 +209,13 @@ class ChaseGame {
     // initialize a background sprite and add to sprites array
     this.background = new Sprite(this, "./assets/background.png");
     this.sprites[this.sprites.length] = this.background;
-    // initialize an item sprite and add to sprites array
-    this.item = new Item(this, "./assets/cracker.png");
-    this.sprites[this.sprites.length] = this.item;
+    // initialize item sprites and add 30 to sprites array
+    for (let i = 0; i < 30; i++) {
+      this.sprites[this.sprites.length] = new Item(
+        this,
+        "./assets/cracker.png"
+      );
+    }
     // initialize a player sprite and add to sprites array
     this.player = new Player(this, "./assets/cheese.png");
     this.sprites[this.sprites.length] = this.player;
