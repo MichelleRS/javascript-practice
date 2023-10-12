@@ -46,6 +46,37 @@ class Sprite {
     this.game.context.drawImage(this.image, this.x, this.y);
   }
 }
+// define item sprite class
+class Item extends Sprite {
+  constructor(game, url) {
+    super(game, url);
+    // set width and height of item
+    this.width = game.canvasWidth / 20;
+    this.height = game.canvasWidth / 20;
+  }
+  // helper function: get a random number
+  getRandomInt(min, max) {
+    let range = max - min + 1;
+    let result = Math.floor(Math.random() * range) + min;
+    return result;
+  }
+  // on reset, display at random coordinates
+  reset() {
+    this.x = this.getRandomInt(0, this.game.canvasWidth - this.width);
+    this.y = this.getRandomInt(0, this.game.canvasHeight - this.height);
+  }
+  // draw item
+  draw() {
+    this.game.context.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.width,
+      this.height
+    );
+  }
+}
+
 // define player sprite class
 class Player extends Sprite {
   constructor(game, url) {
@@ -139,8 +170,6 @@ class Player extends Sprite {
   }
 }
 
-// TODO define item sprite class
-
 // TODO define enemy sprite class
 
 // define game object class
@@ -180,6 +209,9 @@ class ChaseGame {
     // initialize a background sprite and add to sprites array
     this.background = new Sprite(this, "./assets/background.png");
     this.sprites[this.sprites.length] = this.background;
+    // initialize an item sprite and add to sprites array
+    this.item = new Item(this, "./assets/cracker.png");
+    this.sprites[this.sprites.length] = this.item;
     // initialize a player sprite and add to sprites array
     this.player = new Player(this, "./assets/cheese.png");
     this.sprites[this.sprites.length] = this.player;
