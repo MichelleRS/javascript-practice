@@ -96,24 +96,33 @@ class Item extends Sprite {
 }
 // define enemy sprite class
 class Enemy extends Sprite {
-  constructor(game, url) {
+  constructor(game, url, entryDelay) {
     super(game, url);
+    // store entry delay in enemy
+    this.entryDelay = entryDelay;
     // set width and height of enemy
     this.width = game.canvasWidth / 12;
     this.height = game.canvasWidth / 12;
-    // acceleration and friction
-    this.acceleration = 0.1;
+    // give each enemy a different acceleration
+    this.acceleration = 0.1 + entryDelay / 10000;
+    // set enemy friction
     this.friction = 0.99;
   }
-  // reset enemy coordinates and speed
+  // reset enemy coordinates, entry count, and speed
   reset() {
-    this.x = 0;
-    this.y = 0;
+    this.x = -this.width;
+    this.y = -this.height;
+    this.entryCount = 0;
     this.xSpeed = 0;
     this.ySpeed = 0;
   }
   // update enemy movement
   update() {
+    // delay entry of enemy
+    this.entryCount = this.entryCount + 1;
+    if (this.entryCount < this.entryDelay) {
+      return;
+    }
     // if player is to right of enemy
     if (this.game.player.x > this.x) {
       // move enemy right
@@ -298,9 +307,17 @@ class ChaseGame {
         "./assets/cracker.png"
       );
     }
-    // initialize an enemy sprite and add to sprites array
-    this.enemy = new Enemy(this, "./assets/tomato.png");
-    this.sprites[this.sprites.length] = this.enemy;
+    // initialize up to 5 enemy sprites in a game with entry delays
+    for (let enemyCount = 0; enemyCount < 5; enemyCount++) {
+      // start first enemy at 5 seconds, then 10 second delay for subsequent enemies
+      let entryDelay = 300 + enemyCount * 600;
+      // add to sprites array
+      this.sprites[this.sprites.length] = new Enemy(
+        this,
+        "./assets/tomato.png",
+        entryDelay
+      );
+    }
     // initialize a player sprite and add to sprites array
     this.player = new Player(this, "./assets/cheese.png");
     this.sprites[this.sprites.length] = this.player;
