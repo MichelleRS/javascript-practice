@@ -270,7 +270,8 @@ class ChaseGame {
     if (!this.gameRunning) {
       this.drawStartScreen();
       console.log("game is not running");
-      // TODO display score on start screen
+      // display score on start screen
+      this.displayMessage("Recent score: " + this.score, 530);
       return;
     }
     // loop through sprites to draw all
@@ -333,6 +334,8 @@ class ChaseGame {
     // initialize a player sprite and add to sprites array
     this.player = new Player(this, "./assets/cheese.png");
     this.sprites[this.sprites.length] = this.player;
+    // set initial high score to 0
+    this.highScore = 0;
   }
   // method to load all sprite images
   async gameInitialize() {
@@ -365,7 +368,18 @@ class ChaseGame {
     this.background.draw();
     this.context.font = "3rem Courier New";
     this.displayMessage("Chase Game", 70);
-    // TODO game directions
+    // game directions
+    this.context.font = "2rem Courier New";
+    this.displayMessage("Steer cheese to collect crackers.", 140);
+    this.displayMessage("It's game over if the tomato gets you!", 190);
+    this.displayMessage("Use arrow keys to move.", 260);
+    this.displayMessage("Press G to start.", 310);
+    // game scores
+    this.context.font = "2.5rem Courier New";
+    this.displayMessage("Game Scores", 430);
+    this.context.font = "2rem Courier New";
+    this.displayMessage("High score: " + this.highScore, 480);
+    // note: recent score text is found in gameUpdate method of ChaseGame class
   }
   // method to start the game
   gameStart() {
@@ -399,7 +413,10 @@ class ChaseGame {
     // set game running value to false
     this.gameRunning = false;
     console.log("GAME OVER!!");
-    // TODO if game score is greater than high score, set as high score
+    // if game score is greater than high score, set as high score
+    if (this.score > this.highScore) {
+      this.highScore = this.score;
+    }
   }
 }
 
