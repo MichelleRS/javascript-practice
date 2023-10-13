@@ -149,7 +149,10 @@ class Enemy extends Sprite {
     // apply conditional speed to enemy
     this.x = this.x + this.xSpeed;
     this.y = this.y + this.ySpeed;
-    // TODO if enemy collides with player, end game
+    // if enemy collides with player, end game
+    if (this.collidesWith(this.game.player)) {
+      this.game.gameEnd();
+    }
   }
   // draw enemy
   draw() {
@@ -263,7 +266,13 @@ class ChaseGame {
     for (let sprite of this.sprites) {
       sprite.update();
     }
-    // TODO check if game is running
+    // if game over, display start screen
+    if (!this.gameRunning) {
+      this.drawStartScreen();
+      console.log("game is not running");
+      // TODO display score on start screen
+      return;
+    }
     // loop through sprites to draw all
     for (let sprite of this.sprites) {
       sprite.draw();
@@ -283,6 +292,8 @@ class ChaseGame {
     for (let sprite of this.sprites) {
       sprite.reset();
     }
+    // set game score to 0
+    this.score = 0;
   }
   // create and initialize the game object
   constructor() {
@@ -360,22 +371,35 @@ class ChaseGame {
   gameStart() {
     // draw start screen
     this.drawStartScreen();
-    // TODO listen for player to start game
-    // reset game (TODO: move to a run game method)
-    // this.gameReset();
-    // start game animation (TODO: move to a run game method)
-    // window.requestAnimationFrame(this.gameUpdate.bind(this));
+    // listen for player to start game
+    window.addEventListener("keydown", (e) => {
+      switch (e.code) {
+        case "KeyG":
+          // if the game is not running when player presses G
+          if (!this.gameRunning) {
+            console.log("START GAME");
+            // run the game
+            this.gameRun();
+          }
+          break;
+      }
+    });
   }
-  // TODO method to run game
+  // method to run game
   gameRun() {
     // reset game
+    this.gameReset();
     // start game by setting game running value to true
+    this.gameRunning = true;
     // request the next update
+    window.requestAnimationFrame(this.gameUpdate.bind(this));
   }
-  // TODO method to end game
+  // method to end game
   gameEnd() {
-    // end game by setting game running value to false
-    // if game score is greater than high score, set as high score
+    // set game running value to false
+    this.gameRunning = false;
+    console.log("GAME OVER!!");
+    // TODO if game score is greater than high score, set as high score
   }
 }
 
