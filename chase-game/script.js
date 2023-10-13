@@ -333,13 +333,38 @@ class ChaseGame {
     // wait for sprites to finish loading
     await Promise.all(promiseList);
   }
+  // helper function: positioning and styling text
+  displayMessage(text, yPos) {
+    // measure the size of the text message
+    let textSize = this.context.measureText(text);
+    // calculate an offset to center text
+    let x = (this.canvasWidth - textSize.width) / 2.0;
+    // set background text to white
+    this.context.fillStyle = "white";
+    // draw text background
+    this.context.fillText(text, x, yPos);
+    // set top layer text to black
+    this.context.fillStyle = "black";
+    // draw slightly offset from background text
+    this.context.fillText(text, x + 2, yPos + 2);
+  }
+  // method to draw start screen text
+  drawStartScreen() {
+    this.background.draw();
+    this.context.font = "3rem Courier New";
+    this.displayMessage("Chase Game", 70);
+    // TODO game directions
+  }
   // method to start the game
   gameStart() {
-    // reset the game
-    this.gameReset();
-    // start game animation
-    window.requestAnimationFrame(this.gameUpdate.bind(this));
+    // draw start screen
+    this.drawStartScreen();
+    // reset game (TODO: move to a run game method)
+    // this.gameReset();
+    // start game animation (TODO: move to a run game method)
+    // window.requestAnimationFrame(this.gameUpdate.bind(this));
   }
+  // TODO method to run game
 }
 
 /* functions */
