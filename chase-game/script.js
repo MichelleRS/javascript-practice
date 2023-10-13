@@ -1,12 +1,11 @@
-/* events */
+// start game screen on page load
 window.addEventListener("load", () => {
-  //   doLoadImage();
   doGame();
 });
 
 /* classes */
 
-// define all sprites
+// define all sprites as a class
 class Sprite {
   constructor(game, url) {
     // store the game the sprite is part of
@@ -54,7 +53,7 @@ class Sprite {
     this.game.context.drawImage(this.image, this.x, this.y);
   }
 }
-// define item sprite class
+// define item sprite subclass
 class Item extends Sprite {
   constructor(game, url) {
     super(game, url);
@@ -94,7 +93,7 @@ class Item extends Sprite {
     );
   }
 }
-// define enemy sprite class
+// define enemy sprite subclass
 class Enemy extends Sprite {
   constructor(game, url, entryDelay) {
     super(game, url);
@@ -165,7 +164,7 @@ class Enemy extends Sprite {
     );
   }
 }
-// define player sprite class
+// define player sprite subclass
 class Player extends Sprite {
   constructor(game, url) {
     super(game, url);
@@ -269,7 +268,6 @@ class ChaseGame {
     // if game over, display start screen
     if (!this.gameRunning) {
       this.drawStartScreen();
-      console.log("game is not running");
       // display score on start screen
       this.displayMessage("Recent score: " + this.score, 530);
       return;
@@ -391,7 +389,6 @@ class ChaseGame {
         case "KeyG":
           // if the game is not running when player presses G
           if (!this.gameRunning) {
-            console.log("START GAME");
             // run the game
             this.gameRun();
           }
@@ -412,7 +409,6 @@ class ChaseGame {
   gameEnd() {
     // set game running value to false
     this.gameRunning = false;
-    console.log("GAME OVER!!");
     // if game score is greater than high score, set as high score
     if (this.score > this.highScore) {
       this.highScore = this.score;
@@ -420,78 +416,7 @@ class ChaseGame {
   }
 }
 
-/* functions */
-
-// manage multiple image loads
-function getImageLoadPromise(url) {
-  return new Promise((resolve, reject) => {
-    // create a new image object
-    let image = new Image();
-    // set src property to location of image
-    image.src = url;
-    // connect the onload event to the kept parameter
-    image.onload = () => resolve(image);
-    // connect the onerror event to the broken parameter
-    image.onerror = () => reject(new Error("Could not load" + url));
-  });
-}
-
-// handle multiple image promises
-async function getImages(imageUrls) {
-  // initialize an empty promise list
-  let promiseList = [];
-
-  // loop through list of image urls
-  for (let url of imageUrls) {
-    // create image load promise and add to promise list
-    promiseList[promiseList.length] = getImageLoadPromise(url);
-  }
-
-  // wait for all promises to be fulfilled
-  let result = await Promise.all(promiseList);
-  // return list of images
-  return result;
-}
-
-async function doLoadImage() {
-  // get DOM element for canvas
-  const canvas = document.querySelector("canvas");
-
-  if (canvas.getContext) {
-    // get object for drawing area
-    const context = canvas.getContext("2d");
-    // get array of image urls
-    let imageUrls = [
-      "./assets/cheese.png",
-      "./assets/cracker.png",
-      "./assets/tomato.png",
-      "./assets/background.png",
-    ];
-
-    // get images
-    let images = await getImages(imageUrls);
-
-    // set x draw coordinate to 0
-    let x = 0;
-    // set y draw coordinate to 0
-    let y = 0;
-
-    // loop through the images
-    for (let image of images) {
-      // draw the image
-      context.drawImage(image, x, y);
-      // move x across by the width of the image
-      x = x + image.width;
-      // move y down by the height of the image
-      y = y + image.height;
-    }
-  }
-  // error handling
-  else {
-    alert("Graphics not supported");
-  }
-}
-
+// function to start game
 async function doGame() {
   // initialize a new game
   let activeGame = new ChaseGame();
