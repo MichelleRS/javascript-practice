@@ -101,10 +101,46 @@ class Enemy extends Sprite {
     // set width and height of enemy
     this.width = game.canvasWidth / 12;
     this.height = game.canvasWidth / 12;
-    // TODO acceleration and friction
+    // acceleration and friction
+    this.acceleration = 0.1;
+    this.friction = 0.99;
   }
-  // TODO reset enemy
-  // TODO update enemy movement
+  // reset enemy coordinates and speed
+  reset() {
+    this.x = 0;
+    this.y = 0;
+    this.xSpeed = 0;
+    this.ySpeed = 0;
+  }
+  // update enemy movement
+  update() {
+    // if player is to right of enemy
+    if (this.game.player.x > this.x) {
+      // move enemy right
+      this.xSpeed = this.xSpeed + this.acceleration;
+    }
+    // if player is to left of enemy
+    else {
+      // move enemy left
+      this.xSpeed = this.xSpeed - this.acceleration;
+    }
+    // if player is above enemy
+    if (this.game.player.y > this.y) {
+      // move enemy up
+      this.ySpeed = this.ySpeed + this.acceleration;
+    }
+    // if player is below enemy
+    else {
+      // move enemy down
+      this.ySpeed = this.ySpeed - this.acceleration;
+    }
+    // apply friction to prevent enemy from continuously accelerating
+    this.xSpeed = this.xSpeed * this.friction;
+    this.ySpeed = this.ySpeed * this.friction;
+    // apply conditional speed to enemy
+    this.x = this.x + this.xSpeed;
+    this.y = this.y + this.ySpeed;
+  }
   // draw enemy
   draw() {
     this.game.context.drawImage(
