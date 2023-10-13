@@ -149,6 +149,7 @@ class Enemy extends Sprite {
     // apply conditional speed to enemy
     this.x = this.x + this.xSpeed;
     this.y = this.y + this.ySpeed;
+    // TODO if enemy collides with player, end game
   }
   // draw enemy
   draw() {
@@ -262,16 +263,16 @@ class ChaseGame {
     for (let sprite of this.sprites) {
       sprite.update();
     }
+    // TODO check if game is running
     // loop through sprites to draw all
     for (let sprite of this.sprites) {
       sprite.draw();
     }
-    /* score board */
-    // set font and size
+    // set font and size for game play score
     this.context.font = "2.5rem Courier New";
-    // use fillStyle method to set the color of the text
+    // use fillStyle method to set the color of the text game play score
     this.context.fillStyle = "black";
-    // use fillText method to draw the score on canvas at chosen coordinates
+    // use fillText method to draw the game play score on canvas at chosen coordinates
     this.context.fillText("Score: " + this.score, 10, 40);
     // request the next update
     window.requestAnimationFrame(this.gameUpdate.bind(this));
@@ -359,12 +360,23 @@ class ChaseGame {
   gameStart() {
     // draw start screen
     this.drawStartScreen();
+    // TODO listen for player to start game
     // reset game (TODO: move to a run game method)
     // this.gameReset();
     // start game animation (TODO: move to a run game method)
     // window.requestAnimationFrame(this.gameUpdate.bind(this));
   }
   // TODO method to run game
+  gameRun() {
+    // reset game
+    // start game by setting game running value to true
+    // request the next update
+  }
+  // TODO method to end game
+  gameEnd() {
+    // end game by setting game running value to false
+    // if game score is greater than high score, set as high score
+  }
 }
 
 /* functions */
