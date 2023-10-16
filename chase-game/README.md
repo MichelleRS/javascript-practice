@@ -6,7 +6,7 @@
 
 ## Status
 
-- In progress
+- MVP complete
 
 ## Source
 
