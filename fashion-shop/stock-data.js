@@ -59,6 +59,45 @@ class Dress extends StockItem {
   }
 }
 
+// subclass for pants
+class Pants extends StockItem {
+  // pants properties
+  constructor(
+    stockRef,
+    stockLevel,
+    price,
+    description,
+    color,
+    pattern,
+    length,
+    waist
+  ) {
+    super(stockRef, stockLevel, price, description, color);
+    this.pattern = pattern;
+    this.waist = waist;
+    this.length = length;
+  }
+
+  // method: get an item description to be displayed on Stock List page
+  getDescription() {
+    // build string for item description
+    let result =
+      // get description from superclass
+      super.getDescription() +
+      // pattern
+      " Pattern:" +
+      this.pattern +
+      // waist
+      " Waist:" +
+      this.waist +
+      // length
+      " Length:" +
+      this.length;
+    // return string
+    return result;
+  }
+}
+
 // TEST
 window.addEventListener("load", () => {
   console.log("Hello from stock data!");
@@ -79,4 +118,25 @@ window.addEventListener("load", () => {
     "small"
   );
   console.log("testDress.getDescription()", testDress.getDescription());
+
+  // TEST pants
+  let testPants = new Pants(
+    // ref
+    222,
+    // stock level
+    2,
+    // price
+    99,
+    //description
+    "Flair",
+    // color
+    "Olive",
+    // pattern
+    "Plaid",
+    // waist
+    "25",
+    // length
+    "30"
+  );
+  console.log("testPants.getDescription()", testPants.getDescription());
 });
