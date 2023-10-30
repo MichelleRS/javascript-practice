@@ -58,3 +58,25 @@ class Dress extends StockItem {
     return result;
   }
 }
+
+// TEST
+window.addEventListener("load", () => {
+  console.log("Hello from stock data!");
+  let testDress = new Dress(
+    // ref
+    221,
+    // stock level
+    7,
+    // price
+    129,
+    // description
+    "spaghetti straps",
+    // color
+    "green",
+    // pattern
+    "floral",
+    // size
+    "small"
+  );
+  console.log("testDress.getDescription()", testDress.getDescription());
+});
