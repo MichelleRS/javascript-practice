@@ -160,6 +160,49 @@ class Pants extends StockItem {
     // return string
     return result;
   }
+
+  // static class members for test data
+  static colors = ["olive", "washed black"];
+  static patterns = ["plain", "corduroy"];
+  static lengths = ["petite", "standard", "tall"];
+  static waists = [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33];
+
+  // method: get test data
+  static getTestItems(dest) {
+    // set stock number as one higher than the current largest stock reference in fashion shop
+    let stockNo = StockItem.getLargestStockRef(dest) + 1;
+    // loop through pants colors
+    for (let color of Pants.colors) {
+      // loop through pants patterns
+      for (let pattern of Pants.patterns) {
+        // get a random price
+        let price = StockItem.getRandomInt(40, 300);
+        // loop through pants length
+        for (let length of Pants.lengths) {
+          // loop through pants waists
+          for (let waist of Pants.waists) {
+            // get a random stock level
+            let stock = StockItem.getRandomInt(0, 15);
+            // build a description string
+            let description = `${color} ${pattern} pants`;
+            // create a new Pants object and store it
+            dest[dest.length] = new Pants(
+              stockNo,
+              stock,
+              price,
+              description,
+              color,
+              pattern,
+              length,
+              waist
+            );
+            // advance the stock number
+            stockNo = stockNo + 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 // TEST
@@ -168,6 +211,7 @@ window.addEventListener("load", () => {
   // get test data
   let demo = [];
   Dress.getTestItems(demo);
+  Pants.getTestItems(demo);
   for (let item of demo) {
     console.log("item.getDescription()", item.getDescription());
   }
