@@ -38,22 +38,7 @@ class StockItem {
   // method: get an item description
   getDescription() {
     // build string for item description
-    let result =
-      // stock reference
-      "Ref:" +
-      this.stockRef +
-      // stock level
-      " Stock Level:" +
-      this.stockLevel +
-      // price
-      " Price:" +
-      this.price +
-      // description
-      " Description:" +
-      this.description +
-      // color
-      " Color:" +
-      this.color;
+    let result = `Ref:${this.stockRef} Stock Level:${this.stockLevel} Price:${this.price} Description:${this.description} Color:${this.color}`;
     // return string
     return result;
   }
@@ -72,14 +57,7 @@ class Dress extends StockItem {
   getDescription() {
     // build string for item description
     let result =
-      // get description from superclass
-      super.getDescription() +
-      // pattern
-      " Pattern:" +
-      this.pattern +
-      // size
-      " Size:" +
-      this.size;
+      super.getDescription() + ` Pattern:${this.pattern} Size:${this.size}`;
     // return string
     return result;
   }
@@ -146,17 +124,8 @@ class Pants extends StockItem {
   getDescription() {
     // build string for item description
     let result =
-      // get description from superclass
       super.getDescription() +
-      // pattern
-      " Pattern:" +
-      this.pattern +
-      // waist
-      " Waist:" +
-      this.waist +
-      // length
-      " Length:" +
-      this.length;
+      ` Pattern:${this.pattern} Waist:${this.waist} Length:${this.length}`;
     // return string
     return result;
   }
