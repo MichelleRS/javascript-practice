@@ -31,6 +31,9 @@ function renderMainMenu(schema) {
 
   // loop through items in schema
   for (const listItem of schema) {
+    // get type of item
+    let itemType = listItem.type;
+
     // create a list item element
     let listItemEl = document.createElement("li");
     // add class name to list item element
@@ -41,27 +44,22 @@ function renderMainMenu(schema) {
     buttonEl.innerText = listItem.label;
     // add class name to button
     buttonEl.className = "mainMenuItemButton";
-    // TODO add on click function to button
-    buttonEl.setAttribute("onclick", listItem.func);
     // append button to list item element
     listItemEl.appendChild(buttonEl);
+
+    // listen for button click
+    buttonEl.addEventListener("click", () => {
+      console.log("CLICK!!");
+      console.log("buttonEl", buttonEl);
+      console.log("itemType", itemType);
+      // TODO show form to add a new item to stock
+    });
 
     // append list item element to list
     listEl.appendChild(listItemEl);
   }
   // append list element to main page
   mainPage.appendChild(listEl);
-}
-
-/* functions: click events for main menu buttons */
-// add dress
-function doAddDress() {
-  console.log("I clicked Add Dress!!");
-}
-
-// add pants
-function doAddPants() {
-  console.log("I clicked Add Pants!!");
 }
 
 /* functions */
@@ -83,12 +81,12 @@ function doShowMainMenu() {
   // show menu items
   renderMainMenu([
     {
+      type: "Dress",
       label: "Add Dress",
-      func: "doAddDress()",
     },
     {
+      type: "Pants",
       label: "Add Pants",
-      func: "doAddPants()",
     },
   ]);
 }
