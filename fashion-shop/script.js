@@ -52,7 +52,19 @@ function renderMainMenu(schema) {
       console.log("CLICK!!");
       console.log("buttonEl", buttonEl);
       console.log("itemType", itemType);
-      // TODO show form to add a new item to stock
+      console.log("listItem", listItem);
+      // TODO decide what function to call based on item type
+      switch (itemType) {
+        case "Dress":
+          console.log("I want to add a DRESS!!");
+          console.log("listItem.func", listItem.func);
+          break;
+
+        case "Pants":
+          console.log("I want to add PANTS!!");
+          console.log("listItem.func", listItem.func);
+          break;
+      }
     });
 
     // append list item element to list
@@ -83,10 +95,12 @@ function doShowMainMenu() {
     {
       type: "Dress",
       label: "Add Dress",
+      func: "doAddDress()",
     },
     {
       type: "Pants",
       label: "Add Pants",
+      func: "doAddPants()",
     },
   ]);
 }
