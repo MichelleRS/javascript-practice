@@ -46,32 +46,31 @@ function renderMainMenu(schema) {
     buttonEl.className = "mainMenuItemButton";
     // append button to list item element
     listItemEl.appendChild(buttonEl);
-
-    // listen for button click
-    buttonEl.addEventListener("click", () => {
-      console.log("CLICK!!");
-      console.log("buttonEl", buttonEl);
-      console.log("itemType", itemType);
-      console.log("listItem", listItem);
-      // TODO decide what function to call based on item type
-      switch (itemType) {
-        case "Dress":
-          console.log("I want to add a DRESS!!");
-          console.log("listItem.func", listItem.func);
-          break;
-
-        case "Pants":
-          console.log("I want to add PANTS!!");
-          console.log("listItem.func", listItem.func);
-          break;
-      }
-    });
+    // listen for click: function call to perform action
+    buttonEl.setAttribute("onclick", listItem.func);
+    console.log("listItem.func", listItem.func);
+    console.log("typeof listItem.func", typeof listItem.func);
 
     // append list item element to list
     listEl.appendChild(listItemEl);
   }
   // append list element to main page
   mainPage.appendChild(listEl);
+}
+
+/* functions for main menu click events */
+function doAddDress() {
+  document.body.style.backgroundColor = "darkblue";
+  // TODO function call to addStock(Dress) to add a new dress object to store
+}
+
+function doAddPants() {
+  document.body.style.backgroundColor = "pink";
+  // TODO function call to addStock(Pants) to add a new pants object to store
+}
+
+function addStock(StockClass) {
+  // TODO
 }
 
 /* functions */
