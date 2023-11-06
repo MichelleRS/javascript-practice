@@ -175,6 +175,7 @@ class Pants extends StockItem {
     waist
   ) {
     super(stockRef, stockLevel, price, description, color);
+    this.type = "pants";
     this.pattern = pattern;
     this.waist = waist;
     this.length = length;
