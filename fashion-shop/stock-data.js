@@ -26,6 +26,52 @@ class StockItem {
     return largest;
   }
 
+  // method: schema used for form controls when adding stock
+  static StockItemSchema = [
+    {
+      id: "price",
+      prompt: "Price",
+      inputType: "input",
+    },
+    {
+      id: "stockLevel",
+      prompt: "Stock Level",
+      inputType: "input",
+    },
+    {
+      id: "description",
+      prompt: "Description",
+      inputType: "textarea",
+      rows: 5,
+      cols: 40,
+    },
+    {
+      id: "color",
+      prompt: "Color",
+      inputType: "input",
+    },
+  ];
+
+  // TODO build and return a form element
+  static makeFormElement() {
+    let formEl = document.createElement("form");
+    return formEl;
+  }
+  // TODO build and return an input element
+  static makeFormControl() {}
+
+  // TODO method to build elements from schema and append to containing element
+  static buildElementsFromSchema(containerElementId, dataSchema) {
+    // TODO make a form element
+    let formEl = this.makeFormElement();
+    console.log("formEl", formEl);
+    containerElementId.appendChild(formEl);
+    // loop through each item in the schema
+    for (let item of dataSchema) {
+      // TODO make form control
+      console.log("item", item);
+    }
+  }
   // constructor method for shared properties
   constructor(stockRef, stockLevel, price, description, color) {
     this.stockRef = stockRef;
@@ -42,6 +88,18 @@ class StockItem {
     // return string
     return result;
   }
+  // TODO get html to render content in a containing element
+  getHTML(containerElementId) {
+    console.log(
+      "Hello from getHTMl in stock-data.js!! What is the containerElementId?",
+      containerElementId
+    );
+    // TEST
+    StockItem.buildElementsFromSchema(
+      containerElementId,
+      StockItem.StockItemSchema
+    );
+  }
 }
 
 // subclass for dress
@@ -49,6 +107,7 @@ class Dress extends StockItem {
   // dress properties
   constructor(stockRef, stockLevel, price, description, color, pattern, size) {
     super(stockRef, stockLevel, price, description, color);
+    this.type = "dress";
     this.pattern = pattern;
     this.size = size;
   }
@@ -61,6 +120,7 @@ class Dress extends StockItem {
     // return string
     return result;
   }
+  // TODO static dress schema: used to build the form display for the dress
 
   // static class members for test data
   static colors = ["terracotta", "hunter green", "coyote", "navy"];
@@ -175,13 +235,12 @@ class Pants extends StockItem {
 }
 
 // TEST
-window.addEventListener("load", () => {
-  console.log("Hello from stock data!");
-  // get test data
-  let demo = [];
-  Dress.getTestItems(demo);
-  Pants.getTestItems(demo);
-  for (let item of demo) {
-    console.log("item.getDescription()", item.getDescription());
-  }
-});
+// window.addEventListener("load", () => {
+//   console.log("Hello from stock data!");
+//   let demo = [];
+//   Dress.getTestItems(demo);
+//   Pants.getTestItems(demo);
+//   for (let item of demo) {
+//     console.log("item.getDescription()", item.getDescription());
+//   }
+// });

@@ -61,16 +61,24 @@ function renderMainMenu(schema) {
 /* functions for main menu click events */
 function doAddDress() {
   document.body.style.backgroundColor = "darkblue";
-  // TODO function call to addStock(Dress) to add a new dress object to store
+  // TODO function call to render form for adding a new dress to store
+  addStock(Dress);
 }
 
 function doAddPants() {
   document.body.style.backgroundColor = "pink";
-  // TODO function call to addStock(Pants) to add a new pants object to store
+  // TODO function call to render form for adding new pants to store
+  addStock(Pants);
 }
 
+// TODO function: displays form and buttons for adding stock to store
 function addStock(StockClass) {
-  // TODO
+  activeItem = new StockClass();
+  // show page title
+  openPage(`Add ${activeItem.type}`);
+  console.log("activeItem", activeItem);
+  // TODO show form
+  activeItem.getHTML(mainPage);
 }
 
 /* functions */
