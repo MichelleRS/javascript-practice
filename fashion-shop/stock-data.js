@@ -52,26 +52,42 @@ class StockItem {
     },
   ];
 
-  // TODO build and return a form element
-  static makeFormElement() {
+  // build and return a form element
+  static renderFormElement() {
     let formEl = document.createElement("form");
     return formEl;
   }
-  // TODO build and return an input element
-  static makeFormControl() {}
+
+  // TODO build and return a form control container with input element
+  static renderFormControl() {
+    // create a container element for form control
+    let divEl = document.createElement("div");
+    divEl.className = "formControl";
+    // TODO label element
+    // TODO input element
+
+    return divEl;
+  }
 
   // TODO method to build elements from schema and append to containing element
   static buildElementsFromSchema(containerElementId, dataSchema) {
-    // TODO make a form element
-    let formEl = this.makeFormElement();
+    // render form element
+    let formEl = this.renderFormElement();
     console.log("formEl", formEl);
+    // append to main page
     containerElementId.appendChild(formEl);
     // loop through each item in the schema
     for (let item of dataSchema) {
-      // TODO make form control
       console.log("item", item);
+      console.log("dataSchema", dataSchema);
+      // TODO render form control
+      let formControlEl = StockItem.renderFormControl(item);
+      console.log("formControlEl", formControlEl);
+      // append to form
+      formEl.appendChild(formControlEl);
     }
   }
+
   // constructor method for shared properties
   constructor(stockRef, stockLevel, price, description, color) {
     this.stockRef = stockRef;
@@ -88,7 +104,7 @@ class StockItem {
     // return string
     return result;
   }
-  // TODO get html to render content in a containing element
+  // TODO get html for main page to render
   getHTML(containerElementId) {
     console.log(
       "Hello from getHTMl in stock-data.js!! What is the containerElementId?",
