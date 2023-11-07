@@ -68,6 +68,18 @@ function renderFormElement() {
   return formEl;
 }
 
+// render buttons for adding stock form
+function renderFormButtons(schema) {
+  // loop through items in schema
+  for (let button of schema) {
+    let buttonEl = document.createElement("button");
+    buttonEl.innerText = button.label;
+    buttonEl.setAttribute("onclick", button.func);
+    // append to form
+    formEl.appendChild(buttonEl);
+  }
+}
+
 /* functions for main menu click events */
 function doAddDress() {
   document.body.style.backgroundColor = "darkblue";
@@ -79,7 +91,7 @@ function doAddPants() {
   addStock(Pants);
 }
 
-// TODO function: displays form and buttons for adding stock to store
+// function: displays form and buttons for adding stock to store
 function addStock(StockClass) {
   activeItem = new StockClass();
   // show page title
@@ -89,6 +101,17 @@ function addStock(StockClass) {
   mainPage.appendChild(formEl);
   // getHTML = getFormControls
   activeItem.getHTML(formEl);
+  // append save and cancel buttons to form
+  renderFormButtons([
+    {
+      label: "Save",
+      func: "doSaveAdd()",
+    },
+    {
+      label: "Cancel",
+      func: "doCancelAdd()",
+    },
+  ]);
 }
 
 /* functions */
@@ -120,6 +143,16 @@ function doShowMainMenu() {
       func: "doAddPants()",
     },
   ]);
+}
+
+// function: add stock save button
+function doSaveAdd() {
+  console.log("Hello from doSaveAdd()");
+}
+
+// function: cancel adding stock
+function doCancelAdd() {
+  console.log("Hello from doCancelAdd()");
 }
 
 // function: start app
