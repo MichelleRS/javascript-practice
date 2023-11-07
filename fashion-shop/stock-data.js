@@ -53,10 +53,10 @@ class StockItem {
   ];
 
   // build and return a form element
-  static renderFormElement() {
-    let formEl = document.createElement("form");
-    return formEl;
-  }
+  // static renderFormElement() {
+  //   let formEl = document.createElement("form");
+  //   return formEl;
+  // }
 
   // build and return a form control container with input element
   static renderFormControl(item) {
@@ -92,17 +92,10 @@ class StockItem {
     return divEl;
   }
 
-  // TODO method to build elements from schema and append to containing element
-  static buildElementsFromSchema(containerElementId, dataSchema) {
-    // render form element
-    let formEl = this.renderFormElement();
-    console.log("formEl", formEl);
-    // append to main page
-    containerElementId.appendChild(formEl);
+  // method to build form
+  static buildElementsFromSchema(formEl, dataSchema) {
     // loop through each item in the schema
     for (let item of dataSchema) {
-      console.log("item", item);
-      console.log("dataSchema", dataSchema);
       // render form control
       let formControlEl = StockItem.renderFormControl(item);
       console.log("formControlEl", formControlEl);
@@ -127,17 +120,9 @@ class StockItem {
     // return string
     return result;
   }
-  // TODO get html for main page to render
-  getHTML(containerElementId) {
-    console.log(
-      "Hello from getHTMl in stock-data.js!! What is the containerElementId?",
-      containerElementId
-    );
-    // TEST
-    StockItem.buildElementsFromSchema(
-      containerElementId,
-      StockItem.StockItemSchema
-    );
+  // get html for form
+  getHTML(formEl) {
+    StockItem.buildElementsFromSchema(formEl, StockItem.StockItemSchema);
   }
 }
 
@@ -159,7 +144,26 @@ class Dress extends StockItem {
     // return string
     return result;
   }
-  // TODO static dress schema: used to build the form display for the dress
+
+  // static dress schema: used to build the form display for the dress
+  static DressSchema = [
+    {
+      id: "pattern",
+      prompt: "Pattern",
+      inputType: "input",
+    },
+    {
+      id: "size",
+      prompt: "Size",
+      inputType: "input",
+    },
+  ];
+
+  getHTML(formEl) {
+    console.log("Hello from getHTML in Dress!");
+    super.getHTML(formEl);
+    StockItem.buildElementsFromSchema(formEl, Dress.DressSchema);
+  }
 
   // static class members for test data
   static colors = ["terracotta", "hunter green", "coyote", "navy"];
@@ -228,6 +232,30 @@ class Pants extends StockItem {
       ` Pattern:${this.pattern} Waist:${this.waist} Length:${this.length}`;
     // return string
     return result;
+  }
+
+  // static pants schema: used to build the form display for the dress
+  static PantsSchema = [
+    {
+      id: "pattern",
+      prompt: "Pattern",
+      inputType: "input",
+    },
+    {
+      id: "waist",
+      prompt: "Waist",
+      inputType: "input",
+    },
+    {
+      id: "length",
+      prompt: "Length",
+      inputType: "input",
+    },
+  ];
+
+  getHTML(formEl) {
+    super.getHTML(formEl);
+    StockItem.buildElementsFromSchema(formEl, Pants.PantsSchema);
   }
 
   // static class members for test data

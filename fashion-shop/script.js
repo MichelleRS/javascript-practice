@@ -1,6 +1,8 @@
-/* global variables */
+/* global DOM elements */
 // declare variable for the html element that contains user interface
 let mainPage;
+// declare variable for the form element for adding stock to store
+let formEl;
 
 /* events */
 window.addEventListener("load", () => {
@@ -58,16 +60,22 @@ function renderMainMenu(schema) {
   mainPage.appendChild(listEl);
 }
 
+// render form for adding stock to store
+function renderFormElement() {
+  formEl = document.createElement("form");
+  formEl.setAttribute("id", "stockForm");
+  console.log("In renderFormElement: formEl", formEl);
+  return formEl;
+}
+
 /* functions for main menu click events */
 function doAddDress() {
   document.body.style.backgroundColor = "darkblue";
-  // TODO function call to render form for adding a new dress to store
   addStock(Dress);
 }
 
 function doAddPants() {
   document.body.style.backgroundColor = "pink";
-  // TODO function call to render form for adding new pants to store
   addStock(Pants);
 }
 
@@ -76,9 +84,11 @@ function addStock(StockClass) {
   activeItem = new StockClass();
   // show page title
   openPage(`Add ${activeItem.type}`);
-  console.log("activeItem", activeItem);
-  // TODO show form
-  activeItem.getHTML(mainPage);
+  // render empty form element
+  formEl = renderFormElement();
+  mainPage.appendChild(formEl);
+  // getHTML = getFormControls
+  activeItem.getHTML(formEl);
 }
 
 /* functions */
@@ -118,6 +128,8 @@ function doStartFashionShop() {
   console.log("Hello from doStartFashionShop()!!");
   mainPage = document.getElementById("mainPage");
   console.log("mainPage", mainPage);
+  formEl = document.getElementById("stockForm");
+  console.log("doStart: formEl", formEl);
 
   doShowMainMenu();
 }
