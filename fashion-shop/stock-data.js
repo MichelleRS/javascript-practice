@@ -58,14 +58,37 @@ class StockItem {
     return formEl;
   }
 
-  // TODO build and return a form control container with input element
-  static renderFormControl() {
-    // create a container element for form control
+  // build and return a form control container with input element
+  static renderFormControl(item) {
+    // create a parent element for form control
     let divEl = document.createElement("div");
     divEl.className = "formControl";
-    // TODO label element
-    // TODO input element
 
+    /* child: label element */
+    let labelEl = document.createElement("label");
+    labelEl.innerText = `${item.prompt}:`;
+    labelEl.className = "formControlLabel";
+    labelEl.setAttribute("for", item.id);
+    divEl.appendChild(labelEl);
+
+    /* child: input element */
+    let inputEl;
+    // decide input type
+    switch (item.inputType) {
+      case "input":
+        inputEl = document.createElement("input");
+        break;
+      case "textarea":
+        inputEl = document.createElement("textarea");
+        inputEl.setAttribute("rows", item.rows);
+        inputEl.setAttribute("cols", item.cols);
+        break;
+    }
+    inputEl.className = "formControlInput";
+    inputEl.setAttribute("id", item.id);
+    divEl.appendChild(inputEl);
+
+    // return parent element
     return divEl;
   }
 
@@ -80,7 +103,7 @@ class StockItem {
     for (let item of dataSchema) {
       console.log("item", item);
       console.log("dataSchema", dataSchema);
-      // TODO render form control
+      // render form control
       let formControlEl = StockItem.renderFormControl(item);
       console.log("formControlEl", formControlEl);
       // append to form
